@@ -12,7 +12,7 @@ const cadastrar = async (cpf, dataNascimento, nome, salario, turno, id) => {
 
 const remover = async (id) => {
     crud.remover("funcionario", id);
-    return buscar();
+    return buscarFuncionarios();
 }
 
 const buscarFuncionarios = async () => {

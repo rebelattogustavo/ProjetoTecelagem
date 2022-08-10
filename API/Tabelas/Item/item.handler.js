@@ -3,16 +3,16 @@ const crud = require("../../crud");
 const cadastrar = async (tipo, quantidade, id) => {
     let item;
     if (id) {
-        item = crud.cadastrar("item", id, { tipo, quantidade });
+        item = await crud.cadastrar("item", id, { tipo, quantidade });
     } else {
-        item = crud.cadastrar("item", null, { tipo, quantidade });
+        item = await crud.cadastrar("item", null, { tipo, quantidade });
     }
     return item;
 }
 
 const remover = async (id) => {
-    crud.remover("cliente", id);
-    return buscar();
+    crud.remover("item", id);
+    return buscarItens();
 }
 
 const buscarItens = async () => {

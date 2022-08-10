@@ -4,10 +4,10 @@ const cadastrar = async (nome, marca, anoFabricacao, anoCompra, valorCompra, rpm
     qtdPlatina, qtdGaiolas, qtdCones, id) => {
     let maquina;
     if (id) {
-        maquina = crud.cadastrar("maquina", id, { nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha,
+        maquina = await crud.cadastrar("maquina", id, { nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha,
             qtdPlatina, qtdGaiolas, qtdCones });
     } else {
-        maquina = crud.cadastrar("maquina", null, { nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha,
+        maquina = await crud.cadastrar("maquina", null, { nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha,
             qtdPlatina, qtdGaiolas, qtdCones });
     }
     return maquina;
@@ -15,7 +15,7 @@ const cadastrar = async (nome, marca, anoFabricacao, anoCompra, valorCompra, rpm
 
 const remover = async (id) => {
     crud.remover("maquina", id);
-    return buscar();
+    return buscarMaquinas();
 }
 
 const buscarMaquinas = async () => {
