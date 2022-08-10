@@ -6,7 +6,8 @@ import { FioComponent } from './fio/fio.component';
 import { ItensComponent } from './itens/itens.component';
 import { MalhaComponent } from './malha/malha.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
-
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { ComponentesExternosComponent } from './componentes-externos/componentes-externos.component';
 
 
 @NgModule({
@@ -19,18 +20,29 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
         component: TelaLoginComponent
       },
       {
-        path: 'maquina',
-        component: MaquinaComponent
-      },{
-        path: 'fio',
-        component: FioComponent
-      },{
-        path: 'itens',
-        component: ItensComponent
-      },{
-        path: 'malha',
-        component: MalhaComponent
-      }])
+        path: 'cadastro',
+        component: CadastroComponent
+      },
+      {
+        path: 'home',
+        component: ComponentesExternosComponent,
+        children: [
+          {
+            path: 'maquina',
+            component: MaquinaComponent
+          }, {
+            path: 'fio',
+            component: FioComponent
+          }, {
+            path: 'itens',
+            component: ItensComponent
+          }, {
+            path: 'malha',
+            component: MalhaComponent
+          }
+        ]
+      },
+    ])
   ],
   exports: [
     RouterModule
