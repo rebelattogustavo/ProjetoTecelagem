@@ -5,6 +5,7 @@ import { MaquinaComponent } from './maquina/maquina.component';
 import { FioComponent } from './fio/fio.component';
 import { ItensComponent } from './itens/itens.component';
 import { MalhaComponent } from './malha/malha.component';
+import { TelaLoginComponent } from './tela-login/tela-login.component';
 
 
 
@@ -13,6 +14,10 @@ import { MalhaComponent } from './malha/malha.component';
   imports: [
     CommonModule,
     RouterModule.forRoot([
+      {
+        path: '',
+        component: TelaLoginComponent
+      },
       {
         path: 'maquina',
         component: MaquinaComponent
