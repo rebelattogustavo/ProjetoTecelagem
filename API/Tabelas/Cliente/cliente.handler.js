@@ -1,33 +1,31 @@
-const {cadastrar, buscar, buscarPorId, remover} = require("../../crud");
+const { cadastrar, buscar, buscarPorId, remover } = require("../../crud");
 
-const cadastrarCliente = (cliente) => {
-    const clienteCadastrado = cadastrar("cliente", null, cliente);
-    return clienteCadastrado;
+const cadastrarCliente = async (nome, cnpj, id) => {
+    if (id) {
+        await cadastrar("cliente", id, { nome, cnpj });
+    } else {
+        await cadastrar("cliente", null, { nome, cnpj });
+    }
+    return buscarCliente();
 }
 
-const atualizarCliente = (id, cliente) => {
-    const clienteAtualizado = cadastrar("cliente", id, cliente);
-    return clienteAtualizado;
+const removerCliente = async (id) => {
+    remover("cliente", id);
+    return buscarCliente();
 }
 
-const removerCliente = (id) => {
-    const clienteRemovido = remover("cliente", id);
-    return clienteRemovido;
-}
-
-const buscarCliente = () => {
-    const listaClientes = buscar("cliente");
+const buscarCliente = async () => {
+    const listaClientes = await buscar("cliente");
     return listaClientes;
 }
 
-const buscarClientePorId = (_id) => {
-    const cliente = buscarPorId("cliente", _id);
+const buscarClientePorId = async (_id) => {
+    const cliente = await buscarPorId("cliente", _id);
     return cliente;
 }
 
 module.exports = {
     cadastrarCliente,
-    atualizarCliente,
     removerCliente,
     buscarCliente,
     buscarClientePorId
