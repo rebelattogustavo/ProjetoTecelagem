@@ -1,17 +1,18 @@
 const crud = require("../../crud");
 
-const cadastrar = async ({descricao}) => {
+const cadastrar = async ({descricao},id) => {
+    let malha;
     if (id) {
-        await crud.cadastrar("malha", id, {descricao});
+        malha = await crud.cadastrar("malha", id, {descricao});
     } else {
-        await crud.cadastrar("malha", null, {descricao});
+        malha = await crud.cadastrar("malha", null, {descricao});
     }
-    return buscarMalhas();
+    return malha;
 }
 
 const remover = async (id) => {
     crud.remover("malha", id);
-    return buscar();
+    return buscarMalhas();
 }
 
 const buscarMalhas = async () => {
@@ -20,8 +21,8 @@ const buscarMalhas = async () => {
 }
 
 const buscarMalhaId = async (id) => {
-    const funcionario = await crud.buscarPorId("malha", id);
-    return funcionario;
+    const malha = await crud.buscarPorId("malha", id);
+    return malha;
 }
 
 module.exports = {
