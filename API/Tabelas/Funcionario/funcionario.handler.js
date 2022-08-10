@@ -1,12 +1,13 @@
 const crud = require("../../crud");
 
 const cadastrar = async (cpf, dataNascimento, nome, salario, turno, id) => {
+    let novoFuncionario;
     if (id) {
-        await crud.cadastrar("funcionario", id, { cpf, dataNascimento, nome, salario, turno });
+        novoFuncionario = await crud.cadastrar("funcionario", id, { cpf, dataNascimento, nome, salario, turno });
     } else {
-        await crud.cadastrar("funcionario", null, { cpf, dataNascimento, nome, salario, turno });
+        novoFuncionario = await crud.cadastrar("funcionario", null, { cpf, dataNascimento, nome, salario, turno });
     }
-    return buscarFuncionarios();
+    return novoFuncionario;
 }
 
 const remover = async (id) => {

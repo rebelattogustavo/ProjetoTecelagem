@@ -4,7 +4,7 @@ const router = express.Router();
 const itemHandler = require('./item.handler');
 
 router.get('/', async (req, res) => {
-    res.json(await itemHandler.buscarItem());
+    res.json(await itemHandler.buscarItens());
 });
 
 router.get('/:id', async (req, res) =>{
