@@ -4,7 +4,7 @@ const router = express.Router();
 const funcionarioHandler = require('./funcionario.handler');
 
 router.get('/', async (req, res) => {
-    res.json(await funcionarioHandler.buscarFuncionario());
+    res.json(await funcionarioHandler.buscarFuncionarios());
 });
 
 router.get('/:id', async (req, res) =>{

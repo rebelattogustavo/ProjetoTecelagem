@@ -1,32 +1,32 @@
-const { cadastrar, buscar, buscarPorId, remover } = require("../../crud");
+const crud = require("../../crud");
 
-const cadastrar = async (nome, cnpj, id) => {
+const cadastrar = async (cpf, dataNascimento, nome, salario, turno, id) => {
     if (id) {
-        await cadastrar("funcionario", id, { nome, cnpj });
+        await crud.cadastrar("funcionario", id, { cpf, dataNascimento, nome, salario, turno });
     } else {
-        await cadastrar("funcionario", null, { nome, cnpj });
+        await crud.cadastrar("funcionario", null, { cpf, dataNascimento, nome, salario, turno });
     }
-    return buscar();
+    return buscarFuncionarios();
 }
 
 const remover = async (id) => {
-    remover("funcionario", id);
+    crud.remover("funcionario", id);
     return buscar();
 }
 
-const buscarFuncionario = async () => {
-    const listaFuncionario = await buscar("funcionario");
+const buscarFuncionarios = async () => {
+    const listaFuncionario = await crud.buscar("funcionario");
     return listaFuncionario;
 }
 
-const buscarFuncionarioId = async (_id) => {
-    const funcionario = await buscarPorId("funcionario", _id);
+const buscarFuncionarioId = async (id) => {
+    const funcionario = await crud.buscarPorId("funcionario", id);
     return funcionario;
 }
 
 module.exports = {
     cadastrar,
     remover,
-    buscarFuncionario,
+    buscarFuncionarios,
     buscarFuncionarioId
 }
