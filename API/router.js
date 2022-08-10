@@ -1,6 +1,7 @@
 
 const express = require('express');
 const router = express.Router();
+
 const cliente = require('./Tabelas/Cliente/cliente.controller');
 const producao = require('./Tabelas/Producao/producao.controller');
 const funcionario = require('./Tabelas/Funcionario/funcionario.controller');
