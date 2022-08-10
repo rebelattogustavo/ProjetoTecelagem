@@ -12,7 +12,7 @@ const cadastrar = async (nome, cnpj, id) => {
 
 const remover = async (id) => {
     crud.remover("cliente", id);
-    return buscar();
+    return buscarClientes();
 }
 
 const buscarClientes = async () => {
