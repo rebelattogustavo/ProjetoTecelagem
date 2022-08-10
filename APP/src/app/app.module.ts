@@ -9,6 +9,7 @@ import { SidenavComponent } from './componentes-externos/sidenav/sidenav.compone
 import { RotasModule } from './rotas.module';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { EntradaComponent } from './entrada/entrada.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     CadastroComponent,
     HeaderComponent,
     SidenavComponent,
-    ComponentesExternosComponent
+    ComponentesExternosComponent,
+    EntradaComponent
   ],
   imports: [
     BrowserModule,

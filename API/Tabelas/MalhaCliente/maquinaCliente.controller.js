@@ -4,11 +4,11 @@ const router = express.Router();
 const maquinaClienteHandler = require('./maquinaCliente.handler');
 
 router.get('/', async (req, res) => {
-    res.json(await maquinaClienteHandler.buscarMaquinasMalhas());
+    res.json(await maquinaClienteHandler.buscarMaquinasClientes());
 });
 
 router.get('/:id', async (req, res) =>{
-    res.json(await maquinaClienteHandler.buscarMaquinaMalhaId(req.params.id))
+    res.json(await maquinaClienteHandler.buscarMaquinaClienteId(req.params.id))
 });
 
 router.post('/', async (req, res) => {
