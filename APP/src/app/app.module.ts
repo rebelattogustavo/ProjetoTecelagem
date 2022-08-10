@@ -8,6 +8,7 @@ import { HeaderComponent } from './componentes-externos/header/header.component'
 import { SidenavComponent } from './componentes-externos/sidenav/sidenav.component';
 import { RotasModule } from './rotas.module';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
+import { EntradaComponent } from './entrada/entrada.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
     TelaLoginComponent,
     HeaderComponent,
     SidenavComponent,
-    ComponentesExternosComponent
+    ComponentesExternosComponent,
+    EntradaComponent
   ],
   imports: [
     BrowserModule,
