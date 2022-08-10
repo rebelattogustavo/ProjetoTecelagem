@@ -6,6 +6,7 @@ import { FioComponent } from './fio/fio.component';
 import { ItensComponent } from './itens/itens.component';
 import { MalhaComponent } from './malha/malha.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 
 
@@ -17,6 +18,10 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
       {
         path: '',
         component: TelaLoginComponent
+      },
+      {
+        path: 'cadastro',
+        component: CadastroComponent
       },
       {
         path: 'maquina',
