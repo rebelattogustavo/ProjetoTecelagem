@@ -1,5 +1,15 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+const {
+    getFirestore,
+    collection,
+    doc,
+    setDoc,
+    addDoc,
+    query,
+    getDocs,
+    getDoc,
+    deleteDoc,
+  } = require("firebase/firestore");
 
 const firebaseConfig = {
   apiKey: "AIzaSyA1l31Ax63NmM6VrQ7BbphEiJM8bdsL-RE",
@@ -14,7 +24,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function save(nomeTabela, id, dado) {
+async function cadastrar(nomeTabela, id, dado) {
   if (id) {
       const entidadeReferencia = await setDoc(doc(db, nomeTabela, id), dado);
       const dataSalva = {
@@ -32,7 +42,7 @@ async function save(nomeTabela, id, dado) {
   }
 }
 
-async function get(nomeTabela) {
+async function buscar(nomeTabela) {
   const tabelaRef = collection(db, nomeTabela);
 
   const q = query(tabelaRef);
@@ -50,7 +60,7 @@ async function get(nomeTabela) {
   return lista;
 }
 
-async function getById(nomeTabela, id) {
+async function buscarPorId(nomeTabela, id) {
   const docRef = doc(db, nomeTabela, id);
   const docSnap = await getDoc(docRef);
 
@@ -62,7 +72,7 @@ async function getById(nomeTabela, id) {
 
 }
 
-async function remove(nomeTabela, id){
+async function remover(nomeTabela, id){
   const dado = await deleteDoc(doc(db, nomeTabela, id));
   return {
       message: `${id} deleted`
@@ -70,8 +80,8 @@ async function remove(nomeTabela, id){
 }
 
 module.exports = {
-  save,
-  get,
-  getById,
-  remove
+  cadastrar,
+  buscar,
+  buscarPorId,
+  remover
 }
