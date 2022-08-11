@@ -4,16 +4,20 @@ const router = express.Router();
 const producaoHandler = require('./producao.handler');
 
 router.get('/', async (req, res) => {
-    res.json(await producaoHandler.buscarMaquinasMalhas());
+    res.json(await producaoHandler.buscarProducoes());
 });
 
 router.get('/:id', async (req, res) =>{
-    res.json(await producaoHandler.buscarMaquinaMalhaId(req.params.id))
+    res.json(await producaoHandler.buscarProducaoId(req.params.id))
 });
 
 router.post('/', async (req, res) => {
     const { pesoRolo, defeito, clienteId, funcionarioId, maquinaId } = req.body;
-    res.json(await producaoHandler.cadastrarProducao(pesoRolo, defeito, clienteId, funcionarioId, maquinaId));
+    if(defeito){
+        res.json(await producaoHandler.cadastrarProducao(pesoRolo, defeito, clienteId, funcionarioId, maquinaId));
+    }else{
+        res.json(await producaoHandler.cadastrarProducao(pesoRolo, clienteId, funcionarioId, maquinaId));
+    }
 });
 
 router.put('/:id', async (req, res) =>{

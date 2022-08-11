@@ -1,18 +1,18 @@
 const crud = require("../../crud");
 
 const cadastrarProducao = async (pesoRolo, defeito, clienteId, funcionarioId, maquinaId, id) => {
-    let maquina;
+    let producao;
     if (id) {
-        maquina = await crud.cadastrar("producao", id, { pesoRolo, defeito, clienteId, funcionarioId, maquinaId });
+        producao = await crud.cadastrar("producao", id, { pesoRolo, defeito, clienteId, funcionarioId, maquinaId });
     } else {
-        maquina = await crud.cadastrar("producao", null, { pesoRolo, defeito, clienteId, funcionarioId, maquinaId });
+        producao = await crud.cadastrar("producao", null, { pesoRolo, defeito, clienteId, funcionarioId, maquinaId });
     }
-    return maquina;
+    return producao;
 }
 
 const removerProducao = async (id) => {
     crud.remover("producao", id);
-    return buscarMaquinas();
+    return buscarProducoes();
 }
 
 const buscarProducoes = async () => {

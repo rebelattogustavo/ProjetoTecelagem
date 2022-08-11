@@ -1,12 +1,13 @@
 const crud = require("../../crud");
 
 const cadastrarNotaFiscal = async ({arquivo},id) => {
+    let notaFiscal
     if (id) {
-        await crud.cadastrar("nota-fiscal", id, {arquivo});
+        notaFiscal = await crud.cadastrar("nota-fiscal", id, {arquivo});
     } else {
-        await crud.cadastrar("nota-fiscal", null, {arquivo});
+        notaFiscal = await crud.cadastrar("nota-fiscal", null, {arquivo});
     }
-    return buscarNotasFiscais();
+    return notaFiscal;
 }
 
 const removerNotaFiscal = async (id) => {

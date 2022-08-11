@@ -2,14 +2,15 @@ const crud = require("../../crud");
 
 const cadastrarSaidaMalha = async ({qtdRolos, pesoTotal, qualidadeMalha, valorSaida, clienteId, notaFiscalId, 
     fornecedorId, fioId},id) => {
+    let saidaMalha
     if (id) {
-        await crud.cadastrar("saida-malha", id, {qtdRolos, pesoTotal, qualidadeMalha, valorSaida, clienteId, notaFiscalId, 
+        saidaMalha = await crud.cadastrar("saida-malha", id, {qtdRolos, pesoTotal, qualidadeMalha, valorSaida, clienteId, notaFiscalId, 
             fornecedorId, fioId});
     } else {
-        await crud.cadastrar("saida-malha", null, {qtdRolos, pesoTotal, qualidadeMalha, valorSaida, clienteId, notaFiscalId, 
+        saidaMalha = await crud.cadastrar("saida-malha", null, {qtdRolos, pesoTotal, qualidadeMalha, valorSaida, clienteId, notaFiscalId, 
             fornecedorId, fioId});
     }
-    return buscarSaidasMalhas();
+    return saidaMalha;
 }
 
 const removerSaidaMalha = async (id) => {
