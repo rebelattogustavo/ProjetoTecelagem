@@ -1,18 +1,19 @@
 const crud = require("../../crud");
 
-const cadastrar = async ({qtdRolos, pesoTotal, qualidadeMalha, valorSaida, clienteId, notaFiscalId, 
+const cadastrarSaidaMalha = async ({qtdRolos, pesoTotal, qualidadeMalha, valorSaida, clienteId, notaFiscalId, 
     fornecedorId, fioId},id) => {
+    let saidaMalha
     if (id) {
-        await crud.cadastrar("saida-malha", id, {qtdRolos, pesoTotal, qualidadeMalha, valorSaida, clienteId, notaFiscalId, 
+        saidaMalha = await crud.cadastrar("saida-malha", id, {qtdRolos, pesoTotal, qualidadeMalha, valorSaida, clienteId, notaFiscalId, 
             fornecedorId, fioId});
     } else {
-        await crud.cadastrar("saida-malha", null, {qtdRolos, pesoTotal, qualidadeMalha, valorSaida, clienteId, notaFiscalId, 
+        saidaMalha = await crud.cadastrar("saida-malha", null, {qtdRolos, pesoTotal, qualidadeMalha, valorSaida, clienteId, notaFiscalId, 
             fornecedorId, fioId});
     }
-    return buscarSaidasMalhas();
+    return saidaMalha;
 }
 
-const remover = async (id) => {
+const removerSaidaMalha = async (id) => {
     crud.remover("saida-malha", id);
     return buscarSaidasMalhas();
 }
@@ -28,8 +29,8 @@ const buscarSaidaMalhaId = async (id) => {
 }
 
 module.exports = {
-    cadastrar,
-    remover,
+    cadastrarSaidaMalha,
+    removerSaidaMalha,
     buscarSaidasMalhas,
     buscarSaidaMalhaId
 }
