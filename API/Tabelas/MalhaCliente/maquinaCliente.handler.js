@@ -1,33 +1,33 @@
 const crud = require("../../crud");
 
-const cadastrar = async ({descricao},id) => {
-    let malha;
+const cadastrarMaquinaCliente = async ({descricao},id) => {
+    let maquinaCliente;
     if (id) {
-        malha = await crud.cadastrar("malha", id, {descricao});
+        maquinaCliente = await crud.cadastrar("maquina-cliente", id, {descricao});
     } else {
-        malha = await crud.cadastrar("malha", null, {descricao});
+        maquinaCliente = await crud.cadastrar("maquina-cliente", null, {descricao});
     }
-    return malha;
+    return maquinaCliente;
 }
 
-const remover = async (id) => {
-    crud.remover("malha", id);
+const removerMaquinaCliente = async (id) => {
+    crud.remover("maquina-cliente", id);
     return buscarMalhas();
 }
 
-const buscarMalhas = async () => {
-    const listaMalha = await crud.buscar("malha");
+const buscarMaquinasClientes = async () => {
+    const listaMalha = await crud.buscar("maquina-cliente");
     return listaMalha;
 }
 
-const buscarMalhaId = async (id) => {
-    const malha = await crud.buscarPorId("malha", id);
+const buscarMaquinaClienteId = async (id) => {
+    const malha = await crud.buscarPorId("maquina-cliente", id);
     return malha;
 }
 
 module.exports = {
-    cadastrar,
-    remover,
-    buscarMalhas,
-    buscarMalhaId
+    cadastrarMaquinaCliente,
+    removerMaquinaCliente,
+    buscarMaquinasClientes,
+    buscarMaquinaClienteId
 }

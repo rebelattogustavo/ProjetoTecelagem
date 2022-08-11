@@ -20,7 +20,7 @@ const buscarEntradaFios= async () => {
     return listaEntradaFios;
 }
 
-const buscarEntradaMaterialId = async (id) => {
+const buscarEntradaFioId = async (id) => {
     const entradaFio = await crud.buscarPorId("entrada-fio", id);
     return entradaFio;
 }
@@ -29,5 +29,5 @@ module.exports = {
     cadastrarEntradaFio,
     removerEntradaFio,
     buscarEntradaFios,
-    buscarEntradaMaterialId
+    buscarEntradaFioId
 }

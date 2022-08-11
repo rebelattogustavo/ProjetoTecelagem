@@ -14,7 +14,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     req.body.defeito = req.body.defeito ?? "Não possui defeito";
     const { pesoRolo, defeito, clienteId, funcionarioId, maquinaId } = req.body;
-    res.json(await producaoHandler.cadastrar(pesoRolo, defeito, clienteId, funcionarioId, maquinaId));
+    res.json(await producaoHandler.cadastrarProducao(pesoRolo, defeito, clienteId, funcionarioId, maquinaId));
 });
 
 router.put('/:id', async (req, res) => {

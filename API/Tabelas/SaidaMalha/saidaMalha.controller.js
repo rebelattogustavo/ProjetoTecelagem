@@ -4,7 +4,7 @@ const router = express.Router();
 const saidaMalhaHandler = require('./saidaMalha.handler');
 
 router.get('/', async (req, res) => {
-    res.json(await saidaMalhaHandler.buscarSaidaMalhas());
+    res.json(await saidaMalhaHandler.buscarSaidasMalhas());
 });
 
 router.get('/:id', async (req, res) =>{

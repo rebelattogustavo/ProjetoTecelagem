@@ -1,6 +1,6 @@
 const crud = require("../../crud");
 
-const cadastrar = async (descricao,id) => {
+const cadastrarMalha = async (descricao,id) => {
     let malha;
     if (id) {
         malha = await crud.cadastrar("malha", id, {descricao});
