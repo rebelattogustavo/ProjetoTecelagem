@@ -28,16 +28,22 @@
             </div>
         </div>
         <div id="containerLogin">
-            <div id="barraAzul">
-                <img id="imagemUsuario" src="../../../assets/user.png" alt="Imagem usuário">
-            </div>
+            <h3 id="bemVindo">
+                Bem vindo(a) ao
+            </h3>
             <h1 id="titulo">
-                HighLands
+                Textille Industry
             </h1>
-            <input type="text" class="inputsCadastro" placeholder="Email ou usuário" [(ngModel)]="emailUser">
-            <div class="divSenha">
-                <input type="password" class="inputsCadastro2" id="inputSenha1" placeholder="Senha" [(ngModel)]="senhaUser">
-                <img src="../../../assets/olho-fechado.png" class="imgOlho" id="olho1" (click)="trocarOlho(1)">
+            <div class="divCadastro">
+                <img src="../../assets/user.png" class="imgInput">
+                <input type="text" class="inputsCadastro" placeholder="Usuário" [(ngModel)]="emailUser">
+            </div>
+            <div class="divCadastro">
+                <img src="../../assets/lock.png" class="imgInput">
+                <div class="divSenha">
+                    <input type="password" class="inputsCadastro2" id="inputSenha1" placeholder="Senha" [(ngModel)]="senhaUser">
+                    <img src="../../../assets/olho-fechado.png" class="imgOlho" id="olho1" (click)="trocarOlho(1)">
+                </div>
             </div>
             <div class="containerSenha">
                 <span id="esqueciSenha" (click)="esqueciASenha()">Esqueci a senha</span>
@@ -56,6 +62,7 @@
                 <span (click)="cadastrar()" id="cadastrar">Cadastrar</span>
             </p>
         </div>
+        <img src="../../assets/imagem_login.png" class="imgLogin">
     </div>
     <div *ngIf="senha1 == 1 || senha2 == 1 || senha3 == 1" class="modalSenha">
         <img id="fechar2" (click)="fechar2()" src="../../../assets/close.png">
@@ -65,7 +72,7 @@
             <h5 id="inserirEmail">Insira seu Email:</h5>
             <input id="inputEmail" type="email" placeholder="nome@gmail.com">
         </div>
-        <span *ngIf="senha1 == 1" id="avisoCadastro">Caro Usuário, enviaremos um código de verificação no seu email para identificação.</span>
+        <span *ngIf="senha1 == 1" id="avisoCadastro">Enviaremos um código de verificação no seu email para identificação.</span>
         <button *ngIf="senha1 == 1" class="enviarCodigo" (click)="esqueciSenha2()">Enviar</button>
     
         <h3 *ngIf="senha2 == 1" id="inserirCodigo">Insira o Código</h3>
