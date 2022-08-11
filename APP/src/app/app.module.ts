@@ -10,6 +10,7 @@ import { RotasModule } from './rotas.module';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { EntradaComponent } from './entrada/entrada.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EntradaComponent } from './entrada/entrada.component';
   imports: [
     BrowserModule,
     RotasModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
