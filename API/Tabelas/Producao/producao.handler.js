@@ -6,12 +6,12 @@ const cadastrarProducao = async ({pesoRolo, defeito, clienteId, funcionarioId, m
     } else {
         await crud.cadastrar("producao", null, {pesoRolo, defeito, clienteId, funcionarioId, maquinaId});
     }
-    return buscarNotasFiscais();
+    return buscarProducoes();
 }
 
 const removerProducao = async (id) => {
     crud.remover("producao", id);
-    return buscarNotasFiscais();
+    return buscarProducoes();
 }
 
 const buscarProducoes = async () => {
@@ -25,8 +25,8 @@ const buscarProducaoId = async (id) => {
 }
 
 module.exports = {
-    cadastrar,
-    remover,
-    buscarNotasFiscais,
-    buscarNotaFiscalId
+    cadastrarProducao,
+    removerProducao,
+    buscarProducoes,
+    buscarProducaoId
 }
