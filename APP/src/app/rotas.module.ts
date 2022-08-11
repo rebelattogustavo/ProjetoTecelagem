@@ -8,6 +8,7 @@ import { MalhaComponent } from './malha/malha.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ComponentesExternosComponent } from './componentes-externos/componentes-externos.component';
+import { EntradaComponent } from './entrada/entrada.component';
 
 
 @NgModule({
@@ -22,6 +23,10 @@ import { ComponentesExternosComponent } from './componentes-externos/componentes
       {
         path: 'cadastro',
         component: CadastroComponent
+      },
+      {
+        path: 'entrada',
+        component: EntradaComponent
       },
       {
         path: 'home',
