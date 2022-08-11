@@ -11,7 +11,7 @@ const cadastrarMaquinaFio = async (maquinaId, fioId, id) => {
 }
 
 const removerMaquinaFio = async (id) => {
-    crud.remover("maquina", id);
+    crud.remover("maquina-fio", id);
     return buscarMaquinasFios();
 }
 
