@@ -1,6 +1,7 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
 import { navbarData } from './nav-data';
+
 interface SideNavToggle {
   screenWidth: number;
   collapsed: boolean;
@@ -36,6 +37,7 @@ interface SideNavToggle {
     ])
   ]
 })
+
 export class SidenavComponent implements OnInit {
 
   constructor() { }
@@ -58,6 +60,7 @@ export class SidenavComponent implements OnInit {
  
   toggleCollapse(): void {
     this.collapsed = !this.collapsed;
+    console.log(this.collapsed)
     this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
   }
 
