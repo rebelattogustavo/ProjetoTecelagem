@@ -8,14 +8,18 @@ import { HeaderComponent } from './componentes-externos/header/header.component'
 import { SidenavComponent } from './componentes-externos/sidenav/sidenav.component';
 import { RotasModule } from './rotas.module';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { EntradaComponent } from './entrada/entrada.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TelaLoginComponent,
+    CadastroComponent,
     HeaderComponent,
     SidenavComponent,
-    ComponentesExternosComponent
+    ComponentesExternosComponent,
+    EntradaComponent
   ],
   imports: [
     BrowserModule,

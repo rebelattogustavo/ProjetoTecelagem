@@ -241,7 +241,8 @@ export class TelaLoginComponent implements OnInit {
   }
 
   login() {
-    
+    //Fazer verificação de login com API
+    this.router.navigate(["maquina"])
   }
 
   navegacaoTipo() {
