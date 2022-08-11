@@ -12,4 +12,5 @@ export class EntradaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
