@@ -1,16 +1,13 @@
 const crud = require("../../crud");
 
-const cadastrarMaquinaFio = async (nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha,
-    qtdPlatina, qtdGaiolas, qtdCones, id) => {
-    let maquina;
+const cadastrarMaquinaFio = async (maquinaId, fioId, id) => {
+    let maquinaFio;
     if (id) {
-        maquina = await crud.cadastrar("maquina", id, { nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha,
-            qtdPlatina, qtdGaiolas, qtdCones });
+        maquinaFio = await crud.cadastrar("maquina-fio", id, { maquinaId, fioId });
     } else {
-        maquina = await crud.cadastrar("maquina", null, { nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha,
-            qtdPlatina, qtdGaiolas, qtdCones });
+        maquinaFio = await crud.cadastrar("maquina-fio", null, { maquinaId, fioId });
     }
-    return maquina;
+    return maquinaFio;
 }
 
 const removerMaquinaFio = async (id) => {
@@ -19,12 +16,12 @@ const removerMaquinaFio = async (id) => {
 }
 
 const buscarMaquinasFios = async () => {
-    const listaMaquinas = await crud.buscar("maquina");
-    return listaMaquinas;
+    const listaMaquinasFios = await crud.buscar("maquina-fio");
+    return listaMaquinasFios;
 }
 
 const buscarMaquinaFioId = async (id) => {
-    const maquinaFio = await crud.buscarPorId("maquina", id);
+    const maquinaFio = await crud.buscarPorId("maquina-fio", id);
     return maquinaFio;
 }
 
