@@ -13,16 +13,16 @@ router.get('/:id', async (req, res) =>{
 
 router.post('/', async (req, res) => {
     const { cpf, dataNascimento, nome, salario, turno } = req.body;
-    res.json(await funcionarioHandler.cadastrar(cpf, dataNascimento, nome, salario, turno));
+    res.json(await funcionarioHandler.cadastrarFuncionario(cpf, dataNascimento, nome, salario, turno));
 });
 
 router.put('/:id', async (req, res) =>{
     const { cpf, dataNascimento, nome, salario, turno } = req.body;
-    res.json(await funcionarioHandler.cadastrar(cpf, dataNascimento, nome, salario, turno, req.params.id));
+    res.json(await funcionarioHandler.cadastrarFuncionario(cpf, dataNascimento, nome, salario, turno, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {
-    res.json(await funcionarioHandler.remover(req.params.id));
+    res.json(await funcionarioHandler.removerFuncionario(req.params.id));
 });
 
 module.exports = router;

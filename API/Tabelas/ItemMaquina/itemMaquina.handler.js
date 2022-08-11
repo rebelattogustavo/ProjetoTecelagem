@@ -1,33 +1,33 @@
 const crud = require("../../crud");
 
-const cadastrar = async (arquivo , id) => {
-    let novoFuncionario;
+const cadastrarItemMaquina = async (arquivo , id) => {
+    let itemMaquina;
     if (id) {
-        novoFuncionario = await crud.cadastrar("funcionario", id, { cpf, dataNascimento, nome, salario, turno });
+        itemMaquina = await crud.cadastrar("item-maquina", id, { arquivo });
     } else {
-        novoFuncionario = await crud.cadastrar("funcionario", null, { cpf, dataNascimento, nome, salario, turno });
+        itemMaquina = await crud.cadastrar("item-maquina", null, { arquivo });
     }
-    return novoFuncionario;
+    return itemMaquina;
 }
 
-const remover = async (id) => {
-    crud.remover("funcionario", id);
-    return buscarFuncionarios();
+const removerItemMaquina = async (id) => {
+    crud.remover("item-maquina", id);
+    return buscarItemMaquina();
 }
 
-const buscarFuncionarios = async () => {
-    const listaFuncionario = await crud.buscar("funcionario");
-    return listaFuncionario;
+const buscarItemMaquina = async () => {
+    const listaItemMaquina = await crud.buscar("item-maquina");
+    return listaItemMaquina;
 }
 
-const buscarFuncionarioId = async (id) => {
-    const funcionario = await crud.buscarPorId("funcionario", id);
-    return funcionario;
+const buscarItemMaquinaId = async (id) => {
+    const itemMaquina = await crud.buscarPorId("item-maquina", id);
+    return itemMaquina;
 }
 
 module.exports = {
-    cadastrar,
-    remover,
-    buscarFuncionarios,
-    buscarFuncionarioId
+    cadastrarItemMaquina,
+    removerItemMaquina,
+    buscarItemMaquina,
+    buscarItemMaquinaId
 }

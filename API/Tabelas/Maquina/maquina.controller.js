@@ -14,19 +14,19 @@ router.get('/:id', async (req, res) =>{
 router.post('/', async (req, res) => {
     const { nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha, 
         qtdPlatina, qtdGaiolas, qtdCones } = req.body;
-    res.json(await maquinaHandler.cadastrar(nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha,
+    res.json(await maquinaHandler.cadastrarMaquina(nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha,
         qtdPlatina, qtdGaiolas, qtdCones));
 });
 
 router.put('/:id', async (req, res) =>{
     const { nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha, 
         qtdPlatina, qtdGaiolas, qtdCones } = req.body;
-    res.json(await maquinaHandler.cadastrar(nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha,
+    res.json(await maquinaHandler.cadastrarMaquina(nome, marca, anoFabricacao, anoCompra, valorCompra, rpm, qtdAgulha,
         qtdPlatina, qtdGaiolas, qtdCones, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {
-    res.json(await maquinaHandler.remover(req.params.id));
+    res.json(await maquinaHandler.removerMaquina(req.params.id));
 });
 
 module.exports = router;
