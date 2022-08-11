@@ -13,16 +13,16 @@ router.get('/:id', async (req, res) =>{
 
 router.post('/', async (req, res) => {
     const { nome, cnpj } = req.body;
-    res.json(await clienteHandler.cadastrar(nome, cnpj));
+    res.json(await clienteHandler.cadastrarCliente(nome, cnpj));
 });
 
 router.put('/:id', async (req, res) =>{
     const { nome, cnpj } = req.body;
-    res.json(await clienteHandler.cadastrar(nome, cnpj, req.params.id));
+    res.json(await clienteHandler.cadastrarCliente(nome, cnpj, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {
-    res.json(await clienteHandler.remover(req.params.id));
+    res.json(await clienteHandler.removerCliente(req.params.id));
 });
 
 module.exports = router;
