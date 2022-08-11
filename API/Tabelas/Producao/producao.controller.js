@@ -7,20 +7,18 @@ router.get('/', async (req, res) => {
     res.json(await producaoHandler.buscarProducoes());
 });
 
-router.get('/:id', async (req, res) =>{
+router.get('/:id', async (req, res) => {
     res.json(await producaoHandler.buscarProducaoId(req.params.id))
 });
 
 router.post('/', async (req, res) => {
+    req.body.defeito = req.body.defeito ?? "Não possui defeito";
     const { pesoRolo, defeito, clienteId, funcionarioId, maquinaId } = req.body;
-    if(defeito){
-        res.json(await producaoHandler.cadastrarProducao(pesoRolo, defeito, clienteId, funcionarioId, maquinaId));
-    }else{
-        res.json(await producaoHandler.cadastrarProducao(pesoRolo, clienteId, funcionarioId, maquinaId));
-    }
+    res.json(await producaoHandler.cadastrar(pesoRolo, defeito, clienteId, funcionarioId, maquinaId));
 });
 
-router.put('/:id', async (req, res) =>{
+router.put('/:id', async (req, res) => {
+    req.body.defeito = req.body.defeito ?? "Não possui defeito";
     const { pesoRolo, defeito, clienteId, funcionarioId, maquinaId } = req.body;
     res.json(await producaoHandler.cadastrarProducao(pesoRolo, defeito, clienteId, funcionarioId, maquinaId, req.params.id));
 });

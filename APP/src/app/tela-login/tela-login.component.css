@@ -4,7 +4,7 @@ body {
     width: 100vw;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(180deg, #EAEAEA 0%, #DFDFDF 100%);
+    background-color: #12474E;
     display: flex;
     justify-content: center;
 }
@@ -26,10 +26,13 @@ label{
 .divPrincipal {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
     height: 100%;
-    flex-direction: column;
+}
+
+.imgLogin {
+    width: 40%;
 }
 
 #containerLogin {
@@ -39,13 +42,15 @@ label{
     flex-direction: column;
     width: 30.5%;
     background-color: #ffffff;
-    border-radius: 5px;
+    border-radius: 16px;
 }
 
-#imagemUsuario {
-    position: absolute;
-    margin-top: -30px;
-    width: 5%;
+#bemVindo {
+    margin-top: 6%;
+    margin-bottom: 2%;
+    font-weight:normal;
+    font-family: 'Inter';
+    font-size: 14px;
 }
 
 #titulo {
@@ -53,27 +58,34 @@ label{
     align-items: center;
     justify-content: center;
     font-family: 'Inter', sans-serif;
-    color: #0047B6;
-    margin-top: 10%;
+    color: #12474E;
     font-weight: 500;
+    font-size: 26px;
+    margin-bottom: 5%;
 }
 
-#barraAzul {
+.divCadastro {
+    width: 80%;
+    height: 2.5rem;
+    background-color: #EEEEEE;
+    border: 1px solid transparent;
+    border-left: 6px solid #73C6A8;
+    border-radius: 8px;
+    margin: 2%;
+    box-shadow: 2px 5px 5px rgb(199, 197, 197);
     display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 17px;
-    background: #0047B6;
-    border-radius: 7px 7px 0px 0px;
+    align-items: center;
 }
 
 .inputsCadastro {
-    width: 80%;
-    height: 2rem;
     border: none;
-    border-bottom: 1px solid #0047B6;
-    margin: 2%;
-    font-family: 'Inter';
+    background-color: transparent;
+    color: #555555;
+}
+
+.imgInput {
+    height: 24px;
+    margin: 0px 10px;
 }
 
 #esqueciSenha {
@@ -114,13 +126,14 @@ label{
 #entrar {
     width: 35%;
     height: 2.2rem;
-    background-color: #0047B6;
+    background-color: #73C6A8;
     color: #ffffff;
     font-size: 1rem;
     border-radius: 5px;
     border: none;
     margin-top: 5%;
     font-family: 'Inter';
+    box-shadow: 2px 2px 2px rgb(209, 207, 207);
 }
 
 #entrar:hover {
@@ -230,7 +243,7 @@ label{
 }
 
 #azul {
-    background-color: #0047B6;
+    background-color: #73C6A8;
     width: 100%;
     height: 100%;
     animation-name: animacao;
@@ -266,7 +279,7 @@ label{
     background-color: #ffffff;
     filter: drop-shadow(4px 6px 6px rgba(0, 0, 0, 0.3));
     border-radius: 10px;
-    border-top: 8px solid #0047B6;
+    border-top: 8px solid #12474E;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -287,7 +300,7 @@ label{
 #tituloSenha {
     font-family: 'Inter';
     font-size: 28px;
-    color: #0047B6;
+    color: #12474E;
     font-weight: 800;
 }
 
@@ -318,7 +331,7 @@ label{
 }
 
 .enviarCodigo {
-    background-color: #0047B6;
+    background-color: #73C6A8;
     padding: 2% 6%;
     border-radius: 5px;
     color: white;
@@ -404,19 +417,21 @@ label{
     border: none;
     width: 80%;
     height: 2rem;
-    border-bottom: 1px solid #0047B6;
     margin: 2%;
-    font-family: 'Inter';
+    margin-left: 0;
     display: flex;
+    align-items: center;
 }
 
 .inputsCadastro2 {
     width: 90%;
     border: none;
+    background-color: transparent;
 }
 
 .imgOlho {
     height: 80%;
+    float: right;
 }
 
 .imgOlho:hover {
