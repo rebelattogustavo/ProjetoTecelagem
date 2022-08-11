@@ -20,11 +20,11 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
     req.body.defeito = req.body.defeito ?? "Não possui defeito";
     const { pesoRolo, defeito, clienteId, funcionarioId, maquinaId } = req.body;
-    res.json(await producaoHandler.cadastrar(pesoRolo, defeito, clienteId, funcionarioId, maquinaId, req.params.id));
+    res.json(await producaoHandler.cadastrarProducao(pesoRolo, defeito, clienteId, funcionarioId, maquinaId, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {
-    res.json(await producaoHandler.remover(req.params.id));
+    res.json(await producaoHandler.removerProducao(req.params.id));
 });
 
 module.exports = router;

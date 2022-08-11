@@ -1,6 +1,6 @@
 const crud = require("../../crud");
 
-const cadastrar = async ({descricao},id) => {
+const cadastrar = async (descricao,id) => {
     let malha;
     if (id) {
         malha = await crud.cadastrar("malha", id, {descricao});
@@ -10,7 +10,7 @@ const cadastrar = async ({descricao},id) => {
     return malha;
 }
 
-const remover = async (id) => {
+const removerMalha = async (id) => {
     crud.remover("malha", id);
     return buscarMalhas();
 }
@@ -26,8 +26,8 @@ const buscarMalhaId = async (id) => {
 }
 
 module.exports = {
-    cadastrar,
-    remover,
+    cadastrarMalha,
+    removerMalha,
     buscarMalhas,
     buscarMalhaId
 }

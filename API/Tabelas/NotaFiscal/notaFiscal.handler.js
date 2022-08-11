@@ -1,15 +1,16 @@
 const crud = require("../../crud");
 
-const cadastrar = async ({arquivo},id) => {
+const cadastrarNotaFiscal = async ({arquivo},id) => {
+    let notaFiscal
     if (id) {
-        await crud.cadastrar("nota-fiscal", id, {arquivo});
+        notaFiscal = await crud.cadastrar("nota-fiscal", id, {arquivo});
     } else {
-        await crud.cadastrar("nota-fiscal", null, {arquivo});
+        notaFiscal = await crud.cadastrar("nota-fiscal", null, {arquivo});
     }
-    return buscarNotasFiscais();
+    return notaFiscal;
 }
 
-const remover = async (id) => {
+const removerNotaFiscal = async (id) => {
     crud.remover("nota-fiscal", id);
     return buscarNotasFiscais();
 }
@@ -25,8 +26,8 @@ const buscarNotaFiscalId = async (id) => {
 }
 
 module.exports = {
-    cadastrar,
-    remover,
+    cadastrarNotaFiscal,
+    removerNotaFiscal,
     buscarNotasFiscais,
     buscarNotaFiscalId
 }

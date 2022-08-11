@@ -1,12 +1,13 @@
 const crud = require("../../crud");
 
-const cadastrarProducao = async ({pesoRolo, defeito, clienteId, funcionarioId, maquinaId},id) => {
+const cadastrarProducao = async (pesoRolo, defeito, clienteId, funcionarioId, maquinaId, id) => {
+    let producao;
     if (id) {
-        await crud.cadastrar("producao", id, {pesoRolo, defeito, clienteId, funcionarioId, maquinaId});
+        producao = await crud.cadastrar("producao", id, { pesoRolo, defeito, clienteId, funcionarioId, maquinaId });
     } else {
-        await crud.cadastrar("producao", null, {pesoRolo, defeito, clienteId, funcionarioId, maquinaId});
+        producao = await crud.cadastrar("producao", null, { pesoRolo, defeito, clienteId, funcionarioId, maquinaId });
     }
-    return buscarProducoes();
+    return producao;
 }
 
 const removerProducao = async (id) => {
@@ -15,13 +16,13 @@ const removerProducao = async (id) => {
 }
 
 const buscarProducoes = async () => {
-    const listaNotasFiscais = await crud.buscar("producao");
-    return listaNotasFiscais;
+    const listaProducao = await crud.buscar("producao");
+    return listaProducao;
 }
 
 const buscarProducaoId = async (id) => {
-    const notaFiscal = await crud.buscarPorId("producao", id);
-    return notaFiscal;
+    const producao = await crud.buscarPorId("producao", id);
+    return producao;
 }
 
 module.exports = {
