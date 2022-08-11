@@ -28,6 +28,12 @@
     align-items: center;
 }
 
+.input i{
+    width: 20px;
+    height: 20px;
+    color: #000000;
+}
+
 .input input{
     width: 40%;
     height: 60%;
@@ -50,5 +56,5 @@
     width: 30%;
     height: 20%;
     background-color: #F9F9F9;
-    box-shadow: 2px 2px 3px 1px #000000;
+    box-shadow: 1.5px 1.5px 5px 1px #000000;
 }
