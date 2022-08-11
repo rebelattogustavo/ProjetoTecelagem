@@ -13,7 +13,11 @@ router.get('/:id', async (req, res) =>{
 
 router.post('/', async (req, res) => {
     const { pesoRolo, defeito, clienteId, funcionarioId, maquinaId } = req.body;
-    res.json(await producaoHandler.cadastrar(pesoRolo, defeito, clienteId, funcionarioId, maquinaId));
+    if(defeito){
+        res.json(await producaoHandler.cadastrar(pesoRolo, defeito, clienteId, funcionarioId, maquinaId));
+    }else{
+        res.json(await producaoHandler.cadastrar(pesoRolo, clienteId, funcionarioId, maquinaId));
+    }
 });
 
 router.put('/:id', async (req, res) =>{
