@@ -13,18 +13,18 @@ router.get('/:id', async (req, res) =>{
 
 router.post('/', async (req, res) => {
     const { descricao, quantidade, valorTotalGasto, notaFiscalId, fornecedorId, itemId} = req.body;
-    res.json(await entradaMateriaisHandler.cadastrar(descricao, quantidade, valorTotalGasto, 
+    res.json(await entradaMateriaisHandler.cadastrarEntradaMaterial(descricao, quantidade, valorTotalGasto, 
         notaFiscalId, fornecedorId, itemId));
 });
 
 router.put('/:id', async (req, res) =>{
     const { descricao, quantidade, valorTotalGasto, notaFiscalId, fornecedorId, itemId } = req.body;
-    res.json(await entradaMateriaisHandler.cadastrar(descricao, quantidade, valorTotalGasto, 
+    res.json(await entradaMateriaisHandler.cadastrarEntradaMaterial(descricao, quantidade, valorTotalGasto, 
         notaFiscalId, fornecedorId, itemId, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {
-    res.json(await entradaMateriaisHandler.remover(req.params.id));
+    res.json(await entradaMateriaisHandler.removerEntradaMaterial(req.params.id));
 });
 
 module.exports = router;

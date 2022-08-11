@@ -13,16 +13,16 @@ router.get('/:id', async (req, res) =>{
 
 router.post('/', async (req, res) => {
     const { descricao } = req.body;
-    res.json(await malhahandler.cadastrar(descricao));
+    res.json(await malhahandler.cadastrarMalha(descricao));
 });
 
 router.put('/:id', async (req, res) =>{
     const { descricao } = req.body;
-    res.json(await malhahandler.cadastrar(descricao, req.params.id));
+    res.json(await malhahandler.cadastrarMalha(descricao, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {
-    res.json(await malhahandler.remover(req.params.id));
+    res.json(await malhahandler.removerMalha(req.params.id));
 });
 
 module.exports = router;
