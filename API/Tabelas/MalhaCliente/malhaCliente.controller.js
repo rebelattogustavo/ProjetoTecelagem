@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const maquinaClienteHandler = require('./maquinaCliente.handler');
+const maquinaClienteHandler = require('./malhaCliente.handler');
 
 router.get('/', async (req, res) => {
     res.json(await maquinaClienteHandler.buscarMaquinasClientes());

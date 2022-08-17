@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+const { initializeApp } = require("firebase/app");
 const {
     getFirestore,
     collection,
@@ -67,7 +67,7 @@ async function buscarPorId(nomeTabela, id) {
   if (docSnap.exists()) {
       return docSnap.data();
   } else {
-      return new Error("Not found!");
+      return {naoEncontrado: "Não encontrado!"}
   }
 
 }
