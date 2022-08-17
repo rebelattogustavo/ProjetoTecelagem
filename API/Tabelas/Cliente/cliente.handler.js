@@ -12,14 +12,23 @@ const cadastrarCliente = async (nome, cnpj, id) => {
 }
 
 const removerCliente = async (id) => {
-    const cliente = await buscarClienteId(id);
+    // let clienteDeletado;
+    // for (cliente of await buscarClientes()) {
+    //     if (cliente.id === id) {
+    //         clienteDeletado = cliente;
+    //     }
+    // }
+
+    let cliente = await buscarClienteId(id);
+
     console.log(cliente);
-    if(cliente.error){
-        crud.remover("cliente", id);
+
+    if (!cliente.naoEncontrado) {
+        await crud.remover("cliente", id);
     } else {
-        return {"Erro": "Cliente inexistente"};
+        return { "Erro": "Cliente inexistente" };
     }
-    return {"Sucesso": `Cliente ${cliente.nome}, removido com sucesso!`};
+    return { "Sucesso": `Cliente ${cliente.nome}, removido com sucesso!` };
 }
 
 const buscarClientes = async () => {
