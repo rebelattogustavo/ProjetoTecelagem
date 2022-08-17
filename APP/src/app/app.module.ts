@@ -11,6 +11,8 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { EntradaComponent } from './entrada/entrada.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetalhesMaquinaComponent } from './maquina/detalhes-maquina/detalhes-maquina.component';
+import { MaquinaComponent } from './maquina/maquina.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     SidenavComponent,
     ComponentesExternosComponent,
-    EntradaComponent
+    EntradaComponent,
+    MaquinaComponent,
+    DetalhesMaquinaComponent
   ],
   imports: [
     BrowserModule,
