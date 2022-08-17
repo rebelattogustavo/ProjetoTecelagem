@@ -1,5 +1,6 @@
 const crud = require("../../crud");
 
+
 const cadastrarCliente = async (nome, cnpj, id) => {
     let cliente;
     if (id) {
@@ -11,8 +12,14 @@ const cadastrarCliente = async (nome, cnpj, id) => {
 }
 
 const removerCliente = async (id) => {
-    crud.remover("cliente", id);
-    return buscarClientes();
+    const cliente = await buscarClienteId(id);
+    console.log(cliente);
+    if(cliente.error){
+        crud.remover("cliente", id);
+    } else {
+        return {"Erro": "Cliente inexistente"};
+    }
+    return {"Sucesso": `Cliente ${cliente.nome}, removido com sucesso!`};
 }
 
 const buscarClientes = async () => {
