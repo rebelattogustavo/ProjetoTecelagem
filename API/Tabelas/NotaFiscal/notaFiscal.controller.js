@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) =>{
-    res.json(await notaFiscalHandler.buscarNotasFiscalId(req.params.id))
+    res.json(await notaFiscalHandler.buscarNotaFiscalId(req.params.id))
 });
 
 router.post('/', async (req, res) => {

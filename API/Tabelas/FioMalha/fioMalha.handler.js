@@ -28,6 +28,6 @@ const buscarFioMalhaId = async (id) => {
 module.exports = {
     cadastrarFioMalha,
     removerFioMalha,
-    buscarFioMalhaId,
+    buscarFiosMalhas,
     buscarFioMalhaId
 }

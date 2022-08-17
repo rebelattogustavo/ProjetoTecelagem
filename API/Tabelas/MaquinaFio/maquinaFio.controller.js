@@ -4,7 +4,7 @@ const router = express.Router();
 const maquinaFioHandler = require('./maquinaFio.handler');
 
 router.get('/', async (req, res) => {
-    res.json(await maquinaFioHandler.buscarMaquinaFios());
+    res.json(await maquinaFioHandler.buscarMaquinasFios());
 });
 
 router.get('/:id', async (req, res) =>{
@@ -13,16 +13,16 @@ router.get('/:id', async (req, res) =>{
 
 router.post('/', async (req, res) => {
     const { maquinaId, fioId} = req.body;
-    res.json(await maquinaFioHandler.cadastrar(maquinaId, fioId));
+    res.json(await maquinaFioHandler.cadastrarMaquinaFio(maquinaId, fioId));
 });
 
 router.put('/:id', async (req, res) =>{
     const { maquinaId, fioId } = req.body;
-    res.json(await maquinaFioHandler.cadastrar(maquinaId, fioId, req.params.id));
+    res.json(await maquinaFioHandler.cadastrarMaquinaFio(maquinaId, fioId, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {
-    res.json(await maquinaFioHandler.remover(req.params.id));
+    res.json(await maquinaFioHandler.removerMaquinaFio(req.params.id));
 });
 
 module.exports = router;

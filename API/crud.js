@@ -67,7 +67,7 @@ async function buscarPorId(nomeTabela, id) {
   if (docSnap.exists()) {
       return docSnap.data();
   } else {
-      return new Error("Not found!");
+      return {naoEncontrado: "Não encontrado!"}
   }
 
 }

@@ -13,14 +13,14 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     req.body.defeito = req.body.defeito ?? "Não possui defeito";
-    const { pesoRolo, defeito, clienteId, funcionarioId, maquinaId } = req.body;
-    res.json(await producaoHandler.cadastrar(pesoRolo, defeito, clienteId, funcionarioId, maquinaId));
+    const { pesoRolo, defeito, clienteId, funcionarioId, maquinaId, status } = req.body;
+    res.json(await producaoHandler.cadastrarProducao(pesoRolo, defeito, clienteId, funcionarioId, maquinaId, status));
 });
 
 router.put('/:id', async (req, res) => {
     req.body.defeito = req.body.defeito ?? "Não possui defeito";
-    const { pesoRolo, defeito, clienteId, funcionarioId, maquinaId } = req.body;
-    res.json(await producaoHandler.cadastrarProducao(pesoRolo, defeito, clienteId, funcionarioId, maquinaId, req.params.id));
+    const { pesoRolo, defeito, clienteId, funcionarioId, maquinaId, status } = req.body;
+    res.json(await producaoHandler.cadastrarProducao(pesoRolo, defeito, clienteId, funcionarioId, maquinaId, status, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {

@@ -12,10 +12,10 @@ const cadastrarItemMaquina = async (arquivo , id) => {
 
 const removerItemMaquina = async (id) => {
     crud.remover("item-maquina", id);
-    return buscarItemMaquina();
+    return buscarItensMaquinas();
 }
 
-const buscarItemMaquina = async () => {
+const buscarItensMaquinas = async () => {
     const listaItemMaquina = await crud.buscar("item-maquina");
     return listaItemMaquina;
 }
@@ -28,6 +28,6 @@ const buscarItemMaquinaId = async (id) => {
 module.exports = {
     cadastrarItemMaquina,
     removerItemMaquina,
-    buscarItemMaquina,
+    buscarItensMaquinas,
     buscarItemMaquinaId
 }

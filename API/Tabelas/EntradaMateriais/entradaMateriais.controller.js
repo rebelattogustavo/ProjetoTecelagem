@@ -4,11 +4,11 @@ const router = express.Router();
 const entradaMateriaisHandler = require('./entradaMateriais.handler');
 
 router.get('/', async (req, res) => {
-    res.json(await entradaMateriaisHandler.buscarEntradasMateriais());
+    res.json(await entradaMateriaisHandler.buscarEntradaMateriais());
 });
 
 router.get('/:id', async (req, res) =>{
-    res.json(await entradaMateriaisHandler.buscarEntradasMaterialId(req.params.id))
+    res.json(await entradaMateriaisHandler.buscarEntradaMaterialId(req.params.id))
 });
 
 router.post('/', async (req, res) => {

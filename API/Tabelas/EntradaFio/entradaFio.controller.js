@@ -4,7 +4,7 @@ const router = express.Router();
 const entradaFio = require('./entradaFio.handler');
 
 router.get('/', async (req, res) => {
-    res.json(await entradaFio.buscarEntradasFios());
+    res.json(await entradaFio.buscarEntradaFios());
 });
 
 router.get('/:id', async (req, res) =>{
