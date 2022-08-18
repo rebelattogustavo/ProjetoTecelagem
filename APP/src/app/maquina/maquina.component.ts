@@ -6,13 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./maquina.component.css']
 })
 export class MaquinaComponent implements OnInit {
-  abrirDetalhes = true;
+ 
   constructor() { }
 
   ngOnInit(): void {
   }
-  mudaModal(){
-    this.abrirDetalhes = !this.abrirDetalhes;
-  }
-
+  
 }
