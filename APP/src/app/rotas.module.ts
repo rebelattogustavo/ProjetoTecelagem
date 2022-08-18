@@ -9,6 +9,7 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ComponentesExternosComponent } from './componentes-externos/componentes-externos.component';
 import { EntradaComponent } from './entrada/entrada.component';
+import { HomeComponent } from './componentes-externos/home/home.component';
 
 
 @NgModule({
@@ -33,17 +34,21 @@ import { EntradaComponent } from './entrada/entrada.component';
         component: ComponentesExternosComponent,
         children: [
           {
+            path: 'tela-inicial',
+            component: HomeComponent
+          },
+          {
             path: 'maquina',
-            component: MaquinaComponent
+            component: HomeComponent
           }, {
             path: 'fio',
-            component: FioComponent
+            component: HomeComponent
           }, {
             path: 'itens',
-            component: ItensComponent
+            component: HomeComponent
           }, {
             path: 'malha',
-            component: MalhaComponent
+            component: HomeComponent
           }
         ]
       },

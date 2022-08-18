@@ -11,6 +11,12 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { EntradaComponent } from './entrada/entrada.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './componentes-externos/home/home.component';
+import { FioComponent } from './fio/fio.component';
+import { MalhaComponent } from './malha/malha.component';
+import { MaquinaComponent } from './maquina/maquina.component';
+import { ItensComponent } from './itens/itens.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +26,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     SidenavComponent,
     ComponentesExternosComponent,
-    EntradaComponent
+    EntradaComponent,
+    HomeComponent,
+    FioComponent,
+    MalhaComponent,
+    MaquinaComponent,
+    ItensComponent
   ],
   imports: [
     BrowserModule,

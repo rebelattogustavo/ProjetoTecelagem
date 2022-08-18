@@ -1,6 +1,6 @@
 export const navbarData = [
     {
-        routeLink: '/home',
+        routeLink: '/home/tela-inicial',
         icon: 'bi bi-house-door',
         label: 'Home'
     },
