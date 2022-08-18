@@ -1,18 +1,44 @@
 const crud = require("../../crud");
 
 const cadastrarFornecedor = async (nome, cnpj, id) => {
-    let fornecedores;
+    let fornecedor;
     if (id) {
-        fornecedores = await crud.cadastrar("fornecedor", id, { nome, cnpj });
+        const fornecedorChecar = await buscarFornecedorId(id);
+
+        if (fornecedorChecar.naoEncontrado) {
+            return { "Erro": "Cliente inexistente" };
+        }
+
+        const fornecedores = await buscarFornecedores()
+        for (let fornecedor of fornecedores) {
+            if (fornecedor.cnpj == cnpj && fornecedor.id != id) {
+                return { "Erro": "CNPJ inválido" };
+            }
+        }
+
+        fornecedor = await crud.cadastrar("fornecedor", id, { nome, cnpj });
     } else {
-        fornecedores = await crud.cadastrar("fornecedor", null, { nome, cnpj });
+        const fornecedores = await buscarFornecedores()
+        for (let fornecedor of fornecedores) {
+            if (fornecedor.cnpj == cnpj) {
+                return { "Erro": "CNPJ já cadastrado" };
+            }
+        }
+
+        fornecedor = await crud.cadastrar("fornecedor", null, { nome, cnpj });
     }
-    return fornecedores;
+    return fornecedor;
 }
 
 const removerFornecedor = async (id) => {
-    crud.remover("fornecedor", id);
-    return buscarFornecedores();
+    const fornecedor = await buscarFornecedorId(id);
+
+    if (!fornecedor.naoEncontrado) {
+        await crud.remover("fornecedor", id);
+    } else {
+        return { "Erro": "Fornecedor inexistente" };
+    }
+    return { "Sucesso": `Fornecedor ${fornecedor.nome}, removido com sucesso!` };
 }
 
 const buscarFornecedores = async () => {
