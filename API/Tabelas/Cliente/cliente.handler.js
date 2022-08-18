@@ -12,16 +12,7 @@ const cadastrarCliente = async (nome, cnpj, id) => {
 }
 
 const removerCliente = async (id) => {
-    // let clienteDeletado;
-    // for (cliente of await buscarClientes()) {
-    //     if (cliente.id === id) {
-    //         clienteDeletado = cliente;
-    //     }
-    // }
-
     let cliente = await buscarClienteId(id);
-
-    console.log(cliente);
 
     if (!cliente.naoEncontrado) {
         await crud.remover("cliente", id);
