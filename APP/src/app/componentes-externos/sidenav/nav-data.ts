@@ -23,5 +23,15 @@ export const navbarData = [
         routeLink: '/home/itens',
         icon: 'bi bi-box',
         label: 'Itens'
+    },
+    {
+        routeLink: '/home/historico-entrada',
+        icon: 'bi bi-clock-history',
+        label: 'Histórico entradas'
+    },
+    {
+        routeLink: '/home/historico-producao',
+        icon: 'bi bi-clock-history',
+        label: 'Histórico produção'
     }
 ];

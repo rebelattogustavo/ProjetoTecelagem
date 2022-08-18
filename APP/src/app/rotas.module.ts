@@ -9,6 +9,8 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ComponentesExternosComponent } from './componentes-externos/componentes-externos.component';
 import { EntradaComponent } from './entrada/entrada.component';
+import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
+import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
 
 
 @NgModule({
@@ -44,6 +46,12 @@ import { EntradaComponent } from './entrada/entrada.component';
           }, {
             path: 'malha',
             component: MalhaComponent
+          }, {
+            path: 'historico-entrada',
+            component: HistoricoEntradaComponent
+          },{
+            path: 'historico-producao',
+            component: HistoricoProducaoComponent
           }
         ]
       },
