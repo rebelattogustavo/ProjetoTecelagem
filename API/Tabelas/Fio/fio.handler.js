@@ -11,8 +11,22 @@ const cadastrarFio = async (descricao,id) => {
 }
 
 const removerFio = async (id) => {
-    crud.remover("fio", id);
-    return buscarFios();
+    const fioMalhaTabela = await crud.buscar("fio-malha");
+    const fio = await buscarFioId(id);
+
+    if(fioMalhaTabela.length > 0){
+        for(let fioMalha of fioMalhaTabela){
+            if(fio.id == fioMalha.id_fio){
+                return { "Erro": "Fio atrelado a uma malha!" };
+            } else {
+                await crud.remover("fio", id);
+            }
+        }
+    } else {
+        await crud.remover("fio", id);
+    }
+
+    return { "Sucesso": `Fio ${fio.descricao}, removido com sucesso!` };
 }
 
 const buscarFios = async () => {

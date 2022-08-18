@@ -2,11 +2,19 @@ const crud = require("../../crud");
 
 const cadastrarFioMalha = async (fioid, malhaId, id) => {
     let fioMalhas;
-    if (id) {
-        fioMalhas = await crud.cadastrar("fio-malha", id, { fioid, malhaId });
+    const fio  =  await crud.buscarPorId("fio", toString(fioid));
+    const malha = await crud.buscarPorId("malha", toString(malhaId));
+    if(!fio.naoEncontrado && !malha.naoEncontrado){
+        if (id) {
+            fioMalhas = await crud.cadastrar("fio-malha", id, { fioid, malhaId });
+        } else {
+            fioMalhas = await crud.cadastrar("fio-malha", null, { fioid, malhaId });
+        } 
     } else {
-        fioMalhas = await crud.cadastrar("fio-malha", null, { fioid, malhaId });
+        return { "Erro": "Fio e/ou Malha não existem!" };
     }
+
+
     return fioMalhas;
 }
 
