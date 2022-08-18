@@ -3,6 +3,12 @@ const crud = require("../../crud");
 const cadastrarItem = async (tipo, quantidade, id) => {
     let item;
     if (id) {
+        const itemChecar = await buscarItemId(id);
+
+        if (itemChecar.naoEncontrado) {
+            return { "Erro": "Item inexistente" };
+        }
+
         item = await crud.cadastrar("item", id, { tipo, quantidade });
     } else {
         item = await crud.cadastrar("item", null, { tipo, quantidade });
@@ -11,8 +17,14 @@ const cadastrarItem = async (tipo, quantidade, id) => {
 }
 
 const removerItem = async (id) => {
-    crud.remover("item", id);
-    return buscarItens();
+    const item = await buscarItemId(id);
+
+    if (!item.naoEncontrado) {
+        await crud.remover("item", id);
+    } else {
+        return { "Erro": "Item inexistente" };
+    }
+    return { "Sucesso": `Item removido com sucesso!` };
 }
 
 const buscarItens = async () => {

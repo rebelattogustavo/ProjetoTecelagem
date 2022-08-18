@@ -1,11 +1,30 @@
 const crud = require("../../crud");
 
-
 const cadastrarCliente = async (nome, cnpj, id) => {
     let cliente;
     if (id) {
+        const clienteChecar = await buscarClienteId(id);
+
+        if (clienteChecar.naoEncontrado) {
+            return { "Erro": "Cliente inexistente" };
+        }
+
+        const clientes = await buscarClientes()
+        for (let cliente of clientes) {
+            if (cliente.cnpj == cnpj && cliente.id != id) {
+                return { "Erro": "CNPJ inválido" };
+            }
+        }
+
         cliente = await crud.cadastrar("cliente", id, { nome, cnpj });
     } else {
+        const clientes = await buscarClientes()
+        for (let cliente of clientes) {
+            if (cliente.cnpj == cnpj) {
+                return { "Erro": "CNPJ já cadastrado" };
+            }
+        }
+
         cliente = await crud.cadastrar("cliente", null, { nome, cnpj });
     }
     return cliente;
