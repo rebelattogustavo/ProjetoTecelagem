@@ -10,7 +10,12 @@ export class EntradaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    
   }
+
+  
+
 
 
 }
