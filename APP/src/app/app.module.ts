@@ -13,6 +13,7 @@ import { EntradaComponent } from './entrada/entrada.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetalhesMaquinaComponent } from './maquina/detalhes-maquina/detalhes-maquina.component';
 import { MaquinaComponent } from './maquina/maquina.component';
+import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MaquinaComponent } from './maquina/maquina.component';
     ComponentesExternosComponent,
     EntradaComponent,
     MaquinaComponent,
-    DetalhesMaquinaComponent
+    DetalhesMaquinaComponent,
+    HistoricoEntradaComponent
   ],
   imports: [
     BrowserModule,
