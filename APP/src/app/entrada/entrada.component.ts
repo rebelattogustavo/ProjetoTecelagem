@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-entrada',
@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entrada.component.css']
 })
 export class EntradaComponent implements OnInit {
-
+  @Output() changeModal = new EventEmitter()
   constructor() { }
-
+  fecharModal(){
+    this.changeModal.emit()
+  }
   ngOnInit(): void {
 
     
