@@ -10,7 +10,15 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ComponentesExternosComponent } from './componentes-externos/componentes-externos.component';
 import { EntradaComponent } from './entrada/entrada.component';
+// import { HomeComponent } from './componentes-externos/home/home.component';
+// import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
+// import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
+import { cadastroItemComponent } from './cadastroItem/cadastroItem.component';
+
+
+
 import { SacolaComponent } from './sacola/sacola.component';
+
 
 @NgModule({
   declarations: [],
@@ -28,6 +36,10 @@ import { SacolaComponent } from './sacola/sacola.component';
       {
         path: 'entrada',
         component: EntradaComponent
+      },
+      {
+        path: 'cadastroItem',
+        component: cadastroItemComponent
       },
       {
         path: 'home',
