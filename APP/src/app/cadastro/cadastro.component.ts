@@ -94,7 +94,6 @@ export class CadastroComponent implements OnInit {
 
   fechar() {
     this.senhaIncorreta = 0;
-    this.dadosIncorretos = 0;
   }
 
 }

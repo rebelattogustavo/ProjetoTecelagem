@@ -16,8 +16,12 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { EntradaComponent } from './entrada/entrada.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SacolaComponent } from './sacola/sacola.component';
 import { ItensComponent } from './itens/itens.component';
+
+import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
+import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
+import { SacolaComponent } from './sacola/sacola.component';
+
 
 @NgModule({
   declarations: [

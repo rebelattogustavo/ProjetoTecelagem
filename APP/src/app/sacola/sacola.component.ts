@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sacola',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SacolaComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: Router) {
     var self = this;
     if(localStorage.getItem("carrinho")) {
       this.listaSacola = JSON.parse(localStorage.getItem('carrinho') as string) || [];
@@ -20,7 +21,13 @@ export class SacolaComponent implements OnInit {
     });
   }
 
+  modalVenda = false;
   valorTotal = 0;
+
+  pesoTotal = 0;
+  qualidade = "";
+  cliente = "";
+  nota = "";
 
   listaSacola = [
     {
@@ -30,13 +37,6 @@ export class SacolaComponent implements OnInit {
       quantidade: 1,
       valor: 20
     },
-    {
-      codigo: 2,
-      nome: "Calça",
-      descricao: "Calça Boa",
-      quantidade: 4,
-      valor: 10
-    }
   ]
 
   ngOnInit(): void {
@@ -68,6 +68,24 @@ export class SacolaComponent implements OnInit {
         break;
     }
     this.calculaValor();
+  }
+
+  abrirModalVenda() {
+    if(this.listaSacola.length > 0) {
+      this.modalVenda = true;
+    }
+  }
+
+  fechaModal() {
+    this.modalVenda = false;
+  }
+
+  vender() {
+    for (const malha of this.listaSacola) {
+      //Fazer fetch para cada malha (saída malha)
+      //Fazer alguma forma de encontrar o cliente pelo CNPJ
+    }
+    this.router.navigate(['/home']);
   }
 
 }

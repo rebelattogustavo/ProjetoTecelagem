@@ -22,6 +22,32 @@
     </div>
 </div>
 <div id="divFechar">
-    <button id="botaoVender">Finalizar Venda</button>
+    <button id="botaoVender" (click)="abrirModalVenda()">Finalizar Venda</button>
     <span id="valorTotal">Valor Total: R$ {{valorTotal}}</span>
+</div>
+
+<div class="modalVenda" *ngIf="modalVenda">
+    <div style="display: flex; width: 100%; justify-content: space-evenly; align-items: center;">
+        <h2 class="tituloVenda">Saída de Malhas</h2>
+        <img class="fechar" src="../../assets/close.png" (click)="fechaModal()">
+    </div>
+    <div class="modalPrincipal">
+        <div class="divInput">
+            <label for="pesoTotal" class="labelInput">Peso Total:</label>
+            <input type="text" id="pesoTotal" class="inputModal" [(ngModel)]="pesoTotal">
+        </div>
+        <div class="divInput">
+            <label for="qualidade" class="labelInput">Qualidade da Malha:</label>
+            <textarea type="text" id="qualidade" class="inputModal" [(ngModel)]="qualidade"></textarea>
+        </div>
+        <div class="divInput">
+            <label for="cliente" class="labelInput">CNPJ do Cliente:</label>
+            <input type="text" id="cliente" class="inputModal" [(ngModel)]="cliente"/>
+        </div>
+        <div class="divInput">
+            <label for="nota" class="labelInput">Nota Fiscal:</label>
+            <input type="text" id="nota" class="inputModal" [(ngModel)]="nota"/>
+        </div>
+        <button class="botaoVenda" (click)="vender()">Finalizar Venda</button>
+    </div>
 </div>

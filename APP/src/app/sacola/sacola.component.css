@@ -122,3 +122,71 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+.modalVenda {
+    width: 30%;
+    height: 60%;
+    background-color: white;
+    border: 1px solid #12474E;
+    border-top: 15px solid #12474E;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 37%;
+    padding: 15px;
+}
+
+.tituloVenda {
+    color: #12474E;
+    text-align: center;
+    width: 80%;
+}
+
+.fechar {
+    width: 20px;
+    height: 20px;
+}
+
+.fechar:hover {
+    cursor: pointer;
+}
+
+.modalPrincipal {
+    padding: 10px;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.divInput {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.labelInput {
+    color: #12474E;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.inputModal {
+    padding: 0px 10px;
+}
+
+#pesoTotal {
+    width: 20%;
+}
+
+#qualidade {
+    resize: none;
+}
+
+.botaoVenda {
+    padding: 10px;
+    background-color: #12474E;
+    color: white;
+    font-weight: bold;
+    border: 1px solid black;
+    float: right;
+}
