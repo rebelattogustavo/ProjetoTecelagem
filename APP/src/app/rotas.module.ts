@@ -8,6 +8,7 @@ import { EntradaComponent } from './entrada/entrada.component';
 import { HomeComponent } from './componentes-externos/home/home.component';
 import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
 import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
+import { SacolaComponent } from './sacola/sacola.component';
 
 
 
@@ -56,6 +57,10 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
           {
             path: 'historico-producao',
             component: HistoricoProducaoComponent
+          },
+          {
+            path: 'sacola',
+            component: SacolaComponent
           }
         ]
       },

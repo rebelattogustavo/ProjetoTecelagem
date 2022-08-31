@@ -21,6 +21,7 @@ import { DetalhesMaquinaComponent } from './maquina/detalhes-maquina/detalhes-ma
 import { MaquinaComponent } from './maquina/maquina.component';
 import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
 import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
+import { SacolaComponent } from './sacola/sacola.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
     ItensComponent,
     DetalhesMaquinaComponent,
     HistoricoEntradaComponent,
-    HistoricoProducaoComponent
+    HistoricoProducaoComponent,
+    SacolaComponent
   ],
   imports: [
     BrowserModule,
