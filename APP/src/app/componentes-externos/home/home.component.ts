@@ -10,6 +10,11 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router) { }
   tipoModalEntrada = 1
+  fio = []
+  malha = []
+  maquina = []
+  itens = []
+
   ngOnInit(): void {
     console.log(this.router.url)
   }
