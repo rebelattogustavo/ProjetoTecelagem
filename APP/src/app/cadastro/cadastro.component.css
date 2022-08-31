@@ -126,6 +126,7 @@ a{
 .inputsCadastro2{
     width: 90%;
     border: none;
+    outline: none;
 }
 
 #modalCadastro {

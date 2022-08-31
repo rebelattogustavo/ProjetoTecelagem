@@ -11,17 +11,7 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { EntradaComponent } from './entrada/entrada.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { HomeComponent } from './componentes-externos/home/home.component';
-import { FioComponent } from './fio/fio.component';
-import { MalhaComponent } from './malha/malha.component';
-import { ItensComponent } from './itens/itens.component';
-
-import { DetalhesMaquinaComponent } from './maquina/detalhes-maquina/detalhes-maquina.component';
-import { MaquinaComponent } from './maquina/maquina.component';
-import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
-import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
-
+import { SacolaComponent } from './sacola/sacola.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +22,7 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
     SidenavComponent,
     ComponentesExternosComponent,
     EntradaComponent,
-    HomeComponent,
-    FioComponent,
-    MalhaComponent,
-    MaquinaComponent,
-    ItensComponent,
-    DetalhesMaquinaComponent,
-    HistoricoEntradaComponent,
-    HistoricoProducaoComponent
+    SacolaComponent
   ],
   imports: [
     BrowserModule,
