@@ -20,6 +20,7 @@ export class SacolaComponent implements OnInit {
     });
   }
 
+  modalVenda = false;
   valorTotal = 0;
 
   listaSacola = [
@@ -68,6 +69,16 @@ export class SacolaComponent implements OnInit {
         break;
     }
     this.calculaValor();
+  }
+
+  abrirModalVenda() {
+    if(this.listaSacola.length > 0) {
+      this.modalVenda = true;
+    }
+  }
+
+  fechaModal() {
+    this.modalVenda = false;
   }
 
 }

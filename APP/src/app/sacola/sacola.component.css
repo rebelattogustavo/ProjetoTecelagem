@@ -122,3 +122,31 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+.modalVenda {
+    width: 40%;
+    height: 60%;
+    background-color: white;
+    border: 1px solid #12474E;
+    border-top: 15px solid #12474E;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 32%;
+    padding: 15px;
+}
+
+.tituloVenda {
+    color: #12474E;
+    text-align: center;
+    width: 80%;
+}
+
+.fechar {
+    width: 20px;
+    height: 20px;
+}
+
+.fechar:hover {
+    cursor: pointer;
+}
