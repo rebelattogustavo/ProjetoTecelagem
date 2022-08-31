@@ -1,18 +1,37 @@
 const crud = require("../../crud");
 
-const cadastrarMalha = async (descricao,id) => {
+const cadastrarMalha = async (descricao, valor, id) => {
     let malha;
     if (id) {
-        malha = await crud.cadastrar("malha", id, {descricao});
+        const malhaChecar = await buscarMalhaId(id);
+
+        if (malhaChecar.naoEncontrado) {
+            return { "Erro": "Malha inexistente" };
+        }
+
+        malha = await crud.cadastrar("malha", id, {descricao, valor});
     } else {
-        malha = await crud.cadastrar("malha", null, {descricao});
+        malha = await crud.cadastrar("malha", null, {descricao,valor});
     }
     return malha;
 }
 
 const removerMalha = async (id) => {
-    crud.remover("malha", id);
-    return buscarMalhas();
+    const malha = await buscarMalhaId(id);
+    const fioMalha = await crud.buscar("fio-malha");
+
+    if (!malha.naoEncontrado) {
+        for(let fMalha of fioMalha){
+            if(malha.id == fMalha.malha_id){
+                const objDeletado = await crud.remover("fio-malha", fMalha.id);
+            }
+        }
+        await crud.remover("malha", id);
+    } else {
+        return { "Erro": "Malha inexistente" };
+    }
+
+    return { "Sucesso": `Malha removida com sucesso!` };
 }
 
 const buscarMalhas = async () => {
