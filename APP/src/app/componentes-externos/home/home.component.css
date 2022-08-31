@@ -27,12 +27,13 @@
     justify-content: center;
     align-items: center;
 }
-
-.input i{
-    position: relative;
-    left: 1.5rem;
-    font-size: 16px;
-    color: #000000;
+.input-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 60%;
+    background-color: #EEEEEE;
 }
 
 .input input{
@@ -45,7 +46,6 @@
 }
 
 .input input::placeholder{
-    padding-left: 2rem;
     color: #555555;
 }
 
@@ -68,4 +68,8 @@
 .container-fios{
     margin-left: 2rem;
     align-items: center;
+}
+
+.container-fios app-fio, app-malha, app-maquina, app-itens{
+    padding: 10px;
 }
