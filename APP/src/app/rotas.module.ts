@@ -1,3 +1,4 @@
+import { HomeComponent } from './componentes-externos/home/home.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -10,7 +11,6 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { ComponentesExternosComponent } from './componentes-externos/componentes-externos.component';
 import { EntradaComponent } from './entrada/entrada.component';
 import { SacolaComponent } from './sacola/sacola.component';
-
 
 @NgModule({
   declarations: [],
@@ -34,17 +34,21 @@ import { SacolaComponent } from './sacola/sacola.component';
         component: ComponentesExternosComponent,
         children: [
           {
+            path: '',
+            component: HomeComponent
+          },
+          {
             path: 'maquina',
-            component: MaquinaComponent
+            component: HomeComponent
           }, {
             path: 'fio',
-            component: FioComponent
+            component: HomeComponent
           }, {
             path: 'itens',
-            component: ItensComponent
+            component: HomeComponent
           }, {
             path: 'malha',
-            component: MalhaComponent
+            component: HomeComponent
           }, {
             path: 'sacola',
             component: SacolaComponent

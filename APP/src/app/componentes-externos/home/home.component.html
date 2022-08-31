@@ -10,8 +10,8 @@
     </div>
 
     <div class="container-button-fio">
-        <button>Cadastro de FIO</button>
-        <button class="btn btn-primary" (click)="mudaModalEntrada()">Entrada</button>
+        <button (click)="mudaModalEntrada()">Cadastro de FIO</button>
+        <button class="btn btn-primary" >Entrada</button>
     </div>
 
     <div class="container-fios row">
@@ -35,6 +35,6 @@
         <app-itens class="col-md-3 col-sm-4"></app-itens>
         <app-itens class="col-md-3 col-sm-4"></app-itens>
         <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-entrada style="position: fixed; top:0;left:0"></app-entrada>
+        <app-entrada *ngIf="abrirEntrada == true" style="position: fixed; top:0;left:0"></app-entrada>
         <app-detalhes-maquina (statusModalDetalhes)="mudaModalDetalhes()" *ngIf="abrirDetalhes"></app-detalhes-maquina>
     </div>

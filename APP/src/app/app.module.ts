@@ -1,3 +1,8 @@
+import { HomeComponent } from './componentes-externos/home/home.component';
+import { DetalhesMaquinaComponent } from './maquina/detalhes-maquina/detalhes-maquina.component';
+import { FioComponent } from './fio/fio.component';
+import { MaquinaComponent } from './maquina/maquina.component';
+import { MalhaComponent } from './malha/malha.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +17,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { EntradaComponent } from './entrada/entrada.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SacolaComponent } from './sacola/sacola.component';
+import { ItensComponent } from './itens/itens.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,13 @@ import { SacolaComponent } from './sacola/sacola.component';
     SidenavComponent,
     ComponentesExternosComponent,
     EntradaComponent,
-    SacolaComponent
+    SacolaComponent,
+    ItensComponent,
+    MalhaComponent,
+    MaquinaComponent,
+    FioComponent,
+    DetalhesMaquinaComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
