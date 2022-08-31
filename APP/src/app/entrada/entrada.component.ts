@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-entrada',
@@ -7,6 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class EntradaComponent implements OnInit {
   @Output() changeModal = new EventEmitter()
+  @Input() tipo = 2
   constructor() { }
   fecharModal(){
     this.changeModal.emit()

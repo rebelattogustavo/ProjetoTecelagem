@@ -9,12 +9,13 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(private router: Router) { }
-
+  tipoModalEntrada = 1
   ngOnInit(): void {
     console.log(this.router.url)
   }
   stateEntrada = false
-  changeModalEntrada(){
+  changeModalEntrada(number: number){
+    this.tipoModalEntrada = number
     this.stateEntrada = !this.stateEntrada
   }
 }

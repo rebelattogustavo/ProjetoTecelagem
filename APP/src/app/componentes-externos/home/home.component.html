@@ -12,7 +12,8 @@
     <div class="container-button-fio">
         <button>Cadastro de FIO</button>
     </div>
-    <button (click)="changeModalEntrada()">Entrada</button>
+    <button (click)="changeModalEntrada(1)">Entrada Itens</button>
+    <button (click)="changeModalEntrada(2)">Entrada Fios</button>
 
     <div class="container-fios row">
         <app-fio class="col-3"></app-fio>
@@ -35,5 +36,5 @@
         <app-itens class="col-3"></app-itens>
         <app-itens class="col-3"></app-itens>
         <app-itens class="col-3"></app-itens>
-        <app-entrada (changeModal)="changeModalEntrada()" style="position: fixed; top:0;left:0" *ngIf="stateEntrada"></app-entrada>
+        <app-entrada [tipo]="tipoModalEntrada" (changeModal)="changeModalEntrada(1)" style="position: fixed; top:0;left:0" *ngIf="stateEntrada"></app-entrada>
     </div>
