@@ -6,17 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastroItem.component.css']
 })
 export class cadastroItemComponent implements OnInit {
-  
+
   constructor() { }
 
   ngOnInit(): void {
-    
-    
+
+
   }
   tipo = 1;
 
 
-  
+
 
 
 

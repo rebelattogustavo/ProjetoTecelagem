@@ -18,6 +18,8 @@ import { cadastroItemComponent } from './cadastroItem/cadastroItem.component';
 
 
 import { SacolaComponent } from './sacola/sacola.component';
+import { CadastroFioComponent } from './cadastroFio/cadastroFio.component';
+import { CadastroMalhaComponent } from './cadastroMalha/cadastroMalha.component';
 
 
 @NgModule({
@@ -40,6 +42,14 @@ import { SacolaComponent } from './sacola/sacola.component';
       {
         path: 'cadastroItem',
         component: cadastroItemComponent
+      },
+      {
+        path: 'cadastroFio',
+        component: CadastroFioComponent
+      },
+      {
+        path: 'cadastroMalha',
+        component: CadastroMalhaComponent
       },
       {
         path: 'home',
