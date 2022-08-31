@@ -4,7 +4,7 @@ const cadastrarFioMalha = async (fioid, malhaId, id) => {
     let fioMalhas;
     const fio  =  await crud.buscarPorId("fio", toString(fioid));
     const malha = await crud.buscarPorId("malha", toString(malhaId));
-    if(!fio.naoEncontrado && !malha.naoEncontrado){
+    if(!fio.naoEncontrado || !malha.naoEncontrado){
         if (id) {
             fioMalhas = await crud.cadastrar("fio-malha", id, { fioid, malhaId });
         } else {
