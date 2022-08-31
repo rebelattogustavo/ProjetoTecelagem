@@ -1,6 +1,6 @@
 export const navbarData = [
     {
-        routeLink: '/home/tela-inicial',
+        routeLink: '/home',
         icon: 'bi bi-house-door',
         label: 'Home'
     },
@@ -23,15 +23,5 @@ export const navbarData = [
         routeLink: '/home/itens',
         icon: 'bi bi-box',
         label: 'Itens'
-    },
-    {
-        routeLink: '/home/historico-entrada',
-        icon: 'bi bi-clock-history',
-        label: 'Histórico entradas'
-    },
-    {
-        routeLink: '/home/historico-producao',
-        icon: 'bi bi-clock-history',
-        label: 'Histórico produção'
     }
 ];

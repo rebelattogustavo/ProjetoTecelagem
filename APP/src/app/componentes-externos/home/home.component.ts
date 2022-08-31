@@ -13,10 +13,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.router.url)
   }
-  
-  abrirDetalhes = true;
-
-  mudaModal(){
+  abrirEntrada = false;
+  abrirDetalhes = false;
+  mudaModalEntrada(){
+    this.abrirEntrada = !this.abrirEntrada
+  } 
+  mudaModalDetalhes(){
     this.abrirDetalhes = !this.abrirDetalhes;
   }
 
