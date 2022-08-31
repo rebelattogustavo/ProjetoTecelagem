@@ -8,6 +8,8 @@ import { EntradaComponent } from './entrada/entrada.component';
 import { HomeComponent } from './componentes-externos/home/home.component';
 import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
 import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
+import { cadastroItemComponent } from './cadastroItem/cadastroItem.component';
+
 
 
 
@@ -27,6 +29,10 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
       {
         path: 'entrada',
         component: EntradaComponent
+      },
+      {
+        path: 'cadastroItem',
+        component: cadastroItemComponent
       },
       {
         path: 'home',
