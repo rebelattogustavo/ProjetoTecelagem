@@ -38,7 +38,13 @@ import { SacolaComponent } from './sacola/sacola.component';
     MaquinaComponent,
     FioComponent,
     DetalhesMaquinaComponent,
+<<<<<<< HEAD
     HomeComponent
+=======
+    HistoricoEntradaComponent,
+    HistoricoProducaoComponent,
+    SacolaComponent
+>>>>>>> dbbfeca44c2be1968372e8695d0607211e73d028
   ],
   imports: [
     BrowserModule,

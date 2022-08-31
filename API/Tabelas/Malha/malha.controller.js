@@ -12,13 +12,13 @@ router.get('/:id', async (req, res) =>{
 });
 
 router.post('/', async (req, res) => {
-    const { descricao } = req.body;
-    res.json(await malhahandler.cadastrarMalha(descricao));
+    const { descricao, valor } = req.body;
+    res.json(await malhahandler.cadastrarMalha(descricao, valor));
 });
 
 router.put('/:id', async (req, res) =>{
-    const { descricao } = req.body;
-    res.json(await malhahandler.cadastrarMalha(descricao, req.params.id));
+    const { descricao, valor } = req.body;
+    res.json(await malhahandler.cadastrarMalha(descricao, valor, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {
