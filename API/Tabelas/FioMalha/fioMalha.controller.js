@@ -12,8 +12,8 @@ router.get('/:id', async (req, res) =>{
 });
 
 router.post('/', async (req, res) => {
-    const { fioid, malhaId } = req.body;
-    res.json(await fioMalhaHandler.cadastrarFioMalha(fioid, malhaId));
+    const { fio_id, malha_id } = req.body;
+    res.json(await fioMalhaHandler.cadastrarFioMalha(fio_id, malha_id));
 });
 
 router.put('/:id', async (req, res) =>{
