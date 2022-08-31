@@ -13,7 +13,7 @@ export class EntradaComponent implements OnInit {
     
     
   }
-  tipo = 1;
+  tipo = 2;
 
 
   
