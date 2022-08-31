@@ -5,12 +5,15 @@
         </h1>
     </div>
     <div class="input">
-        <i class="bi bi-search"></i>
+        <div class="input-icon">
+            <i class="bi bi-search"></i>
+        </div>
         <input placeholder="Pesquisar" type="text">
     </div>
 
     <div class="container-button-fio">
         <button>Cadastro de FIO</button>
+        <button class="btn btn-primary" (click)="mudaModalEntrada()">Entrada</button>
     </div>
 
     <div class="container-fios row">
@@ -34,5 +37,6 @@
         <app-itens class="col-md-3 col-sm-4"></app-itens>
         <app-itens class="col-md-3 col-sm-4"></app-itens>
         <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-detalhes-maquina (statusModalDetalhes)="mudaModal()" *ngIf="abrirDetalhes"></app-detalhes-maquina>
+        <app-entrada style="position: fixed; top:0;left:0"></app-entrada>
+        <app-detalhes-maquina (statusModalDetalhes)="mudaModalDetalhes()" *ngIf="abrirDetalhes"></app-detalhes-maquina>
     </div>

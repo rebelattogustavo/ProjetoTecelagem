@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./maquina.component.css']
 })
 export class MaquinaComponent implements OnInit {
- 
+
   constructor() { }
 
   ngOnInit(): void {
   }
-  
+
 }

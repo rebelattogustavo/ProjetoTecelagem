@@ -6,18 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entrada.component.css']
 })
 export class EntradaComponent implements OnInit {
-  
+
   constructor() { }
 
   ngOnInit(): void {
-    
-    
   }
-  tipo = 1;
-
-
-  
-
 
 
 }
