@@ -22,6 +22,7 @@ import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada
 import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
 import { SacolaComponent } from './sacola/sacola.component';
 
+import { HttpClientModule } from  '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SacolaComponent } from './sacola/sacola.component';
     BrowserModule,
     RotasModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

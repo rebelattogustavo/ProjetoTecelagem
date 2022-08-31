@@ -10,33 +10,30 @@
         </div>
         <input placeholder="Pesquisar" type="text">
     </div>
-
-    <div class="container-button-fio">
-        <button (click)="mudaModalEntrada()">Cadastro de FIO</button>
-        <button class="btn btn-primary" >Entrada</button>
-    </div>
+    
+    <button (click)="changeModalEntrada(1)">Entrada Itens</button>
+    <button (click)="changeModalEntrada(2)">Entrada Fios</button>
 
     <div class="container-fios row">
-        <app-fio class="col-md-3 col-sm-4"></app-fio>
-        <app-fio class="col-md-3 col-sm-4"></app-fio>
-        <app-fio class="col-md-3 col-sm-4"></app-fio>
-        <app-fio class="col-md-3 col-sm-4"></app-fio>
-        <app-fio class="col-md-3 col-sm-4"></app-fio>
-        <app-malha class="col-md-3 col-sm-4"></app-malha>
-        <app-malha class="col-md-3 col-sm-4"></app-malha>
-        <app-malha class="col-md-3 col-sm-4"></app-malha>
-        <app-malha class="col-md-3 col-sm-4"></app-malha>
-        <app-malha class="col-md-3 col-sm-4"></app-malha>
-        <app-maquina class="col-md-3 col-sm-4"></app-maquina>
-        <app-maquina class="col-md-3 col-sm-4"></app-maquina>
-        <app-maquina class="col-md-3 col-sm-4"></app-maquina>
-        <app-maquina class="col-md-3 col-sm-4"></app-maquina>
-        <app-maquina class="col-md-3 col-sm-4"></app-maquina>
-        <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-entrada *ngIf="abrirEntrada == true" style="position: fixed; top:0;left:0"></app-entrada>
-        <app-detalhes-maquina (statusModalDetalhes)="mudaModalDetalhes()" *ngIf="abrirDetalhes"></app-detalhes-maquina>
+        <app-fio class="col-3"></app-fio>
+        <app-fio class="col-3"></app-fio>
+        <app-fio class="col-3"></app-fio>
+        <app-fio class="col-3"></app-fio>
+        <app-fio class="col-3"></app-fio>
+        <app-malha class="col-3"></app-malha>
+        <app-malha class="col-3"></app-malha>
+        <app-malha class="col-3"></app-malha>
+        <app-malha class="col-3"></app-malha>
+        <app-malha class="col-3"></app-malha>
+        <app-maquina class="col-3"></app-maquina>
+        <app-maquina class="col-3"></app-maquina>
+        <app-maquina class="col-3"></app-maquina>
+        <app-maquina class="col-3"></app-maquina>
+        <app-maquina class="col-3"></app-maquina>
+        <app-itens class="col-3"></app-itens>
+        <app-itens class="col-3"></app-itens>
+        <app-itens class="col-3"></app-itens>
+        <app-itens class="col-3"></app-itens>
+        <app-itens class="col-3"></app-itens>
+        <app-entrada [tipo]="tipoModalEntrada" (changeModal)="changeModalEntrada(1)" style="position: fixed; top:0;left:0" *ngIf="stateEntrada"></app-entrada>
     </div>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { MaquinaService } from '../service/maquina.service';
+
 
 @Component({
   selector: 'app-entrada',
@@ -6,14 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entrada.component.css']
 })
 export class EntradaComponent implements OnInit {
-  
-  constructor() { }
+  @Output() changeModal = new EventEmitter()
+  @Input() tipo = 2
+  constructor(
+    private maquinaService: MaquinaService
+  ) { }
+  fecharModal(){
+    this.changeModal.emit()
+  }
+
+
+  buscarMaquina(){
+    console.log(this.maquinaService.buscarMaquinas());
+  }
 
   ngOnInit(): void {
     
-    
   }
-  tipo = 1;
 
 
   
