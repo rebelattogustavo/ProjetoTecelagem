@@ -1,14 +1,29 @@
 const crud = require("../../crud");
 
-const cadastrarEntradaMaterial = async (descricao, quantidade, valorTotalGasto, 
+const cadastrarEntradaMaterial = async (descricao, quantidade, valorTotalGasto,
     notaFiscalId, fornecedorId, itemId, id) => {
     let entradaMateriais;
     if (id) {
-        entradaMateriais = await crud.cadastrar("entrada-materiais", id, { descricao, quantidade, valorTotalGasto, 
-            notaFiscalId, fornecedorId, itemId });
+        entradaMateriais = await crud.cadastrar("entrada-materiais", id, {
+            descricao, quantidade, valorTotalGasto,
+            notaFiscalId, fornecedorId, itemId
+        });
     } else {
-        entradaMateriais = await crud.cadastrar("entrada-materiais", null, { descricao, quantidade, valorTotalGasto, 
-            notaFiscalId, fornecedorId, itemId });
+        let item = await crud.buscarPorId("item", itemId);
+        if (!item.naoEncontrado) {
+            let fornecedor = await crud.buscarPorId("fornecedor", fornecedorId);
+            if (!fornecedor.naoEncontrado) {
+                entradaMateriais = await crud.cadastrar("entrada-materiais", fornecedor.id, {
+                    descricao, quantidade,
+                    valorTotalGasto, notaFiscalId, fornecedorId, itemId
+                });
+                return entradaMateriais;
+            } else {
+                return { "Erro": "Fornecedor não encontrado" }
+            }
+        } else {
+            return { "Erro": "Item não encontrado" }
+        }
     }
     return entradaMateriais;
 }
