@@ -13,5 +13,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.router.url)
   }
-
+  stateEntrada = false
+  changeModalEntrada(){
+    this.stateEntrada = !this.stateEntrada
+  }
 }
