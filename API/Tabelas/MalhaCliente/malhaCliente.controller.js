@@ -3,7 +3,7 @@ const router = express.Router();
 
 const maquinaClienteHandler = require('./malhaCliente.handler');
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res) => { 
     res.json(await maquinaClienteHandler.buscarMalhasClientes());
 });
 
