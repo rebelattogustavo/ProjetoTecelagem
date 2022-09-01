@@ -19,7 +19,7 @@ export class EntradaComponent implements OnInit {
 
 
   buscarMaquina(){
-    console.log(this.maquinaService.buscarMaquinas());
+    this.maquinaService.buscarMaquinas();
   }
 
   ngOnInit(): void {

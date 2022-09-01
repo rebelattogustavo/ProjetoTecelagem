@@ -10,7 +10,7 @@ export class MaquinaService {
   constructor(private http: HttpClient) {}
 
   buscarMaquinas() {
-    return this.http.get('/api/maquina');
+    return this.http.get('http://localhost:8080/api/maquina').subscribe((e) => {console.log(e)});
   }
 
 }
