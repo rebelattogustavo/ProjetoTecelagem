@@ -4,22 +4,34 @@ const cadastrarProducao = async (pesoRolo, defeito, clienteId, funcionarioId, ma
     console.log("peso: ", pesoRolo, "def: ", defeito, "cliente: ", clienteId, "func: ", funcionarioId, 
     "maq: ", maquinaId, "stats: ", status, "id: ", id);
     let producao;
+
+    let cliente = await crud.buscarPorId("cliente", clienteId);
+    if (cliente.naoEncontrado) {
+        return { "Erro": "Máquina não encontrada!" }
+    }
+
+    let funcionario = await crud.buscarPorId("funcionario", funcionarioId);
+    if (funcionario.naoEncontrado) {
+        return { "Erro": "Máquina funcionario!" }
+    }
+
+    let maquina = await crud.buscarPorId("maquina", maquinaId);
+    if (maquina.naoEncontrado) {
+        return { "Erro": "Máquina não encontrada!" }
+    }
+
     if (id) {
-        producao = await crud.cadastrar("producao", id, { pesoRolo, defeito, clienteId, funcionarioId, 
-            maquinaId, status });
+        producao = await crud.cadastrar("producao", id, {
+            pesoRolo, defeito, clienteId, funcionarioId,
+            maquinaId, status
+        });
     } else {
-        let maquina = await crud.buscarPorId("maquina", maquinaId);
 
-        console.log(maquina);
-    
-        if (!maquina.naoEncontrado) {
-            producao = await crud.cadastrar("producao", null, { pesoRolo, defeito, clienteId, funcionarioId, 
-                maquinaId, status: "em produção" });
-        } else {
-            return { "Erro": "Maquina inexistente" };
-        }
-        return { "Sucesso": `Produção cadastrada com sucesso!` };
 
+        producao = await crud.cadastrar("producao", null, {
+            pesoRolo, defeito, clienteId, funcionarioId,
+            maquinaId, status: "em produção"
+        });
     }
     return producao;
 }

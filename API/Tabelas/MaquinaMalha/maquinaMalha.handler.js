@@ -12,6 +12,16 @@ const cadastrarMaquinaMalha = async ( maquinaId, malhaId, id) => {
     }
 
     let maquinaMalha;
+    let maquina = await crud.buscarPorId("maquina", maquinaId);
+    if (maquina.naoEncontrado) {
+        return { "Erro": "Máquina não encontrada!" }
+    }
+
+    let malha = await crud.buscarPorId("malha", malhaId);
+    if (malha.naoEncontrado) {
+        return { "Erro": "Malha não encontrada!" }
+    }
+
     if (id) {
         const checarMaquinaMalha = await buscarMaquinaMalhaId(id)
 

@@ -18,12 +18,19 @@ const cadastrarItem = async (tipo, quantidade, id) => {
 
 const removerItem = async (id) => {
     const item = await buscarItemId(id);
+    const itemMaquina = await crud.buscar("item-maquina");
 
     if (!item.naoEncontrado) {
+        for (let maq of itemMaquina) {
+            if (item.id == maq.idItem) {
+                const objDeletado = await crud.remover("item-maquina", maq.id);
+            }
+        }
         await crud.remover("item", id);
     } else {
         return { "Erro": "Item inexistente" };
     }
+
     return { "Sucesso": `Item removido com sucesso!` };
 }
 
