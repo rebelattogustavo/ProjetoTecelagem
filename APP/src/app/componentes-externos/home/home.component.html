@@ -11,30 +11,30 @@
         <input placeholder="Pesquisar" type="text">
     </div>
 
+    <div class="container-button-fio">
+        <button *ngIf="lista == 'fio'">Cadastro de Fio</button>
+        <button *ngIf="lista == 'malha'">Cadastro de Malha</button>
+        <button *ngIf="lista == 'maquina'">Cadastro de Máquina</button>
+        <button *ngIf="lista == 'itens'">Cadastro de Item</button>
+    </div>
     <button (click)="changeModalEntrada(1)">Entrada Itens</button>
     <button (click)="changeModalEntrada(2)">Entrada Fios</button>
 
-    <div class="container-fios row">
-        <app-fio class="col-md-3 col-sm-4"></app-fio>
-        <app-fio class="col-md-3 col-sm-4"></app-fio>
-        <app-fio class="col-md-3 col-sm-4"></app-fio>
-        <app-fio class="col-md-3 col-sm-4"></app-fio>
-        <app-fio class="col-md-3 col-sm-4"></app-fio>
-        <app-malha class="col-md-3 col-sm-4"></app-malha>
-        <app-malha class="col-md-3 col-sm-4"></app-malha>
-        <app-malha class="col-md-3 col-sm-4"></app-malha>
-        <app-malha class="col-md-3 col-sm-4"></app-malha>
-        <app-malha class="col-md-3 col-sm-4"></app-malha>
-        <app-maquina class="col-md-3 col-sm-4"></app-maquina>
-        <app-maquina class="col-md-3 col-sm-4"></app-maquina>
-        <app-maquina class="col-md-3 col-sm-4"></app-maquina>
-        <app-maquina class="col-md-3 col-sm-4"></app-maquina>
-        <app-maquina class="col-md-3 col-sm-4"></app-maquina>
-        <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-itens class="col-md-3 col-sm-4"></app-itens>
-        <app-entrada [tipo]="tipoModalEntrada" (changeModal)="changeModalEntrada(1)"
-            style="position: fixed; top:0;left:0" *ngIf="stateEntrada"></app-entrada>
+    <app-entrada [tipo]="tipoModalEntrada" (changeModal)="changeModalEntrada(1)" style="position: fixed; top:0;left:0"
+        *ngIf="stateEntrada"></app-entrada>
+
+    <div *ngIf="lista == 'fio'" class="container-fios row">
+        <app-fio *ngFor="let f of fio" class="col-md-3 col-sm-4" [fio]="f"></app-fio>
+    </div>
+
+    <div *ngIf="lista == 'malha'" class="container-fios row">
+        <app-malha *ngFor="let f of malha" class="col-md-3 col-sm-4" [malha]="f"></app-malha>
+    </div>
+
+    <div *ngIf="lista == 'maquina'" class="container-fios row">
+        <app-maquina *ngFor="let f of maquina" class="col-md-3 col-sm-4" [maquina]="f"></app-maquina>
+    </div>
+
+    <div *ngIf="lista == 'itens'" class="container-fios row">
+        <app-itens *ngFor="let f of itens" class="col-md-3 col-sm-4" [item]="f"></app-itens>
     </div>

@@ -9,14 +9,20 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(private router: Router) { }
+  stateDetalhes = false
   tipoModalEntrada = 1
   fio = []
   malha = []
   maquina = []
   itens = []
 
+  lista = "";
+
+  openModalDetalhes(){
+    this.stateDetalhes = !this.stateDetalhes
+  }
   ngOnInit(): void {
-    console.log(this.router.url)
+    this.lista = this.router.url.split("/", 3)[2];
   }
   stateEntrada = false
   changeModalEntrada(number: number){
