@@ -15,8 +15,10 @@ export class HomeComponent implements OnInit {
   maquina = []
   itens = []
 
+  lista = "";
+
   ngOnInit(): void {
-    console.log(this.router.url)
+    this.lista = this.router.url.split("/", 3)[2];
   }
   stateEntrada = false
   changeModalEntrada(number: number){
