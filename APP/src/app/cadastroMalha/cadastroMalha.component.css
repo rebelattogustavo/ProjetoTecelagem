@@ -91,3 +91,10 @@
     color: white;
     font-size: 30px;
 }
+
+.selecionados{
+    box-shadow: 2px 1px 7px 1px rgba(0, 0, 0, 0.479);
+    border-radius: 10px;
+    width: 500px;
+    height: 100px;
+}
