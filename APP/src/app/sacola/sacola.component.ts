@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -85,7 +85,8 @@ export class SacolaComponent implements OnInit {
       //Fazer fetch para cada malha (saída malha)
       //Fazer alguma forma de encontrar o cliente pelo CNPJ
     }
-    this.router.navigate(['/home']);
+    localStorage.removeItem('carrinho')
+    this.router.navigate(['/home/tela-inicial']);
   }
 
 }

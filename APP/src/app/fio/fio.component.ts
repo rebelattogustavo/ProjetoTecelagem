@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-fio',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fio.component.css']
 })
 export class FioComponent implements OnInit {
+
+  @Input() fio = {codigo: 0, descricao: ""}
 
   constructor() { }
 
