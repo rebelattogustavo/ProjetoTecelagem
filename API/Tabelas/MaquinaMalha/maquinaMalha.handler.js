@@ -1,6 +1,16 @@
 const crud = require("../../crud");
 
-const cadastrarMaquinaMalha = async (maquinaId, malhaId, id) => {
+const cadastrarMaquinaMalha = async ( maquinaId, malhaId, id) => {
+    let verificacaoIds = await crud.buscarPorId("malha", malhaId)
+    if (verificacaoIds.naoEncontrado) {
+        return { "Erro": "Id de malha não encontrado" }
+    }
+
+    verificacaoIds = await crud.buscarPorId("maquina", maquinaId)
+    if (verificacaoIds.naoEncontrado) {
+        return { "Erro": "Id de máquina não encontrado" }
+    }
+
     let maquinaMalha;
     let maquina = await crud.buscarPorId("maquina", maquinaId);
     if (maquina.naoEncontrado) {
@@ -13,10 +23,10 @@ const cadastrarMaquinaMalha = async (maquinaId, malhaId, id) => {
     }
 
     if (id) {
-        let checaMaquinaMalha = await buscarMaquinaMalhaId(id);
+        const checarMaquinaMalha = await buscarMaquinaMalhaId(id)
 
-        if (checaMaquinaMalha.naoEncontrado) {
-            return { "Erro": "Máquina não encontrada!" }
+        if (checarMaquinaMalha.naoEncontrado) {
+            return { "Erro": "Id de máquina malha não encontrado" }
         }
 
         maquinaMalha = await crud.cadastrar("maquina-malha", id, { maquinaId, malhaId });
@@ -27,8 +37,14 @@ const cadastrarMaquinaMalha = async (maquinaId, malhaId, id) => {
 }
 
 const removerMaquinaMalha = async (id) => {
+    const checarMaquinaFio = await buscarMaquinaMalhaId(id)
+
+    if (checarMaquinaFio.naoEncontrado) {
+        return { "Erro": "Id de máquina fio não encontrado" }
+    }
+
     crud.remover("maquina-malha", id);
-    return buscarMaquinas();
+    return buscarMaquinasMalhas();
 }
 
 const buscarMaquinasMalhas = async () => {

@@ -1,12 +1,21 @@
 const crud = require("../../crud");
 
-const cadastrarItemMaquina = async (arquivo , id) => {
+const cadastrarItemMaquina = async (idItem, idMaquina, id) => {
     let itemMaquina;
-    if (id) {
-        itemMaquina = await crud.cadastrar("item-maquina", id, { arquivo });
+
+    const item = await crud.buscarPorId("item", idItem);
+    const maquina = await crud.buscarPorId("maquina", idMaquina);
+
+    if(!item.naoEncontrado && !maquina.naoEncontrado){
+        if (id) {
+            itemMaquina = await crud.cadastrar("item-maquina", id, { idItem, idMaquina });
+        } else {
+            itemMaquina = await crud.cadastrar("item-maquina", null, { idItem, idMaquina });
+        }
     } else {
-        itemMaquina = await crud.cadastrar("item-maquina", null, { arquivo });
+        return { "Erro": "Item e/ou Maquina não existem!" };
     }
+
     return itemMaquina;
 }
 
