@@ -29,7 +29,7 @@
             <h6 style="margin-left: 40px;">Quantidade</h6>
             <div class="centralizar">
             <h3 style="margin-left: 20px;">+</h3>
-            <input class="quantidade" placeholder="" type="text">
+            <input class="quantidade" placeholder="" type="text" [(ngModel)]="quantidade">
             <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
         </div>
         </div>
@@ -46,15 +46,15 @@
                     <i class="bi bi-boxes" style="font-size: 20px;"></i>
                 </div>
             </div>
-            
-            <input class="inputs" type="text">
+            <input class="inputs" placeholder="" type="text" *ngIf="this.tipo == 1" [(ngModel)]="fornecedor">
+            <input class="inputs" placeholder="" type="text" *ngIf="this.tipo == 2" [(ngModel)]="peso">
             </div>
         </div>
         <div>
             <h6 style="margin-left: 63px;">Valor</h6>
             <div class="centralizar">
             <h3 style="margin-left: 20px;">+</h3>
-            <input class="quantidade" placeholder="" type="text">
+            <input class="quantidade" placeholder="" type="text" [(ngModel)]="valor">
             <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
         </div>
         </div>
@@ -63,7 +63,7 @@
             <div style="margin-left: 60px;">
             <div style="margin-right: 60px;">
                 <h6>Descrição</h6>
-                <textarea class="Desc"></textarea>
+                <textarea class="Desc" [(ngModel)]="descricao"></textarea>
         </div>
         
     </div>
@@ -78,14 +78,14 @@
             </div>
         </div>
         
-        <input class="inputs" type="text">
+        <input class="inputs" type="text" [(ngModel)]="fornecedor">
         </div>
     </div>
     <div>
         <h6 style="margin-left: 25px;">Rolos por caixa</h6>
         <div class="centralizar">
         <h3 style="margin-left: 20px;">+</h3>
-        <input class="quantidade" placeholder="" type="text">
+        <input class="quantidade" placeholder="" type="text" [(ngModel)]="rolosCaixa">
         <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
     </div>
     </div>
@@ -102,7 +102,7 @@
             </button>
     </div>
     <div>
-        <button class="nota" style="margin-left: 100px; margin-top: 25px;" (click)="buscarMaquina()">
+        <button class="nota" style="margin-left: 100px; margin-top: 25px;" (click)="entradaItens()">
             Enviar
         </button>
     </div>

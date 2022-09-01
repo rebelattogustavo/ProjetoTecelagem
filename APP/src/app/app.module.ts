@@ -41,7 +41,8 @@ import { HttpClientModule } from  '@angular/common/http';
     DetalhesMaquinaComponent,
     HistoricoEntradaComponent,
     HistoricoProducaoComponent,
-    SacolaComponent
+    SacolaComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
