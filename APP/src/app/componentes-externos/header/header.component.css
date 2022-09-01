@@ -1,3 +1,10 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
 .blue {
     background-color: #1f394f;
     position: sticky;
@@ -13,4 +20,15 @@
     position: absolute;
     top: -13px;
     left: 57px;
+}
+
+.divImg {
+    display: flex;
+    width: 20%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sacola:hover {
+    cursor: pointer;
 }

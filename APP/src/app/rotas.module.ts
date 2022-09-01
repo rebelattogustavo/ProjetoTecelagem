@@ -1,3 +1,4 @@
+import { HomeComponent } from './componentes-externos/home/home.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -5,9 +6,18 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ComponentesExternosComponent } from './componentes-externos/componentes-externos.component';
 import { EntradaComponent } from './entrada/entrada.component';
-import { HomeComponent } from './componentes-externos/home/home.component';
+// import { HomeComponent } from './componentes-externos/home/home.component';
+// import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
+// import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
+import { cadastroItemComponent } from './cadastroItem/cadastroItem.component';
+
+
+
 import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
 import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
+import { SacolaComponent } from './sacola/sacola.component';
+import { CadastroFioComponent } from './cadastroFio/cadastroFio.component';
+import { CadastroMalhaComponent } from './cadastroMalha/cadastroMalha.component';
 
 
 
@@ -25,11 +35,23 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
         component: EntradaComponent
       },
       {
+        path: 'cadastroItem',
+        component: cadastroItemComponent
+      },
+      {
+        path: 'cadastroFio',
+        component: CadastroFioComponent
+      },
+      {
+        path: 'cadastroMalha',
+        component: CadastroMalhaComponent
+      },
+      {
         path: 'home',
         component: ComponentesExternosComponent,
         children: [
           {
-            path: 'tela-inicial',
+            path: '',
             component: HomeComponent
           },
           {
@@ -54,10 +76,15 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
             component: HistoricoProducaoComponent
           },
           {
+<<<<<<< HEAD
             path: 'cadastro/funcionario', component: CadastroComponent
           },
           {
             path: 'cadastro/cliente', component: CadastroComponent
+=======
+            path: 'sacola',
+            component: SacolaComponent
+>>>>>>> d3f11d3134385f4b79193ac41eed37f9ad4176dd
           }
         ]
       },

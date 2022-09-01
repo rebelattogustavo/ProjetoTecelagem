@@ -15,24 +15,24 @@
             <div style="margin-right: 60px;">
                 <h6 *ngIf="this.tipo == 1">Produto</h6>
                 <h6 *ngIf="this.tipo == 2">Nome</h6>
-            <div class="centralizar">
-            <div class="ladoInput">
-                <div style="margin-left: 15px; margin-top: 4px;">
-                    <i class="bi bi-boxes" style="font-size: 20px;"></i>
+                <div class="centralizar">
+                    <div class="ladoInput">
+                        <div style="margin-left: 15px; margin-top: 4px;">
+                            <i class="bi bi-boxes" style="font-size: 20px;"></i>
+                        </div>
+                    </div>
+
+                    <input class="inputs" type="text">
                 </div>
             </div>
-            
-            <input class="inputs" type="text">
+            <div>
+                <h6 style="margin-left: 40px;">Quantidade</h6>
+                <div class="centralizar">
+                    <h3 style="margin-left: 20px;">+</h3>
+                    <input class="quantidade" placeholder="" type="text">
+                    <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
+                </div>
             </div>
-        </div>
-        <div>
-            <h6 style="margin-left: 40px;">Quantidade</h6>
-            <div class="centralizar">
-            <h3 style="margin-left: 20px;">+</h3>
-            <input class="quantidade" placeholder="" type="text">
-            <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
-        </div>
-        </div>
         </div>
 
 
@@ -40,69 +40,74 @@
             <div style="margin-right: 60px;">
                 <h6 *ngIf="this.tipo == 1">Fornecedor</h6>
                 <h6 *ngIf="this.tipo == 2">Peso</h6>
-            <div class="centralizar">
-            <div class="ladoInput" >
-                <div style="margin-left: 15px; margin-top: 4px;">
-                    <i class="bi bi-boxes" style="font-size: 20px;"></i>
+                <div class="centralizar">
+                    <div class="ladoInput">
+                        <div style="margin-left: 15px; margin-top: 4px;">
+                            <i class="bi bi-boxes" style="font-size: 20px;"></i>
+                        </div>
+                    </div>
+
+                    <input class="inputs" type="text">
                 </div>
             </div>
-            
-            <input class="inputs" type="text">
+            <div>
+                <h6 style="margin-left: 63px;">Valor</h6>
+                <div class="centralizar">
+                    <h3 style="margin-left: 20px;">+</h3>
+                    <input class="quantidade" placeholder="" type="text">
+                    <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
+                </div>
             </div>
-        </div>
-        <div>
-            <h6 style="margin-left: 63px;">Valor</h6>
-            <div class="centralizar">
-            <h3 style="margin-left: 20px;">+</h3>
-            <input class="quantidade" placeholder="" type="text">
-            <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
-        </div>
-        </div>
         </div>
         <div class="centralizar" style="margin-top: 5px;" *ngIf="this.tipo == 1">
             <div style="margin-left: 60px;">
-            <div style="margin-right: 60px;">
-                <h6>Descrição</h6>
-                <textarea class="Desc"></textarea>
-        </div>
-        
-    </div>
-    </div>
-    <div class="centralizar" style="margin-top: 10px; margin-bottom: 40px;" *ngIf="this.tipo == 2">
-        <div style="margin-right: 60px;">
-            <h6 >Fornecedor</h6>
-        <div class="centralizar">
-        <div class="ladoInput" >
-            <div style="margin-left: 15px; margin-top: 4px;">
-                <i class="bi bi-boxes" style="font-size: 20px;"></i>
+                <div style="margin-right: 60px;">
+                    <h6>Descrição</h6>
+                    <textarea class="Desc"></textarea>
+                </div>
+
             </div>
         </div>
-        
-        <input class="inputs" type="text">
+        <div class="centralizar" style="margin-top: 10px; margin-bottom: 40px;" *ngIf="this.tipo == 2">
+            <div style="margin-right: 60px;">
+                <h6>Fornecedor</h6>
+                <div class="centralizar">
+                    <div class="ladoInput">
+                        <div style="margin-left: 15px; margin-top: 4px;">
+                            <i class="bi bi-boxes" style="font-size: 20px;"></i>
+                        </div>
+                    </div>
+
+                    <input class="inputs" type="text">
+                </div>
+            </div>
+            <div>
+                <h6 style="margin-left: 25px;">Rolos por caixa</h6>
+                <div class="centralizar">
+                    <h3 style="margin-left: 20px;">+</h3>
+                    <input class="quantidade" placeholder="" type="text">
+                    <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
+                </div>
+            </div>
+        </div>
+        <div class="centralizar" style="margin-top: 20px;">
+            <div>
+                <div class="centralizar">
+                    <h6>Nota Fiscal</h6>
+                </div>
+
+                <button class="nota">
+                    <img src="./../../assets/envio.png" style="height: 25px;">
+                    Adicionar Arquivo
+                </button>
+            </div>
+            <div>
+                <button class="nota" style="margin-left: 100px; margin-top: 25px;">
+                    Enviar
+                </button>
+            </div>
         </div>
     </div>
-    <div>
-        <h6 style="margin-left: 25px;">Rolos por caixa</h6>
-        <div class="centralizar">
-        <h3 style="margin-left: 20px;">+</h3>
-        <input class="quantidade" placeholder="" type="text">
-        <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
-    </div>
-    </div>
-</div>
-    <div class="centralizar" style="margin-top: 20px;">
-        <div>
-            <div class="centralizar">
-            <h6>Nota Fiscal</h6>
-        </div>
-        
-            <button class="nota">
-                 <img src="./../../assets/envio.png" style="height: 25px;"> 
-                 Adicionar Arquivo
-            </button>
-    </div>
-</div>
-</div>
 
 
 </div>

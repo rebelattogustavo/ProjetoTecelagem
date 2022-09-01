@@ -9,8 +9,8 @@
 
 .modais{
     background-color: white;
-    height: 500px;
-    width: 600px;
+    height: 550px;
+    width: 550px;
     border-radius: 15px;
 }
 
@@ -49,6 +49,7 @@
     box-shadow: 2px 1px 7px 1px rgba(0, 0, 0, 0.479);
     border-radius: 10px;
     outline: none;
+    
 }
 
 .Desc{
@@ -69,4 +70,31 @@
     border-radius: 10px;
     color: white;
     
+}
+
+.selecionar{
+    width: 250px;
+    height: 35px;
+    border: none;
+    box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.479);
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+}
+
+.adicionar{
+    width: 50px;
+    height: 40px;
+    border: none;
+    background-color: #73C6A8;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.selecionados{
+    box-shadow: 2px 1px 7px 1px rgba(0, 0, 0, 0.479);
+    border-radius: 10px;
+    width: 500px;
+    height: 100px;
 }
