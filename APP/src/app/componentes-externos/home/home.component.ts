@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(private router: Router) { }
+  stateDetalhes = false
   tipoModalEntrada = 1
   fio = []
   malha = []
@@ -17,6 +18,9 @@ export class HomeComponent implements OnInit {
 
   lista = "";
 
+  openModalDetalhes(){
+    this.stateDetalhes = !this.stateDetalhes
+  }
   ngOnInit(): void {
     this.lista = this.router.url.split("/", 3)[2];
   }
