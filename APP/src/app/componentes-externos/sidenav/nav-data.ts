@@ -33,5 +33,15 @@ export const navbarData = [
         routeLink: '/home/historico-producao',
         icon: 'bi bi-clock-history',
         label: 'Histórico produção'
+    },
+    {
+        routeLink: '/home/cadastro/cliente',
+        icon: "bi bi-people-fill",
+        label: "Cadastro de Clientes"
+    },
+    {
+        routeLink: '/home/cadastro/funcionario',
+        icon: "bi bi-person-badge",
+        label: "Cadastro de Funcionário"
     }
 ];

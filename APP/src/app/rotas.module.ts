@@ -21,10 +21,6 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
         component: TelaLoginComponent
       },
       {
-        path: 'cadastro',
-        component: CadastroComponent
-      },
-      {
         path: 'entrada',
         component: EntradaComponent
       },
@@ -48,7 +44,7 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
           }, {
             path: 'malha',
             component: HomeComponent
-          }, 
+          },
           {
             path: 'historico-entrada',
             component: HistoricoEntradaComponent
@@ -56,6 +52,12 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
           {
             path: 'historico-producao',
             component: HistoricoProducaoComponent
+          },
+          {
+            path: 'cadastro/funcionario', component: CadastroComponent
+          },
+          {
+            path: 'cadastro/cliente', component: CadastroComponent
           }
         ]
       },

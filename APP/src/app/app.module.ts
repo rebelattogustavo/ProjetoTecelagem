@@ -39,7 +39,8 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
     ItensComponent,
     DetalhesMaquinaComponent,
     HistoricoEntradaComponent,
-    HistoricoProducaoComponent
+    HistoricoProducaoComponent,
+
   ],
   imports: [
     BrowserModule,
