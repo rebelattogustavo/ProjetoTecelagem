@@ -1,8 +1,24 @@
 const crud = require("../../crud");
 
-const cadastrarMaquinaMalha = async ( maquinaId, malhaId, id) => {
+const cadastrarMaquinaMalha = async (maquinaId, malhaId, id) => {
     let maquinaMalha;
+    let maquina = await crud.buscarPorId("maquina", maquinaId);
+    if (maquina.naoEncontrado) {
+        return { "Erro": "Máquina não encontrada!" }
+    }
+
+    let malha = await crud.buscarPorId("malha", malhaId);
+    if (malha.naoEncontrado) {
+        return { "Erro": "Malha não encontrada!" }
+    }
+
     if (id) {
+        let checaMaquinaMalha = await buscarMaquinaMalhaId(id);
+
+        if (checaMaquinaMalha.naoEncontrado) {
+            return { "Erro": "Máquina não encontrada!" }
+        }
+
         maquinaMalha = await crud.cadastrar("maquina-malha", id, { maquinaId, malhaId });
     } else {
         maquinaMalha = await crud.cadastrar("maquina-malha", null, { maquinaId, malhaId });
