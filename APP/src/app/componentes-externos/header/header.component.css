@@ -1,34 +1,18 @@
 .header {
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
-    width: 100%;
     align-items: center;
+    width: 100%;
 }
 
 .blue {
-    background-color: #12474E;
-    position: sticky;
     top: 0;
+    position: sticky;
+    background-color: #12474E;
 }
-
-.imagem-logo {
-    width: 40px;
-    position: absolute;
-    top: -25px;
-    left: 40px;
-}
-
-.span-logo {
-    position: absolute;
-    top: -13px;
-    left: 57px;
-}
-
-.divImg {
-    display: flex;
-    width: 20%;
-    justify-content: space-evenly;
-    align-items: center;
+.imagem-logo{
+    margin: 0 1rem 0 0;
 }
 
 .sacola:hover {

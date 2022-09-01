@@ -8,9 +8,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class DetalhesMaquinaComponent implements OnInit {
     @Output() statusModalDetalhes = new EventEmitter;
   constructor() { }
-    close(){
-        this.statusModalDetalhes.emit()
-    }
+  close(){
+      this.statusModalDetalhes.emit()
+  }
   ngOnInit(): void {
   }
 
