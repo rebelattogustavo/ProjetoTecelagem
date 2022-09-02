@@ -45,7 +45,7 @@ import { SacolaComponent } from './sacola/sacola.component';
         component: ComponentesExternosComponent,
         children: [
           {
-            path: '',
+            path: 'tela-inicial',
             component: HomeComponent
           },
           {
@@ -68,6 +68,12 @@ import { SacolaComponent } from './sacola/sacola.component';
           {
             path: 'historico-producao',
             component: HistoricoProducaoComponent
+          },
+          {
+            path: 'cadastro/funcionario', component: CadastroComponent
+          },
+          {
+            path: 'cadastro/cliente', component: CadastroComponent
           },
           {
             path: 'sacola',
