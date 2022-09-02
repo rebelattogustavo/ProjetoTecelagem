@@ -11,7 +11,12 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) { }
   stateDetalhes = false
   tipoModalEntrada = 1
-  fio = []
+
+  fio = [{
+    codigo: 1,
+    descricao: "Fio Bom"
+  }]
+
   malha = [
     {
       codigo: 1,
@@ -19,35 +24,87 @@ export class HomeComponent implements OnInit {
       valor: 200
     }
   ]
-  maquina = []
-  itens = []
 
-  fiosFiltrados = [];
+  maquina = [
+    {
+      codigo: 0, nome: "", marca: "", ano_fabricacao: "", ano_compra: "", valor_compra: 0, rpm: 0, qtd_agulha: 0, qtd_platina: 0, qtd_gaiolas: 0, qtd_cones: 0
+    }
+  ]
+
+  itens = [{
+    codigo: 0, tipo: "", quantidade: 0
+  }]
+
+
+
+  fiosFiltrados = [{
+    codigo: 1,
+    descricao: "Fio Bom"
+  }];
+
   malhasFiltradas = [{
     codigo: 1,
     descricao: "Malha Boa",
     valor: 200
   }];
-  maquinasFiltradas = [];
-  itensFiltrados = [];
+
+  maquinasFiltradas = [
+    {
+      codigo: 0, nome: "", marca: "", ano_fabricacao: "", ano_compra: "", valor_compra: 0, rpm: 0, qtd_agulha: 0, qtd_platina: 0, qtd_gaiolas: 0, qtd_cones: 0
+    }
+  ];
+
+  itensFiltrados = [
+    {codigo: 0, tipo: "", quantidade: 0}
+  ];
+
+
 
   textPesquisa = "";
 
   lista = "";
 
-  openModalDetalhes(){
+  openModalDetalhes() {
     this.stateDetalhes = !this.stateDetalhes
   }
   ngOnInit(): void {
     this.lista = this.router.url.split("/", 3)[2];
+
+    this.malha = [];
+    this.fio = [];
+    this.itens = [];
+    this.maquina = [];
+
+    //Preencher as listas com os dados do banco
+
     this.fiosFiltrados = this.fio;
     this.malhasFiltradas = this.malha;
     this.maquinasFiltradas = this.maquina;
     this.itensFiltrados = this.itens;
   }
   stateEntrada = false
-  changeModalEntrada(number: number){
+  changeModalEntrada(number: number) {
     this.tipoModalEntrada = number
     this.stateEntrada = !this.stateEntrada
+  }
+
+  filtrar() {
+    var self = this;
+
+    this.fiosFiltrados = this.fio.filter(function (a) {
+      return a.descricao.toLowerCase().indexOf(self.textPesquisa.toLowerCase()) > -1
+    })
+
+    this.malhasFiltradas = this.malha.filter(function (a) {
+      return a.descricao.toLowerCase().indexOf(self.textPesquisa.toLowerCase()) > -1
+    })
+
+    this.maquinasFiltradas = this.maquina.filter(function (a) {
+      return a.nome.toLowerCase().indexOf(self.textPesquisa.toLowerCase()) > -1
+    })
+
+    this.itensFiltrados = this.itens.filter(function (a) {
+      return a.tipo.toLowerCase().indexOf(self.textPesquisa.toLowerCase()) > -1
+    })
   }
 }

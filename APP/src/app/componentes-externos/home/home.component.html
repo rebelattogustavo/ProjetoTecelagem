@@ -11,7 +11,7 @@
             <div class="input-icon">
                 <i class="bi bi-search"></i>
             </div>
-            <input placeholder="Pesquisar" type="text" [(ngModel)]="textPesquisa">
+            <input placeholder="Pesquisar" type="text" [(ngModel)]="textPesquisa" (keyup)="filtrar()">
         </div>
         <button class="entrada" *ngIf="lista == 'itens'" (click)="changeModalEntrada(1)">Entrada Itens</button>
         <button class="entrada" *ngIf="lista == 'fio'" (click)="changeModalEntrada(2)">Entrada Fios</button>
@@ -26,24 +26,24 @@
         *ngIf="stateEntrada"></app-entrada>
 
     <div *ngIf="lista == 'tela-inicial'" class="container-fios row">
-        <app-malha *ngFor="let f of malha" class="col-md-3 col-sm-4" [malha]="f"></app-malha>
-        <app-maquina *ngFor="let f of maquina" class="col-md-3 col-sm-4" [maquina]="f"></app-maquina>
-        <app-fio *ngFor="let f of fio" class="col-md-3 col-sm-4" [fio]="f"></app-fio>
-        <app-itens *ngFor="let f of itens" class="col-md-3 col-sm-4" [item]="f"></app-itens>
+        <app-malha *ngFor="let f of malhasFiltradas" class="col-md-3 col-sm-4" [malha]="f"></app-malha>
+        <app-maquina *ngFor="let f of maquinasFiltradas" class="col-md-3 col-sm-4" [maquina]="f"></app-maquina>
+        <app-fio *ngFor="let f of fiosFiltrados" class="col-md-3 col-sm-4" [fio]="f"></app-fio>
+        <app-itens *ngFor="let f of itensFiltrados" class="col-md-3 col-sm-4" [item]="f"></app-itens>
     </div>
 
     <div *ngIf="lista == 'fio'" class="container-fios row">
-        <app-fio *ngFor="let f of fio" class="col-md-3 col-sm-4" [fio]="f"></app-fio>
+        <app-fio *ngFor="let f of fiosFiltrados" class="col-md-3 col-sm-4" [fio]="f"></app-fio>
     </div>
 
     <div *ngIf="lista == 'malha'" class="container-fios row">
-        <app-malha *ngFor="let f of malha" class="col-md-3 col-sm-4" [malha]="f"></app-malha>
+        <app-malha *ngFor="let f of malhasFiltradas" class="col-md-3 col-sm-4" [malha]="f"></app-malha>
     </div>
 
     <div *ngIf="lista == 'maquina'" class="container-fios row">
-        <app-maquina *ngFor="let f of maquina" class="col-md-3 col-sm-4" [maquina]="f"></app-maquina>
+        <app-maquina *ngFor="let f of maquinasFiltradas" class="col-md-3 col-sm-4" [maquina]="f"></app-maquina>
     </div>
 
     <div *ngIf="lista == 'itens'" class="container-fios row">
-        <app-itens *ngFor="let f of itens" class="col-md-3 col-sm-4" [item]="f"></app-itens>
+        <app-itens *ngFor="let f of itensFiltrados" class="col-md-3 col-sm-4" [item]="f"></app-itens>
     </div>
