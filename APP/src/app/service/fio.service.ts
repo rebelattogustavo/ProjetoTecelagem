@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
     providedIn: 'root',
 })
-export class ItensService {
+export class FioService {
 
     constructor(private http: HttpClient) { }
 
