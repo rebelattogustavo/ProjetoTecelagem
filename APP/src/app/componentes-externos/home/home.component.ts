@@ -12,12 +12,22 @@ export class HomeComponent implements OnInit {
   stateDetalhes = false
   tipoModalEntrada = 1
   fio = []
-  malha = []
+  malha = [
+    {
+      codigo: 1,
+      descricao: "Malha Boa",
+      valor: 200
+    }
+  ]
   maquina = []
   itens = []
 
   fiosFiltrados = [];
-  malhasFiltradas = [];
+  malhasFiltradas = [{
+    codigo: 1,
+    descricao: "Malha Boa",
+    valor: 200
+  }];
   maquinasFiltradas = [];
   itensFiltrados = [];
 
@@ -30,6 +40,10 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
     this.lista = this.router.url.split("/", 3)[2];
+    this.fiosFiltrados = this.fio;
+    this.malhasFiltradas = this.malha;
+    this.maquinasFiltradas = this.maquina;
+    this.itensFiltrados = this.itens;
   }
   stateEntrada = false
   stateFio = false

@@ -23,9 +23,13 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
 import { SacolaComponent } from './sacola/sacola.component';
 
 import { HttpClientModule } from  '@angular/common/http';
+<<<<<<< HEAD
 import { CadastroFioComponent } from './cadastroFio/cadastroFio.component';
 import { cadastroItemComponent } from './cadastroItem/cadastroItem.component';
 import { CadastroMalhaComponent } from './cadastroMalha/cadastroMalha.component';
+=======
+import CheckLogged from './checklogged';
+>>>>>>> 102f61f0601ca95eb52eb06f418ab47244c3f770
 
 @NgModule({
   declarations: [
@@ -57,7 +61,7 @@ import { CadastroMalhaComponent } from './cadastroMalha/cadastroMalha.component'
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CheckLogged],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
