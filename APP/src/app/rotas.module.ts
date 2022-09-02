@@ -16,6 +16,7 @@ import CheckLogged from './checklogged';
 import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
 import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
 import { SacolaComponent } from './sacola/sacola.component';
+import { cadastroMaquinasComponent } from './cadastro-maquinas/cadastro-maquinas.component';
 
 
 
@@ -27,6 +28,10 @@ import { SacolaComponent } from './sacola/sacola.component';
       {
         path: '',
         component: TelaLoginComponent
+      },
+      {
+        path: 'cadastroMaquinas',
+        component: cadastroMaquinasComponent
       },
       {
         path: 'cadastro',
