@@ -14,10 +14,10 @@ export class EntradaComponent implements OnInit {
     this.changeModal.emit();
   }
 
-  quantidade = 0;
+  quantidade = 1;
   fornecedor = '';
-  peso = 0;
-  valor = 0;
+  peso = 1;
+  valor = 1;
   descricao = '';
   rolosCaixa = 0;
   nome = "";
@@ -44,6 +44,36 @@ export class EntradaComponent implements OnInit {
       // })
     } else {
       
+    }
+  }
+
+  mudarQtd(opcao: number) {
+    if(opcao == 1) {
+      if(this.quantidade > 1) {
+        this.quantidade--;
+      }
+    } else {
+      this.quantidade++;
+    }
+  }
+
+  mudarValor(opcao: number) {
+    if(opcao == 1) {
+      if(this.valor > 1) {
+        this.valor--;
+      }
+    } else {
+      this.valor++;
+    }
+  }
+
+  mudarRolos(opcao: number) {
+    if(opcao == 1) {
+      if(this.rolosCaixa > 1) {
+        this.rolosCaixa--;
+      }
+    } else {
+      this.rolosCaixa++;
     }
   }
 

@@ -28,9 +28,9 @@
         <div>
             <h6 style="margin-left: 40px;">Quantidade</h6>
             <div class="centralizar">
-            <h3 style="margin-left: 20px;">+</h3>
+            <h3 class="sinais" style="margin-left: 20px;" (click)="mudarQtd(1)">-</h3>
             <input class="quantidade" placeholder="" type="text" [(ngModel)]="quantidade">
-            <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
+            <h3 class="sinais" style="margin-left: 20px; font-size: 35px;" (click)="mudarQtd(2)">+</h3>
         </div>
         </div>
         </div>
@@ -53,9 +53,9 @@
         <div>
             <h6 style="margin-left: 63px;">Valor</h6>
             <div class="centralizar">
-            <h3 style="margin-left: 20px;">+</h3>
+            <h3 class="sinais" style="margin-left: 20px;" (click)="mudarValor(1)">-</h3>
             <input class="quantidade" placeholder="" type="text" [(ngModel)]="valor">
-            <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
+            <h3 class="sinais" style="margin-left: 20px; font-size: 35px;" (click)="mudarValor(2)">+</h3>
         </div>
         </div>
         </div>
@@ -84,9 +84,9 @@
     <div>
         <h6 style="margin-left: 25px;">Rolos por caixa</h6>
         <div class="centralizar">
-        <h3 style="margin-left: 20px;">+</h3>
+        <h3 class="sinais" style="margin-left: 20px;" (click)="mudarRolos(1)">+</h3>
         <input class="quantidade" placeholder="" type="text" [(ngModel)]="rolosCaixa">
-        <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
+        <h3 class="sinais" style="margin-left: 20px; font-size: 35px;" (click)="mudarRolos(2)">-</h3>
     </div>
     </div>
 </div>
