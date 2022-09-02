@@ -16,6 +16,13 @@ export class HomeComponent implements OnInit {
   maquina = []
   itens = []
 
+  fiosFiltrados = [];
+  malhasFiltradas = [];
+  maquinasFiltradas = [];
+  itensFiltrados = [];
+
+  textPesquisa = "";
+
   lista = "";
 
   openModalDetalhes(){
