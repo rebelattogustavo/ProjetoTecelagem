@@ -23,13 +23,19 @@
                 Cadastrar
             </h1>
             <input type="text" class="inputsCadastro" placeholder="Nome" [(ngModel)]="usuario">
-            <input type="email" class="inputsCadastro" placeholder="Email" [(ngModel)]="email">
+            <input *ngIf="tipoTela" type="text" class="inputsCadastro" placeholder="CNPJ" [(ngModel)]="cnpj">
+            <input *ngIf="tipoTela == false" type="text" class="inputsCadastro" placeholder="CPF" [(ngModel)]="cpf">
+            <input *ngIf="tipoTela" type="date" class="inputsCadastro" placeholder="Data de nascimento"
+                [(ngModel)]="dataNascimento">
+            <input *ngIf="tipoTela" type="text" class="inputsCadastro" placeholder="Turno" [(ngModel)]="turno">
             <div class="inputsCadastro">
-                <input type="password" class="inputsCadastro2" placeholder="Senha" id="inputSenha1" [(ngModel)]="senhaUser">
+                <input type="password" class="inputsCadastro2" placeholder="Senha" id="inputSenha1"
+                    [(ngModel)]="senhaUser">
                 <img src="../../../assets/olho-fechado.png" class="imgOlho" (click)="trocarOlho(1)" id="olho1">
             </div>
             <div class="inputsCadastro">
-                <input type="password" class="inputsCadastro2" placeholder="Confirmar Senha" id="inputSenha2" [(ngModel)]="repetirSenhaUser">
+                <input type="password" class="inputsCadastro2" placeholder="Confirmar Senha" id="inputSenha2"
+                    [(ngModel)]="repetirSenhaUser">
                 <img src="../../../assets/olho-fechado.png" class="imgOlho" (click)="trocarOlho(2)" id="olho2">
             </div>
             <button id="cadastrar" (click)="cadastrar()">
