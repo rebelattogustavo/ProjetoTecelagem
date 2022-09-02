@@ -32,7 +32,6 @@ export class SacolaComponent implements OnInit {
   listaSacola = [
     {
       codigo: 1,
-      nome: "Camisa",
       descricao: "Camisa Boa",
       quantidade: 1,
       valor: 20
@@ -54,6 +53,7 @@ export class SacolaComponent implements OnInit {
   excluirMalha(index: number) {
     this.listaSacola.splice(index, 1);
     this.calculaValor();
+    localStorage.setItem('carrinho', JSON.stringify(this.listaSacola));
   }
 
   modificaQtd(opcao: number, index: number) {
@@ -67,6 +67,7 @@ export class SacolaComponent implements OnInit {
         this.listaSacola[index].quantidade++;
         break;
     }
+    localStorage.setItem('carrinho', JSON.stringify(this.listaSacola));
     this.calculaValor();
   }
 
