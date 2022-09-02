@@ -10,9 +10,10 @@
 
 .modais {
     background-color: white;
-    height: 430px;
+    height: auto;
     width: 550px;
     border-radius: 15px;
+    padding: 0 0 5vh 0;
 }
 
 .linha {
