@@ -12,13 +12,13 @@ router.get('/:id', async (req, res) =>{
 });
 
 router.post('/', async (req, res) => {
-    const { arquivo} = req.body;
-    res.json(await notaFiscalHandler.cadastrarNotaFiscal(arquivo));
+    const { numero} = req.body;
+    res.json(await notaFiscalHandler.cadastrarNotaFiscal(numero));
 });
 
 router.put('/:id', async (req, res) =>{
-    const { arquivo } = req.body;
-    res.json(await notaFiscalHandler.cadastrarNotaFiscal(arquivo, req.params.id));
+    const { numero } = req.body;
+    res.json(await notaFiscalHandler.cadastrarNotaFiscal(numero, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {
