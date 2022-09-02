@@ -22,6 +22,8 @@ export class EntradaComponent implements OnInit {
   rolosCaixa = 0;
   nome = "";
 
+  notaFiscal = "";
+
   //Inserir um novo item
   //Inserir a entrada_item
   //Verificar se o item existe
