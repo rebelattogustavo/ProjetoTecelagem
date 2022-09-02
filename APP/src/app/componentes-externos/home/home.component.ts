@@ -32,6 +32,23 @@ export class HomeComponent implements OnInit {
     this.lista = this.router.url.split("/", 3)[2];
   }
   stateEntrada = false
+  stateFio = false
+  stateCadastro = false
+  stateMaquina = false
+  stateMalha = false
+  stateItem = false
+  changeModalCadastroMalha(){
+    this.stateMalha = !this.stateMalha
+  }
+  changeModalCadastroFio(){
+    this.stateFio = !this.stateFio
+  }
+  changeModalCadastroItem(){
+    this.stateItem = !this.stateItem
+  }
+  changeModalCadastroMaquina(){
+    this.stateMaquina = !this.stateMaquina
+  }
   changeModalEntrada(number: number){
     this.tipoModalEntrada = number
     this.stateEntrada = !this.stateEntrada

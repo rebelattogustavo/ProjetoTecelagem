@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cadastroMalha',
@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroMalhaComponent implements OnInit {
 
+  @Output() modalCadastroMalha = new EventEmitter()
   constructor() { }
-
+  fechaModal(){
+    this.modalCadastroMalha.emit()
+  }
   ngOnInit(): void {
 
 
