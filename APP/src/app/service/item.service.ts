@@ -10,7 +10,15 @@ export class ItensService {
   constructor(private http: HttpClient) {}
 
   cadastrarItem(body: {}) {
-    return this.http.post('http://localhost:8080/api/item', body).subscribe();
+    this.http.post('http://localhost:8080/api/item', body).subscribe();
+  }
+
+  buscarItens(){
+
+  }
+
+  cadastrarEntradaMaterial(body: {}){
+    return this.http.post('http://localhost:8080/api/entrada-materiais', body).subscribe();
   }
 
 }

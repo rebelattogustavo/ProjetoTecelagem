@@ -20,15 +20,28 @@ export class EntradaComponent implements OnInit {
   valor = 0;
   descricao = '';
   rolosCaixa = 0;
+  nome = "";
+
+  //Inserir um novo item
+  //Inserir a entrada_item
+  //Verificar se o item existe
+  //Caso existir, somar a quantidade
+  //Cadastrar nota fiscal
 
   entradaItens() {
     if (this.tipo == 1) {
-      this.itemsService.cadastrarItem({
-        descricao: this.descricao,
+      console.log(this.itemsService.cadastrarItem({
         quantidade: this.quantidade,
-        valor: this.valor,
-        fornecedor: this.fornecedor
-      });
+        tipo: this.nome
+      }));
+      // this.itemsService.cadastrarEntradaMaterial({
+      //   descricao: this.descricao,
+      //   fornecedorId: this.fornecedor,
+      //   // itemId: novoItem.id,
+      //   // notaFiscalId: notaFiscal.id,
+      //   quantidade: this.quantidade,
+      //   valorTotalGasto: this.valor
+      // })
     } else {
       
     }
