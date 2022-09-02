@@ -45,7 +45,7 @@ import { SacolaComponent } from './sacola/sacola.component';
         component: ComponentesExternosComponent,
         children: [
           {
-            path: '',
+            path: 'tela-inicial',
             component: HomeComponent
           },
           {
