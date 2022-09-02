@@ -251,7 +251,7 @@ export class TelaLoginComponent implements OnInit {
     if(this.usuario == "" || this.senha == ""){
       alert('É necessario preencher todos os campos!');
     }else{
-    // let usuarios =  this.usuariosService.getListaUser().find(lista => lista.usuario == this.usuario && lista.senha == this.senha);
+    // let usuarios =  this.usuariosService.buscarClientes().find(lista => lista.usuario == this.usuario && lista.senha == this.senha);
     // if(usuarios){
     //   localStorage.setItem('USUARIO', this.usuario);
     //   localStorage.setItem('SENHA', this.senha);
