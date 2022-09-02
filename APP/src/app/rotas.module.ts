@@ -73,6 +73,14 @@ import { SacolaComponent } from './sacola/sacola.component';
           {
             path: 'sacola',
             component: SacolaComponent
+          },
+          {
+            path: 'cadastro/cliente',
+            component: CadastroComponent
+          },
+          {
+            path: 'cadastro/funcionario',
+            component: CadastroComponent
           }
         ]
       },
