@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
   ];
 
   itensFiltrados = [
-    {codigo: 0, tipo: "", quantidade: 0}
+    { codigo: 0, tipo: "", quantidade: 0 }
   ];
 
 
@@ -82,7 +82,26 @@ export class HomeComponent implements OnInit {
     this.maquinasFiltradas = this.maquina;
     this.itensFiltrados = this.itens;
   }
-  stateEntrada = false
+
+  stateFio = false
+  stateCadastro = false
+  stateMaquina = false
+  stateMalha = false
+  stateItem = false
+  stateEntrada = false;
+
+  changeModalCadastroMalha() {
+    this.stateMalha = !this.stateMalha
+  }
+  changeModalCadastroFio() {
+    this.stateFio = !this.stateFio
+  }
+  changeModalCadastroItem() {
+    this.stateItem = !this.stateItem
+  }
+  changeModalCadastroMaquina() {
+    this.stateMaquina = !this.stateMaquina
+  }
   changeModalEntrada(number: number) {
     this.tipoModalEntrada = number
     this.stateEntrada = !this.stateEntrada

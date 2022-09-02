@@ -15,15 +15,18 @@
         </div>
         <button class="entrada" *ngIf="lista == 'itens'" (click)="changeModalEntrada(1)">Entrada Itens</button>
         <button class="entrada" *ngIf="lista == 'fio'" (click)="changeModalEntrada(2)">Entrada Fios</button>
-        <button class="cadastro" *ngIf="lista == 'fio'">Cadastro de Fio</button>
-        <button class="cadastro" *ngIf="lista == 'malha'">Cadastro de Malha</button>
-        <button class="cadastro" *ngIf="lista == 'maquina'">Cadastro de Máquina</button>
-        <button class="cadastro" *ngIf="lista == 'itens'">Cadastro de Item</button>
+        <button class="cadastro" *ngIf="lista == 'fio'" (click)="changeModalCadastroFio()" >Cadastro de Fio</button>
+        <button class="cadastro" *ngIf="lista == 'malha'" (click)="changeModalCadastroMalha()">Cadastro de Malha</button>
+        <button class="cadastro" *ngIf="lista == 'maquina'" (click)="changeModalCadastroMaquina()">Cadastro de Máquina</button>
+        <button class="cadastro" *ngIf="lista == 'itens'" (click)="changeModalCadastroItem()">Cadastro de Item</button>
     </div>
   
 
     <app-entrada [tipo]="tipoModalEntrada" (changeModal)="changeModalEntrada(1)" style="position: fixed; top:0;left:0"
         *ngIf="stateEntrada"></app-entrada>
+    <app-cadastroFio (modalCadastroFio)="changeModalCadastroFio()" *ngIf="stateFio" style="position: fixed; top:0;left:0"></app-cadastroFio>
+    <app-cadastroMalha (modalCadastroMalha)="changeModalCadastroMalha()" *ngIf="stateMalha" style="position: fixed; top:0;left:0"></app-cadastroMalha>
+    <app-cadastroItem (modalCadastroItem)="changeModalCadastroItem()" *ngIf="stateItem" style="position: fixed; top:0;left:0"></app-cadastroItem>
 
     <div *ngIf="lista == 'tela-inicial'" class="container-fios row">
         <app-malha *ngFor="let f of malhasFiltradas" class="col-md-3 col-sm-4" [malha]="f"></app-malha>

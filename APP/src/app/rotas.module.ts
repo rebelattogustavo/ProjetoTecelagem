@@ -10,7 +10,7 @@ import { EntradaComponent } from './entrada/entrada.component';
 // import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
 // import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
 import { cadastroItemComponent } from './cadastroItem/cadastroItem.component';
-
+import CheckLogged from './checklogged';
 
 
 import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
@@ -43,10 +43,11 @@ import { SacolaComponent } from './sacola/sacola.component';
       {
         path: 'home',
         component: ComponentesExternosComponent,
-        children: [
+        canActivate: [CheckLogged], children: [
           {
             path: 'tela-inicial',
-            component: HomeComponent
+            component: HomeComponent,
+            canActivate: []
           },
           {
             path: 'maquina',
@@ -70,14 +71,16 @@ import { SacolaComponent } from './sacola/sacola.component';
             component: HistoricoProducaoComponent
           },
           {
-            path: 'cadastro/funcionario', component: CadastroComponent
-          },
-          {
-            path: 'cadastro/cliente', component: CadastroComponent
-          },
-          {
             path: 'sacola',
             component: SacolaComponent
+          },
+          {
+            path: 'cadastro/cliente',
+            component: CadastroComponent
+          },
+          {
+            path: 'cadastro/funcionario',
+            component: CadastroComponent
           }
         ]
       },
