@@ -13,6 +13,10 @@
     min-height: 140px;
 }
 
+.item:hover {
+    cursor: pointer;
+}
+
 .container-top-item{
     display: flex;
     justify-content: space-between;
@@ -124,4 +128,15 @@
     font-weight: bold;
     border: 1px solid black;
     float: right;
+    margin-left: 25px;
+}
+
+.botaoSacola {
+    float: right;
+    display: flex;
+    height: 50px;
+}
+
+.sacola:hover {
+    cursor: pointer;
 }

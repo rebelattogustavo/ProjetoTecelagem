@@ -35,6 +35,9 @@
             <p class="spanQtd">{{quantidade}}</p>
             <img (click)="modificaQtd(2)" src="../../assets/mais.png" class="botaoDiminuir"/>
         </div>
-        <button class="botaoVenda" (click)="vender()">Finalizar Venda</button>
+        <div class="botaoSacola">
+            <img src="../../assets/sacolaPreta.png" class="sacola" (click)="adicionaSacola()">
+            <button class="botaoVenda" (click)="vender()">Finalizar Venda</button>
+        </div>
     </div>
 </div>

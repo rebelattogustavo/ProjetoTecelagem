@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MalhaComponent implements OnInit {
 
-  @Input() malha = {codigo: 0, descricao: "", fornecedor: "", valor: 0};
+  @Input() malha = { codigo: 0, descricao: "", valor: 0 };
 
   constructor() { }
 
@@ -17,6 +17,8 @@ export class MalhaComponent implements OnInit {
   cliente = "";
   nota = "";
   quantidade = 1;
+
+  sacola = [{ codigo: 0, descricao: "a", valor: 3 }]
 
   ngOnInit(): void {
   }
@@ -30,8 +32,8 @@ export class MalhaComponent implements OnInit {
   }
 
   modificaQtd(opcao: number) {
-    if(opcao == 1) {
-      if(this.quantidade > 1) {
+    if (opcao == 1) {
+      if (this.quantidade > 1) {
         this.quantidade--;
       }
     } else {
@@ -40,12 +42,31 @@ export class MalhaComponent implements OnInit {
   }
 
   vender() {
-    //Fazer fetch do saída malhas
-    this.modalVenda = false;
+
+    if (typeof (this.quantidade) != 'number' || typeof (this.pesoTotal) != 'number') {
+      alert("OS tipos não são válidos!")
+    } else if (this.cliente == "") {
+      alert("Preencha o Cliente!")
+    } else if (this.nota == "") {
+      alert("Preencha a nota fiscal!");
+    } else {
+      //Fazer fetch do saída malhas
+      this.modalVenda = false;
+    }
   }
 
   getPreco(valor: number) {
     return valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+  }
+
+  adicionaSacola() {
+    this.modalVenda = false;
+    this.sacola = JSON.parse(localStorage.getItem('carrinho') as string) || [];
+    let malhaNova = {
+      codigo: this.malha.codigo, descricao: this.malha.descricao, valor: this.malha.valor, quantidade: this.quantidade
+    }
+    this.sacola.push(malhaNova);
+    localStorage.setItem('carrinho', JSON.stringify(this.sacola));
   }
 
 
