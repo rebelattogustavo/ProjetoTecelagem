@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { UsuariosService } from '../service/usuario.service';
 
 @Component({
   selector: 'app-tela-login',
@@ -30,7 +31,7 @@ export class TelaLoginComponent implements OnInit {
   olho2: number = 1;
   olho3: number = 1;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, private usuariosService: UsuariosService ) {
     if (localStorage.getItem('cadastro')) {
       localStorage.removeItem('cadastro');
       this.cadastro = 1;
@@ -38,12 +39,15 @@ export class TelaLoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     if (localStorage.getItem('usuario')) {
       this.navegacaoTipo();
     }
     if (this.cadastro == 1) {
       this.modalCadastro();
     }
+    localStorage.removeItem('USUARIO');
+    localStorage.removeItem('SENHA');
   }
 
   lembrar() {
@@ -240,9 +244,19 @@ export class TelaLoginComponent implements OnInit {
     }
   }
 
+  usuario = "";
+  senha = "";
   login() {
     //Fazer verificação de login com API
-    this.router.navigate(["home/maquina"])
+    let usuarios =  this.usuariosService.getListaUser().find(lista => lista.usuario == this.usuario && lista.senha == this.senha);
+    if(usuarios){
+      localStorage.setItem('USUARIO', this.usuario);
+      localStorage.setItem('SENHA', this.senha);
+      this.router.navigate(["home/tela-inicial"])
+    }else{
+      alert('Usuário não cadastrado!');
+    }
+    
   }
 
   navegacaoTipo() {

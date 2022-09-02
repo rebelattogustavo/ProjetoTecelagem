@@ -23,6 +23,7 @@ import { HistoricoProducaoComponent } from './historico-producao/historico-produ
 import { SacolaComponent } from './sacola/sacola.component';
 
 import { HttpClientModule } from  '@angular/common/http';
+import CheckLogged from './checklogged';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { HttpClientModule } from  '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CheckLogged],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
