@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,20 +9,33 @@ import { Router } from '@angular/router';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   olho1: number = 1;
   olho2: number = 1;
 
   usuario: string = "";
-  email: string = "";
+  cnpj: string = "";
+  cpf: string = "";
+  dataNascimento: Date = new Date();
+  turno: string = ""
+
   senhaUser: string = "";
   repetirSenhaUser: string = "";
 
   senhaIncorreta: number = 0;
   dadosIncorretos: number = 0;
-
+  rota = "";
+  tipoTela = false;
   ngOnInit() {
+    this.rota = "";
+    this.rota = this.router.url;
+    if (this.rota == '/home/cadastro/cliente') {
+      this.tipoTela = false
+    } else{
+      this.tipoTela = true
+    }
+    console.log(this.rota)
   }
 
   entrar() {
@@ -30,19 +44,19 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar() {
-    if(this.email && this.usuario && this.senhaUser) {
-      if(this.senhaUser == this.repetirSenhaUser && this.senhaUser != '' && this.senhaUser) {
+    if (this.cnpj && this.usuario && this.senhaUser) {
+      if (this.senhaUser == this.repetirSenhaUser && this.senhaUser != '' && this.senhaUser) {
         localStorage.setItem('cadastro', '1');
-  
+
         const user = {
           nome: this.usuario,
-          email: this.email,
+          cnpj: this.cnpj,
           senha: this.senhaUser,
           tipo: 0
         }
 
         //Usar serviço para cadastrar
-        this.router.navigate(['']); 
+        this.router.navigate(['']);
       } else {
         this.senhaIncorreta = 1;
         setTimeout(() => {
@@ -62,11 +76,11 @@ export class CadastroComponent implements OnInit {
     let divOlho: HTMLImageElement;
     let input2: HTMLInputElement
 
-    switch(input) {
+    switch (input) {
       case 1:
         divOlho = document.querySelector("#olho1") as HTMLImageElement;
         input2 = document.querySelector("#inputSenha1") as HTMLInputElement;
-        if(this.olho1 == 1) {
+        if (this.olho1 == 1) {
           this.olho1 = 0;
           divOlho.src = "../../../assets/olho-aberto.png";
           input2.type = 'text';
@@ -79,7 +93,7 @@ export class CadastroComponent implements OnInit {
       case 2:
         divOlho = document.querySelector("#olho2") as HTMLImageElement;
         input2 = document.querySelector("#inputSenha2") as HTMLInputElement
-        if(this.olho2 == 1) {
+        if (this.olho2 == 1) {
           this.olho2 = 0;
           divOlho.src = "../../../assets/olho-aberto.png";
           input2.type = 'text';
