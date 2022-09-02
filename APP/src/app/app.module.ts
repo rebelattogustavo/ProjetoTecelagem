@@ -26,6 +26,7 @@ import { HttpClientModule } from  '@angular/common/http';
 import { CadastroFioComponent } from './cadastroFio/cadastroFio.component';
 import { cadastroItemComponent } from './cadastroItem/cadastroItem.component';
 import { CadastroMalhaComponent } from './cadastroMalha/cadastroMalha.component';
+import { cadastroMaquinasComponent } from './cadastro-maquinas/cadastro-maquinas.component';
 import CheckLogged from './checklogged';
 
 @NgModule({
@@ -49,7 +50,8 @@ import CheckLogged from './checklogged';
     HomeComponent,
     CadastroFioComponent,
     cadastroItemComponent,
-    CadastroMalhaComponent
+    CadastroMalhaComponent,
+    cadastroMaquinasComponent
   ],
   imports: [
     BrowserModule,
