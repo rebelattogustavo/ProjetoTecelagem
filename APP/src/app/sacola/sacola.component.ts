@@ -31,7 +31,7 @@ export class SacolaComponent implements OnInit {
 
   listaSacola = [
     {
-      codigo: 1,
+      id: "1",
       descricao: "Camisa Boa",
       quantidade: 1,
       valor: 20

@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MalhaComponent implements OnInit {
 
-  @Input() malha = { codigo: 0, descricao: "", valor: 0 };
+  @Input() malha = { id: "0", descricao: "", valor: 0 };
 
   constructor() { }
 
@@ -18,7 +18,7 @@ export class MalhaComponent implements OnInit {
   nota = "";
   quantidade = 1;
 
-  sacola = [{ codigo: 0, descricao: "a", valor: 3 }]
+  sacola = [{ id: "0", descricao: "a", valor: 3 }]
 
   ngOnInit(): void {
   }
@@ -63,7 +63,7 @@ export class MalhaComponent implements OnInit {
     this.modalVenda = false;
     this.sacola = JSON.parse(localStorage.getItem('carrinho') as string) || [];
     let malhaNova = {
-      codigo: this.malha.codigo, descricao: this.malha.descricao, valor: this.malha.valor, quantidade: this.quantidade
+      id: this.malha.id, descricao: this.malha.descricao, valor: this.malha.valor, quantidade: this.quantidade
     }
     this.sacola.push(malhaNova);
     localStorage.setItem('carrinho', JSON.stringify(this.sacola));

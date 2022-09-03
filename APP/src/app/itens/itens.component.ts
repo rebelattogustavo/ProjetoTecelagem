@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ItensComponent implements OnInit {
 
-  @Input() item = {codigo: 0, tipo: "", quantidade: 0}
+  @Input() item = {id: 0, tipo: "", quantidade: 0}
 
   constructor() { }
 

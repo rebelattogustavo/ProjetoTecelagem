@@ -10,15 +10,23 @@ export class ItensService {
   constructor(private http: HttpClient) {}
 
   cadastrarItem(body: {}) {
-    this.http.post('https://tecelagem-back-end.vercel.app/api/item', body).subscribe();
+    return this.http.post('https://tecelagem-back-end.vercel.app/api/item', body);
   }
 
   buscarItens(){
-
+    return this.http.get('https://tecelagem-back-end.vercel.app/api/item');
   }
 
-  cadastrarEntradaMaterial(body: {}){
-    return this.http.post('https://tecelagem-back-end.vercel.app/api/entrada-materiais', body).subscribe();
+  buscarItem(id: String){
+    return this.http.get(`https://tecelagem-back-end.vercel.app/api/item/${id}`);
+  }
+
+  editarItem(id: String, body: {}){
+    return this.http.put(`https://tecelagem-back-end.vercel.app/api/item/${id}`, body);
+  }
+
+  deletarItem(id: String){
+    return this.http.delete(`https://tecelagem-back-end.vercel.app/api/item/${id}`);
   }
 
 }
