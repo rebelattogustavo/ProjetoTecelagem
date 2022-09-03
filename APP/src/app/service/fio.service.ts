@@ -9,7 +9,7 @@ export class FioService {
     constructor(private http: HttpClient) { }
 
     cadastrarFio(body: {}) {
-        return this.http.post('http://localhost:8080/api/fio', body);
+        return this.http.post('https://tecelagem-back-end.vercel.app/api/fio', body);
     }
 
     buscarFios() {

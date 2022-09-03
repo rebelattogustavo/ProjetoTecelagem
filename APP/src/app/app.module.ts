@@ -68,10 +68,21 @@ import { UsuariosService } from './service/usuario.service';
     cadastroItemComponent,
     CadastroMalhaComponent,
     cadastroMaquinasComponent,
+    
+    
+  ],
+  imports: [
+    BrowserModule,
+    RotasModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule
+  ],
+  providers: [CheckLogged,
     EntradaFioService,
     EntradaMateriais,
-    FioService,
     FioMalha,
+    FioService,
     Fornecedor,
     FuncionarioService,
     ItensService,
@@ -84,16 +95,7 @@ import { UsuariosService } from './service/usuario.service';
     NotaFiscalService,
     ProducaoService,
     SaidaMalhaService,
-    UsuariosService
-  ],
-  imports: [
-    BrowserModule,
-    RotasModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    HttpClientModule
-  ],
-  providers: [CheckLogged,FioService],
+    UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

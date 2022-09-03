@@ -20,7 +20,7 @@
                         </div>
                     </div>
 
-                    <input class="inputs" type="text">
+                    <input [(ngModel)]="nome" class="inputs" type="text">
                 </div>
             </div>
         </div>
@@ -29,14 +29,14 @@
             <div style="margin-left: 60px;">
                 <div style="margin-right: 60px;">
                     <h6>Descrição</h6>
-                    <textarea class="Desc"></textarea>
+                    <textarea [(ngModel)]="descricao" class="Desc"></textarea>
                 </div>
 
             </div>
         </div>
         <div class="centralizar" style="margin-top: 20px;">
             <div>
-                <button class="nota" style="margin-top: 25px;">
+                <button (click)="enviarCadastro()" class="nota" style="margin-top: 25px;">
                     Enviar
                 </button>
             </div>
