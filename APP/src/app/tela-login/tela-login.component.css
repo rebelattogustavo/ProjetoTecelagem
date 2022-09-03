@@ -132,6 +132,7 @@ label{
     border-radius: 5px;
     border: none;
     margin-top: 5%;
+    margin-bottom: 5%;
     font-family: 'Inter';
     box-shadow: 2px 2px 2px rgb(209, 207, 207);
 }

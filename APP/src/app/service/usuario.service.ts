@@ -1,30 +1,41 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+// import { Usuario } from '../shared/usuario.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosService {
 
-  constructor(private http: HttpClient) {}
+  constructor() { }
+  
+     lista = [
+    {nome: "Otavio", usuario: "otavio", senha: "123"},
+    {nome: "Vinicius", usuario: "vinicius", senha: "123"},
+    {nome: "Camilly", usuario: "camilly", senha: "123"},
+    {nome: "Felipe", usuario: "felipe", senha: "123"},
+    {nome: "Matheus", usuario: "matheus", senha: "123"},
+    {nome: "Eduarda", usuario: "eduarda", senha: "123"},
+    {nome: "Diego", usuario: "diego", senha: "123"},
+    {nome: "Gustavo", usuario: "gustavo", senha: "123"},
+  ]
 
-  cadastrarCliente(body: {}) {
-    return this.http.post('http://localhost:8080/api/cliente', body);
-  }
 
-  buscarClientes(){
-    return this.http.get('http://localhost:8080/api/cliente');
-  }
+  getListaUser(){
+    return this.lista
+ }
+ addUser(usuario: {nome: "", usuario: "", senha: ""}){
+  this.lista.push(usuario)
+  console.log(this.lista)
+ }
+//  setUser(usuario: string){
+//   let index =  this.lista.findIndex(listas => listas.usuario == usuario);
+//   let us = this.lista[index];
+//   let nome = us.nome;
+//   let nick = us.usuario;
+//   let senha = us.senha;
+//   let user = {nome, nick, senha};
+//   this.lista[index] = user;
+//   console.log(this.lista)
+//  }
 
-  buscarCliente(id: String){
-    return this.http.get(`http://localhost:8080/api/cliente/${id}`);
-  }
-
-  editarCliente(id: String, body: {}){
-    return this.http.put(`http://localhost:8080/api/cliente/${id}`, body);
-  }
-
-  deletarCliente(id: String){
-    return this.http.delete(`http://localhost:8080/api/cliente/${id}`);
-  }
 }
