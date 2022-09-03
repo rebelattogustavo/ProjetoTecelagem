@@ -27,6 +27,8 @@ export class UsuariosService {
   this.lista.push(usuario)
   console.log(this.lista)
  }
+
+ //  Pra depois
 //  setUser(usuario: string){
 //   let index =  this.lista.findIndex(listas => listas.usuario == usuario);
 //   let us = this.lista[index];
