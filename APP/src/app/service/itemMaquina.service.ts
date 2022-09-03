@@ -9,14 +9,14 @@ export class ItemMaquinaService {
   constructor(private http: HttpClient) {}
 
   cadastrarItemMaquina(body: {}) {
-    return this.http.post('http://localhost:8080/api/item-maquina', body);
+    return this.http.post('https://tecelagem-back-end.vercel.app/api/item-maquina', body);
   }
 
   buscarItemMaquina(){
-    return this.http.get('http://localhost:8080/api/item-maquina');
+    return this.http.get('https://tecelagem-back-end.vercel.app/api/item-maquina');
   }
 
   buscarItemMaquinaId(id: String){
-    return this.http.get(`http://localhost:8080/api/item-maquina/${id}`);
+    return this.http.get(`https://tecelagem-back-end.vercel.app/api/item-maquina/${id}`);
   }
 }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 // import { Usuario } from '../shared/usuario.model';
 
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class UsuariosService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
   
      lista = [
     {nome: "Otavio", usuario: "otavio", senha: "123"},
@@ -18,7 +19,6 @@ export class UsuariosService {
     {nome: "Diego", usuario: "diego", senha: "123"},
     {nome: "Gustavo", usuario: "gustavo", senha: "123"},
   ]
-
 
   getListaUser(){
     return this.lista
@@ -39,5 +39,4 @@ export class UsuariosService {
 //   this.lista[index] = user;
 //   console.log(this.lista)
 //  }
-
 }

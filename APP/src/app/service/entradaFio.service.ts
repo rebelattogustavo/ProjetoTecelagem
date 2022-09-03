@@ -9,14 +9,14 @@ export class EntradaFioService {
   constructor(private http: HttpClient) {}
 
   cadastrarEntradaFio(body: {}) {
-    return this.http.post('http://localhost:8080/api/entrada-fio', body);
+    return this.http.post('https://tecelagem-back-end.vercel.app/api/entrada-fio', body);
   }
 
   buscarEntradaFio(){
-    return this.http.get('http://localhost:8080/api/entrada-fio');
+    return this.http.get('https://tecelagem-back-end.vercel.app/api/entrada-fio');
   }
 
   buscarEntradaFioId(id: String){
-    return this.http.get(`http://localhost:8080/api/entrada-fio/${id}`);
+    return this.http.get(`https://tecelagem-back-end.vercel.app/api/entrada-fio/${id}`);
   }
 }

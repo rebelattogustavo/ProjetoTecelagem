@@ -9,22 +9,22 @@ export class MaquinaService {
   constructor(private http: HttpClient) {}
 
   cadastrarMaquina(body: {}) {
-    return this.http.post('http://localhost:8080/api/maquina', body);
+    return this.http.post('https://tecelagem-back-end.vercel.app/api/maquina', body);
   }
 
   buscarMaquinas(){
-    return this.http.get('http://localhost:8080/api/maquina');
+    return this.http.get('https://tecelagem-back-end.vercel.app/api/maquina');
   }
 
   buscarMaquina(id: String){
-    return this.http.get(`http://localhost:8080/api/maquina/${id}`);
+    return this.http.get(`https://tecelagem-back-end.vercel.app/api/maquina/${id}`);
   }
 
   editarMaquina(id: String, body: {}){
-    return this.http.put(`http://localhost:8080/api/maquina/${id}`, body);
+    return this.http.put(`https://tecelagem-back-end.vercel.app/api/maquina/${id}`, body);
   }
 
   deletarMaquina(id: String){
-    return this.http.delete(`http://localhost:8080/api/maquina/${id}`);
+    return this.http.delete(`https://tecelagem-back-end.vercel.app/api/maquina/${id}`);
   }
 }
