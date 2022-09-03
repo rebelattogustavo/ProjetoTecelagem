@@ -13,10 +13,10 @@ export class FioService {
     }
 
     buscarFios() {
-        return this.http.get('http://localhost:8080/api/fio');
+        return this.http.get('https://tecelagem-back-end.vercel.app/api/fio');
     }
 
     buscarFioId(id: string) {
-        return this.http.get(`http://localhost:8080/api/fio/${id}`);
+        return this.http.get(`https://tecelagem-back-end.vercel.app/api/fio/${id}`);
     }
 }

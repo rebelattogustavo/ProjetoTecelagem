@@ -45,6 +45,8 @@ import { NotaFiscalService } from './service/notaFiscal.service';
 import { ProducaoService } from './service/producao.service';
 import { SaidaMalhaService } from './service/saidaMalha.service';
 import { UsuariosService } from './service/usuario.service';
+import { ClienteService } from './service/cliente.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,7 +97,8 @@ import { UsuariosService } from './service/usuario.service';
     NotaFiscalService,
     ProducaoService,
     SaidaMalhaService,
-    UsuariosService],
+    UsuariosService,
+  ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

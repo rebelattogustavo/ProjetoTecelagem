@@ -9,14 +9,14 @@ export class Fornecedor {
     constructor(private http: HttpClient) { }
 
     cadastrarFornecedor(body: {}) {
-        return this.http.post('http://localhost:8080/api/fornecedor', body);
+        return this.http.post('https://tecelagem-back-end.vercel.app/api/fornecedor', body);
     }
 
     buscarFornecedores() {
-        return this.http.get('http://localhost:8080/api/fornecedor');
+        return this.http.get('https://tecelagem-back-end.vercel.app/api/fornecedor');
     }
 
     buscarFornecedorId(id: string) {
-        return this.http.get(`http://localhost:8080/api/fornecedor/${id}`);
+        return this.http.get(`https://tecelagem-back-end.vercel.app/api/fornecedor/${id}`);
     }
 }
