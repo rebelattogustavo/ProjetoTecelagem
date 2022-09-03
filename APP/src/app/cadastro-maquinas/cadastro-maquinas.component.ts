@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MaquinaService } from '../service/maquina.service';
 
 @Component({
   selector: 'app-cadastroMaquinas',
@@ -6,16 +7,33 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./cadastro-maquinas.component.css']
 })
 export class cadastroMaquinasComponent implements OnInit {
-  @Output() modalcadastroMaquinas = new EventEmitter()
+  @Output() modalCadastroMaquina = new EventEmitter()
 
-  constructor() { }
+  constructor(private maquinaService: MaquinaService) { }
   fechaModal(){
-    this.modalcadastroMaquinas.emit()
+    this.modalCadastroMaquina.emit()
   }
   ngOnInit(): void {
 
 
   }
+  nome=""
+  marca=""
+  anoFabricacao=""
+  anoCompra=""
+  quantidadeAgulhas=0
+  quantidadePlatinas=0
+  quantidadeGaiolas=0
+  valor=0
+  enviarDados(){
+    this.maquinaService.cadastrarMaquina({nome: this.nome, marca: this.marca, 
+      anoFabricacao: this.anoFabricacao, anoCompra: this.anoCompra, quantidadeAgulhas: this.quantidadeAgulhas, 
+      quantidadePlatinas:this.quantidadePlatinas, quantidadeGaiolas:this.quantidadeGaiolas, valor:this.valor})
+      .subscribe(e => {
+        console.log(e)
+      })
+  }
+
   tipo = 1;
 
 
