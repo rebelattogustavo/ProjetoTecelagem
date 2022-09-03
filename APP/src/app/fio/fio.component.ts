@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FioComponent implements OnInit {
 
-  @Input() fio = {codigo: 0, descricao: ""}
+  @Input() fio = {id: 0, descricao: ""}
 
   constructor() { }
 

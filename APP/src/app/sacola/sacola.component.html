@@ -4,7 +4,7 @@
         <div id="flexSacola">
             <div *ngFor="let malha of listaSacola; let i = index" class="caixaSacola">
                 <div class="divSuperior">
-                    <span class="tituloMalha">{{malha.codigo}}</span>
+                    <span class="tituloMalha">{{malha.id}}</span>
                     <div class="aumentarDiminuir">
                         <img (click)="modificaQtd(1, i)" src="../../assets/menos.png" class="botaoDiminuir"/>
                         <p class="spanQtd">{{malha.quantidade}}</p>
