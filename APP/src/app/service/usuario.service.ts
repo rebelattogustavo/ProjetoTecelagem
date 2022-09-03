@@ -20,19 +20,23 @@ export class UsuariosService {
     {nome: "Gustavo", usuario: "gustavo", senha: "123"},
   ]
 
-  buscarClientes(){
-    return this.http.get('https://tecelagem-back-end.vercel.app/api/cliente');
-  }
+  getListaUser(){
+    return this.lista
+ }
+ addUser(usuario: {nome: "", usuario: "", senha: ""}){
+  this.lista.push(usuario)
+  console.log(this.lista)
+ }
 
-  buscarCliente(id: String){
-    return this.http.get(`https://tecelagem-back-end.vercel.app/api/cliente/${id}`);
-  }
-
-  editarCliente(id: String, body: {}){
-    return this.http.put(`https://tecelagem-back-end.vercel.app/api/cliente/${id}`, body);
-  }
-
-  deletarCliente(id: String){
-    return this.http.delete(`https://tecelagem-back-end.vercel.app/api/cliente/${id}`);
-  }
+ //  Pra depois
+//  setUser(usuario: string){
+//   let index =  this.lista.findIndex(listas => listas.usuario == usuario);
+//   let us = this.lista[index];
+//   let nome = us.nome;
+//   let nick = us.usuario;
+//   let senha = us.senha;
+//   let user = {nome, nick, senha};
+//   this.lista[index] = user;
+//   console.log(this.lista)
+//  }
 }
