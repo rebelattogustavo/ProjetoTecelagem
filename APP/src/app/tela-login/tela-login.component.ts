@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FuncionarioService } from '../service/funcionario.service';
 import { UsuariosService } from '../service/usuario.service';
 
 @Component({
@@ -31,7 +32,8 @@ export class TelaLoginComponent implements OnInit {
   olho2: number = 1;
   olho3: number = 1;
 
-  constructor(private router: Router, private route: ActivatedRoute, private usuariosService: UsuariosService ) {
+  constructor(private router: Router, private route: ActivatedRoute,
+     private usuariosService: UsuariosService, private funcionarioService: FuncionarioService ) {
     if (localStorage.getItem('cadastro')) {
       localStorage.removeItem('cadastro');
       this.cadastro = 1;
@@ -246,20 +248,47 @@ export class TelaLoginComponent implements OnInit {
 
   usuario = "";
   senha = "";
+  // funcionario = [
+  //   {
+  //     id: "1",
+  //     Nome: "Leo",
+  //     CNPJ: "1243",
+  //     Nascimento: Date,
+  //     Turno: "Noturno", 
+  //     Senha: "123",
+  //     Confirmar: "123"
+
+  //   }
+  // ]
+  // funcionarioFiltrado = [{
+  //   // id: "1",
+  //   // descricao: "Malha Boa",
+  //   // valor: 200
+  // }];
   login() {
     //Fazer verificação de login com API
+    // let funcionarios;
     if(this.usuario == "" || this.senha == ""){
       alert('É necessario preencher todos os campos!');
     }else{
-    let usuarios =  this.usuariosService.getListaUser().find(lista => lista.usuario == this.usuario && lista.senha == this.senha);
-    if(usuarios){
-      localStorage.setItem('USUARIO', this.usuario);
-      localStorage.setItem('SENHA', this.senha);
-      this.router.navigate(["home/tela-inicial"])
-    }else{
-      alert('Usuário não cadastrado!');
-    }
+    this.funcionarioService.buscarFuncionarios().subscribe(e => {
+      let funcionarios = Object.values(e);
+      console.log(funcionarios);
+      let existe = true;
+      for(const funcionario of funcionarios){
+        if(funcionario.nome == this.usuario && funcionario.senha == this.senha){
+          localStorage.setItem('USUARIO', this.usuario);
+          localStorage.setItem('SENHA', this.senha);
+          this.router.navigate(["home/tela-inicial"]);
+          existe = false;
+        }
+      }
+      if(existe){
+        alert('Usuário não cadastrado!');
+      }
+    });
   }
+  
     
   }
 
