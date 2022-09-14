@@ -12,6 +12,7 @@ export class HistoricoEntradaComponent implements OnInit {
         this.statusModalDetalhes.emit()
     }
   ngOnInit(): void {
+    
   }
 
 }

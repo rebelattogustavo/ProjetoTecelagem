@@ -8,9 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MalhaComponent implements OnInit {
 
   @Input() malha = { id: "0", descricao: "", valor: 0 };
-
+  @Input() tipo_exibicao_bloco = true;
   constructor() { }
-
   modalVenda = false;
   pesoTotal = 0;
   qualidade = "";
