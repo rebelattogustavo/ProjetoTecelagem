@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ClienteService } from '../service/cliente.service';
+import { SaidaMalhaService } from '../service/saidaMalha.service';
 
 @Component({
   selector: 'app-sacola',
@@ -8,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SacolaComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private malhaService : SaidaMalhaService, private clienteService : ClienteService) {
     var self = this;
     if(localStorage.getItem("carrinho")) {
       this.listaSacola = JSON.parse(localStorage.getItem('carrinho') as string) || [];
@@ -83,9 +85,41 @@ export class SacolaComponent implements OnInit {
 
   vender() {
     for (const malha of this.listaSacola) {
-      //Fazer fetch para cada malha (saída malha)
-      //Fazer alguma forma de encontrar o cliente pelo CNPJ
     }
+
+    let clienteID = "";
+
+      try {
+        this.clienteService.buscarClientes().subscribe(e => {
+          let listaClientes = Object.values(e);
+          console.log(listaClientes);
+
+          for (const cliente of listaClientes) {
+            if(cliente.cnpj == this.cliente) {
+              clienteID = cliente.id;
+            }
+          }
+
+          if(!clienteID) {
+            alert("Cliente Inválido!");
+            return;
+          }
+
+          try {
+            for (const malha of this.listaSacola) {
+              this.malhaService.cadastrarSaidaMalha({qtd_rolos: malha.quantidade, peso_total: this.pesoTotal, qualidade_malha: this.qualidade, valor_saida: (malha.quantidade * malha.valor), cliente_codigo: clienteID, nota_fiscal_codigo: this.nota, malha_codigo: malha.id}); 
+            }
+          } catch (erro) {
+            alert("Erro interno no Sistema!");
+            return;
+          }
+          this.modalVenda = false;
+          alert("Venda Efetuada com Sucesso!");
+        })
+      } catch(erro) {
+        alert("Erro interno no Sistema!")
+      }
+
     localStorage.removeItem('carrinho')
     this.router.navigate(['/home/tela-inicial']);
   }
