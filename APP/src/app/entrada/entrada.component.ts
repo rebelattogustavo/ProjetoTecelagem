@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { EntradaFioService } from '../service/entradaFio.service';
+import { FioService } from '../service/fio.service';
 import { ItensService } from '../service/item.service';
 
 @Component({
@@ -9,7 +11,10 @@ import { ItensService } from '../service/item.service';
 export class EntradaComponent implements OnInit {
   @Output() changeModal = new EventEmitter();
   @Input() tipo = 2;
-  constructor(private itemsService: ItensService) {}
+  constructor(
+    private itemsService: ItensService,
+    private entradaFioService: EntradaFioService
+    ) {}
   fecharModal() {
     this.changeModal.emit();
   }
@@ -36,16 +41,16 @@ export class EntradaComponent implements OnInit {
         quantidade: this.quantidade,
         tipo: this.nome
       }));
-      // this.itemsService.cadastrarEntradaMaterial({
-      //   descricao: this.descricao,
-      //   fornecedorId: this.fornecedor,
-      //   // itemId: novoItem.id,
-      //   // notaFiscalId: notaFiscal.id,
-      //   quantidade: this.quantidade,
-      //   valorTotalGasto: this.valor
-      // })
-    } else {
-      
+    } else if(this.tipo == 2){
+      this.entradaFioService.cadastrarEntradaFio({
+        clienteId: this.nome,
+        quantidade: this.quantidade,
+        valor: this.valor,
+        fornecedorId: this.fornecedor,
+        notaFiscalId: this.notaFiscal,
+        qtdCaixa: this.quantidade,
+        rolosPorCaixa: this.rolosCaixa
+      })
     }
   }
 

@@ -13,6 +13,7 @@ export class MalhaComponent implements OnInit {
 
   constructor(private clienteService : ClienteService, private malhaService : SaidaMalhaService) { }
 
+  @Input() tipo_exibicao_bloco = true;
   modalVenda = false;
   pesoTotal = 0;
   qualidade = "";
