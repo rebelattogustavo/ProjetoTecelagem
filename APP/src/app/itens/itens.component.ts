@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ItensComponent implements OnInit {
 
   @Input() item = {id: 0, tipo: "", quantidade: 0}
-
+  @Input() tipo_exibicao_bloco = true;
   constructor() { }
 
   ngOnInit(): void {

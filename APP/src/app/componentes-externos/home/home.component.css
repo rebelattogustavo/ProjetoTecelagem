@@ -11,7 +11,9 @@
  .container-title {
      margin-top: 3rem;
  }
-
+.color-actived{
+    background-color: rgb(132, 185, 161);
+}
  .container-title h1 {
      font-size: 34px;
      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
