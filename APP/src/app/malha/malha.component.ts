@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ClienteService } from '../service/cliente.service';
+import { SaidaMalhaService } from '../service/saidaMalha.service';
 
 @Component({
   selector: 'app-malha',
@@ -8,8 +10,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MalhaComponent implements OnInit {
 
   @Input() malha = { id: "0", descricao: "", valor: 0 };
+
+  constructor(private clienteService : ClienteService, private malhaService : SaidaMalhaService) { }
+
   @Input() tipo_exibicao_bloco = true;
-  constructor() { }
   modalVenda = false;
   pesoTotal = 0;
   qualidade = "";
@@ -42,15 +46,41 @@ export class MalhaComponent implements OnInit {
 
   vender() {
 
-    if (typeof (this.quantidade) != 'number' || typeof (this.pesoTotal) != 'number') {
-      alert("OS tipos não são válidos!")
-    } else if (this.cliente == "") {
+    if (this.cliente == "") {
       alert("Preencha o Cliente!")
     } else if (this.nota == "") {
       alert("Preencha a nota fiscal!");
     } else {
-      //Fazer fetch do saída malhas
-      this.modalVenda = false;
+      let clienteID = "";
+
+      try {
+        this.clienteService.buscarClientes().subscribe(e => {
+          let listaClientes = Object.values(e);
+          console.log(listaClientes);
+
+          for (const cliente of listaClientes) {
+            if(cliente.cnpj == this.cliente) {
+              clienteID = cliente.id;
+            }
+          }
+
+          if(!clienteID) {
+            alert("Cliente Inválido!");
+            return;
+          }
+
+          try {
+            this.malhaService.cadastrarSaidaMalha({qtd_rolos: this.quantidade, peso_total: this.pesoTotal, qualidade_malha: this.qualidade, valor_saida: (this.quantidade * this.malha.valor), cliente_codigo: clienteID, nota_fiscal_codigo: this.nota, malha_codigo: this.malha.id});
+          } catch (erro) {
+            alert("Erro interno no Sistema!");
+            return;
+          }
+          this.modalVenda = false;
+          alert("Venda Efetuada com Sucesso!");
+        })
+      } catch(erro) {
+        alert("Erro interno no Sistema!")
+      }
     }
   }
 
