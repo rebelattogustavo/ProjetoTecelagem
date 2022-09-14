@@ -10,12 +10,13 @@ import { EntradaComponent } from './entrada/entrada.component';
 // import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
 // import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
 import { cadastroItemComponent } from './cadastroItem/cadastroItem.component';
-
+import CheckLogged from './checklogged';
 
 
 import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada.component';
 import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
 import { SacolaComponent } from './sacola/sacola.component';
+import { cadastroMaquinasComponent } from './cadastro-maquinas/cadastro-maquinas.component';
 
 
 
@@ -27,6 +28,10 @@ import { SacolaComponent } from './sacola/sacola.component';
       {
         path: '',
         component: TelaLoginComponent
+      },
+      {
+        path: 'cadastroMaquinas',
+        component: cadastroMaquinasComponent
       },
       {
         path: 'cadastro',
@@ -43,10 +48,11 @@ import { SacolaComponent } from './sacola/sacola.component';
       {
         path: 'home',
         component: ComponentesExternosComponent,
-        children: [
+        canActivate: [CheckLogged], children: [
           {
-            path: '',
-            component: HomeComponent
+            path: 'tela-inicial',
+            component: HomeComponent,
+            canActivate: []
           },
           {
             path: 'maquina',
@@ -72,6 +78,14 @@ import { SacolaComponent } from './sacola/sacola.component';
           {
             path: 'sacola',
             component: SacolaComponent
+          },
+          {
+            path: 'cadastro/cliente',
+            component: CadastroComponent
+          },
+          {
+            path: 'cadastro/funcionario',
+            component: CadastroComponent
           }
         ]
       },

@@ -16,8 +16,4 @@ export class HeaderComponent implements OnInit {
   abrirSacola() {
     this.router.navigate(['/home/sacola'])
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> dbbfeca44c2be1968372e8695d0607211e73d028
 }

@@ -4,7 +4,7 @@
         <div id="flexSacola">
             <div *ngFor="let malha of listaSacola; let i = index" class="caixaSacola">
                 <div class="divSuperior">
-                    <span class="tituloMalha">{{malha.nome}}</span>
+                    <span class="tituloMalha">{{malha.id}}</span>
                     <div class="aumentarDiminuir">
                         <img (click)="modificaQtd(1, i)" src="../../assets/menos.png" class="botaoDiminuir"/>
                         <p class="spanQtd">{{malha.quantidade}}</p>
@@ -31,8 +31,6 @@
         <h2 class="tituloVenda">Saída de Malhas</h2>
         <img class="fechar" src="../../assets/close.png" (click)="fechaModal()">
     </div>
-<<<<<<< HEAD
-=======
     <div class="modalPrincipal">
         <div class="divInput">
             <label for="pesoTotal" class="labelInput">Peso Total:</label>
@@ -52,5 +50,4 @@
         </div>
         <button class="botaoVenda" (click)="vender()">Finalizar Venda</button>
     </div>
->>>>>>> dbbfeca44c2be1968372e8695d0607211e73d028
 </div>

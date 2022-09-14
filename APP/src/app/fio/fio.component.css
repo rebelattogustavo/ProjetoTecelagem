@@ -10,6 +10,7 @@
     box-shadow: 1.5px 1.5px 5px 1px #000000;
     border-left: 10px solid #12474E;
     border-radius: 5px;
+    min-height: 140px;
 }
 
 .container-top-item{
@@ -28,4 +29,11 @@
 .container-bottom-item{
     display: flex;
     flex-direction: column;
+}
+
+h1 {
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

@@ -68,3 +68,7 @@
     color: white;
     
 }
+
+.sinais:hover {
+    cursor: pointer;
+}

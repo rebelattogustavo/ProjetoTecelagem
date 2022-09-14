@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
->>>>>>> dbbfeca44c2be1968372e8695d0607211e73d028
 
 @Component({
   selector: 'app-sacola',
@@ -11,11 +8,7 @@ import { Router } from '@angular/router';
 })
 export class SacolaComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() {
-=======
   constructor(private router: Router) {
->>>>>>> dbbfeca44c2be1968372e8695d0607211e73d028
     var self = this;
     if(localStorage.getItem("carrinho")) {
       this.listaSacola = JSON.parse(localStorage.getItem('carrinho') as string) || [];
@@ -31,32 +24,18 @@ export class SacolaComponent implements OnInit {
   modalVenda = false;
   valorTotal = 0;
 
-<<<<<<< HEAD
-=======
   pesoTotal = 0;
   qualidade = "";
   cliente = "";
   nota = "";
 
->>>>>>> dbbfeca44c2be1968372e8695d0607211e73d028
   listaSacola = [
     {
-      codigo: 1,
-      nome: "Camisa",
+      id: "1",
       descricao: "Camisa Boa",
       quantidade: 1,
       valor: 20
     },
-<<<<<<< HEAD
-    {
-      codigo: 2,
-      nome: "Calça",
-      descricao: "Calça Boa",
-      quantidade: 4,
-      valor: 10
-    }
-=======
->>>>>>> dbbfeca44c2be1968372e8695d0607211e73d028
   ]
 
   ngOnInit(): void {
@@ -74,6 +53,7 @@ export class SacolaComponent implements OnInit {
   excluirMalha(index: number) {
     this.listaSacola.splice(index, 1);
     this.calculaValor();
+    localStorage.setItem('carrinho', JSON.stringify(this.listaSacola));
   }
 
   modificaQtd(opcao: number, index: number) {
@@ -87,6 +67,7 @@ export class SacolaComponent implements OnInit {
         this.listaSacola[index].quantidade++;
         break;
     }
+    localStorage.setItem('carrinho', JSON.stringify(this.listaSacola));
     this.calculaValor();
   }
 
@@ -100,15 +81,13 @@ export class SacolaComponent implements OnInit {
     this.modalVenda = false;
   }
 
-<<<<<<< HEAD
-=======
   vender() {
     for (const malha of this.listaSacola) {
       //Fazer fetch para cada malha (saída malha)
       //Fazer alguma forma de encontrar o cliente pelo CNPJ
     }
-    this.router.navigate(['/home']);
+    localStorage.removeItem('carrinho')
+    this.router.navigate(['/home/tela-inicial']);
   }
 
->>>>>>> dbbfeca44c2be1968372e8695d0607211e73d028
 }

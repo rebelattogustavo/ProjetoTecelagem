@@ -4,26 +4,29 @@ const cadastrarEntradaMaterial = async (descricao, quantidade, valorTotalGasto,
     notaFiscalId, fornecedorId, itemId, id) => {
     let entradaMateriais;
     if (id) {
-        entradaMateriais = await crud.cadastrar("entrada-materiais", id, {
-            descricao, quantidade, valorTotalGasto,
-            notaFiscalId, fornecedorId, itemId
-        });
-    } else {
-        let item = await crud.buscarPorId("item", itemId);
-        if (!item.naoEncontrado) {
-            let fornecedor = await crud.buscarPorId("fornecedor", fornecedorId);
-            if (!fornecedor.naoEncontrado) {
-                entradaMateriais = await crud.cadastrar("entrada-materiais", fornecedor.id, {
-                    descricao, quantidade,
-                    valorTotalGasto, notaFiscalId, fornecedorId, itemId
-                });
-                return entradaMateriais;
-            } else {
-                return { "Erro": "Fornecedor não encontrado" }
-            }
-        } else {
-            return { "Erro": "Item não encontrado" }
+        const checarEntrada = await buscarEntradaMaterialId(id)
+
+        if (checarEntrada.naoEncontrado) {
+            return { "Erro": "Id de máquina fio não encontrado" }
         }
+        entradaMateriais = await crud.cadastrar("entrada-materiais", id, { descricao, quantidade, valorTotalGasto, 
+            notaFiscalId, fornecedorId, itemId });
+    } else {
+        let nota = await crud.buscarPorId("nota-fiscal", notaFiscalId);
+        if(nota.naoEncontrado){
+            return {"Erro": "Nota não encontrada!"}
+        }
+        let fornecedor = await crud.buscarPorId("fornecedor", fornecedorId);
+        if(fornecedor.naoEncontrado){
+            return {"Erro": "Fornecedor não encontrado!"}
+        }
+        let item = await crud.buscarPorId("item",itemId);
+        if(item.naoEncontrado){
+            return {"Erro": "Item não encontrado!"}
+        }
+        entradaMateriais = await crud.cadastrar("entrada-materiais", null, { descricao, quantidade, valorTotalGasto, 
+            notaFiscalId, fornecedorId, itemId });
+        
     }
     return entradaMateriais;
 }

@@ -22,6 +22,30 @@ import { HistoricoEntradaComponent } from './historico-entrada/historico-entrada
 import { HistoricoProducaoComponent } from './historico-producao/historico-producao.component';
 import { SacolaComponent } from './sacola/sacola.component';
 
+import { HttpClientModule } from  '@angular/common/http';
+import { CadastroFioComponent } from './cadastroFio/cadastroFio.component';
+import { cadastroItemComponent } from './cadastroItem/cadastroItem.component';
+import { CadastroMalhaComponent } from './cadastroMalha/cadastroMalha.component';
+import { cadastroMaquinasComponent } from './cadastro-maquinas/cadastro-maquinas.component';
+import CheckLogged from './checklogged';
+import { FioService } from './service/fio.service';
+import { EntradaFioService } from './service/entradaFio.service';
+import { EntradaMateriais } from './service/entradaMateriais.service';
+import { FioMalha } from './service/fioMalha.service';
+import { Fornecedor } from './service/fornecedor.service';
+import { FuncionarioService } from './service/funcionario.service';
+import { ItensService } from './service/item.service';
+import { ItemMaquinaService } from './service/itemMaquina.service';
+import { MalhaService } from './service/malha.service';
+import { MalhaClienteService } from './service/malhaCliente.service';
+import { MaquinaService } from './service/maquina.service';
+import { MaquinaMalhaService } from './service/maquinaMalha.service';
+import { MaquinaFioService } from './service/maquinFio.service';
+import { NotaFiscalService } from './service/notaFiscal.service';
+import { ProducaoService } from './service/producao.service';
+import { SaidaMalhaService } from './service/saidaMalha.service';
+import { UsuariosService } from './service/usuario.service';
+import { ClienteService } from './service/cliente.service';
 
 @NgModule({
   declarations: [
@@ -38,21 +62,43 @@ import { SacolaComponent } from './sacola/sacola.component';
     MaquinaComponent,
     FioComponent,
     DetalhesMaquinaComponent,
-<<<<<<< HEAD
-    HomeComponent
-=======
     HistoricoEntradaComponent,
     HistoricoProducaoComponent,
-    SacolaComponent
->>>>>>> dbbfeca44c2be1968372e8695d0607211e73d028
+    SacolaComponent,
+    HomeComponent,
+    CadastroFioComponent,
+    cadastroItemComponent,
+    CadastroMalhaComponent,
+    cadastroMaquinasComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     RotasModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CheckLogged,
+    EntradaFioService,
+    EntradaMateriais,
+    FioMalha,
+    FioService,
+    Fornecedor,
+    FuncionarioService,
+    ItensService,
+    ItemMaquinaService,
+    MalhaService,
+    MalhaClienteService,
+    MaquinaService,
+    MaquinaMalhaService,
+    MaquinaFioService,
+    NotaFiscalService,
+    ProducaoService,
+    SaidaMalhaService,
+    UsuariosService,
+  ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 <body>
     <div class="divPrincipal">
-        <div *ngIf="cadastro == 1" id="modalCadastro">
+        <!-- <div *ngIf="cadastro == 1" id="modalCadastro">
             <div class="divInfo">
                 <img id="fechar" (click)="fechar()" src="../../../assets/close.png">
                 <span id="spanCadastro">Seu cadastro foi efetuado com sucesso</span>
@@ -8,7 +8,7 @@
             <div id="fundo" style="background-color: #AEAEAE;">
                 <div id="azul"></div>
             </div>
-        </div>
+        </div> -->
         <div *ngIf="requisicaoSenha == 1" id="modalCadastro">
             <div class="divInfo">
                 <img id="fechar" (click)="fechar()" src="../../../assets/close.png">
@@ -36,12 +36,12 @@
             </h1>
             <div class="divCadastro">
                 <img src="../../assets/user.png" class="imgInput">
-                <input type="text" class="inputsCadastro" placeholder="Usuário" [(ngModel)]="emailUser">
+                <input type="text" class="inputsCadastro" placeholder="Usuário" [(ngModel)]="usuario">
             </div>
             <div class="divCadastro">
                 <img src="../../assets/lock.png" class="imgInput">
                 <div class="divSenha">
-                    <input type="password" class="inputsCadastro2" id="inputSenha1" placeholder="Senha" [(ngModel)]="senhaUser">
+                    <input type="password" class="inputsCadastro2" id="inputSenha1" placeholder="Senha" [(ngModel)]="senha">
                     <img src="../../../assets/olho-fechado.png" class="imgOlho" id="olho1" (click)="trocarOlho(1)">
                 </div>
             </div>
@@ -57,10 +57,6 @@
             <button type="button" id="entrar" (click)="login()">
                 Entrar
             </button>
-            <p id="textoConta">
-                Não tem uma conta?
-                <span (click)="cadastrar()" id="cadastrar">Cadastrar</span>
-            </p>
         </div>
         <img src="../../assets/imagem_login.png" class="imgLogin">
     </div>
