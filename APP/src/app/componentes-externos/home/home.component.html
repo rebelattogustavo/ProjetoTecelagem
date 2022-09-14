@@ -27,7 +27,7 @@
     <app-cadastroFio (modalCadastroFio)="changeModalCadastroFio()" *ngIf="stateFio" style="position: fixed; top:0;left:0"></app-cadastroFio>
     <app-cadastroMalha (modalCadastroMalha)="changeModalCadastroMalha()" *ngIf="stateMalha" style="position: fixed; top:0;left:0"></app-cadastroMalha>
     <app-cadastroItem (modalCadastroItem)="changeModalCadastroItem()" *ngIf="stateItem" style="position: fixed; top:0;left:0"></app-cadastroItem>
-    <app-cadastroMaquinas (modalCadastroMaquina)="changeModalCadastroMaquina()" *ngIf="stateMaquina"  style="position: absolute; top:8%;left:0"></app-cadastroMaquinas>
+    <app-cadastroMaquinas (modalCadastroMaquina)="changeModalCadastroMaquina()" *ngIf="stateMaquina"  style="position: fixed; top:0;left:0"></app-cadastroMaquinas>
     <div *ngIf="lista == 'tela-inicial'" class="container-fios row">
         <app-malha *ngFor="let f of malhasFiltradas" class="col-md-3 col-sm-4" [malha]="f"></app-malha>
         <app-maquina *ngFor="let f of maquinasFiltradas" class="col-md-3 col-sm-4" [maquina]="f"></app-maquina>
