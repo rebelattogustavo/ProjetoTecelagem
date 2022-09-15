@@ -27,4 +27,6 @@ export class FuncionarioService {
   deletarFuncionario(id: String){
     return this.http.delete(`https://tecelagem-back-end.vercel.app/api/funcionario/${id}`);
   }
+
+  
 }

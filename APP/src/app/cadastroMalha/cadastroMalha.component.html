@@ -20,14 +20,14 @@
                         </div>
                     </div>
 
-                    <input class="inputs" type="text">
+                    <input [(ngModel)]="nome" class="inputs" type="text">
                 </div>
             </div>
             <div>
                 <h6 style="margin-left: 40px;">Quantidade</h6>
                 <div class="centralizar">
                     <h3 style="margin-left: 20px;">+</h3>
-                    <input class="quantidade" placeholder="" type="text">
+                    <input [(ngModel)]="quantidade" class="quantidade" placeholder="" type="text">
                     <h3 style="margin-left: 20px; font-size: 35px;">-</h3>
                 </div>
             </div>
@@ -38,9 +38,8 @@
             <div style="margin-left: 60px;">
                 <div style="margin-right: 60px;">
                     <h6>Descrição</h6>
-                    <textarea class="Desc"></textarea>
+                    <textarea [(ngModel)]="descricao" class="Desc"></textarea>
                 </div>
-
             </div>
         </div>
 
@@ -50,7 +49,7 @@
                     <h6>Fios</h6>
                     <div>
                         <div class="centralizar">
-                            <input class="selecionar" type="text" placeholder="Selecionar">
+                            <input [(ngModel)]="fios" class="selecionar" type="text" placeholder="Selecionar">
                         </div>
                     </div>
                 </div>
@@ -70,7 +69,7 @@
 
         <div class="centralizar">
             <div>
-                <button class="nota" style="margin-top: 20px;">
+                <button (click)="enviarCadastro()" class="nota" style="margin-top: 20px;">
                     Enviar
                 </button>
             </div>
