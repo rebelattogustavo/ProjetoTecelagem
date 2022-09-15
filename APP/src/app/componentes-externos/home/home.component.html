@@ -22,8 +22,9 @@
             Máquina</button>
         <button class="cadastro" *ngIf="lista == 'itens'" (click)="changeModalCadastroItem()">Cadastro de Item</button>
     </div>
-    <div class="mx-3 mt-2 d-flex justify-content-between">
-        <div class="d-flex">
+    <div class="mx-4 mt-2 d-flex justify-content-between">
+        <div class="d-flex mt-1" style="padding: 9px;    margin-left: 10px;
+        border: 1px solid black;">
             <div class="d-flex" style="align-items: center; justify-content:center">
                 <span>Malha:</span>
                 <div class="m-2" style="background-color: #12474E; width:10px; height: 10px"></div>
@@ -42,10 +43,22 @@
             </div>
         </div>
             
-        <div class="d-flex" style="">
-            <div [ngClass]="{'color-actived': !tipo_exibicao_bloco}" (click)="change_to_list()"
+        <div class="d-flex" style="align-items: center;">
+            <div style="width: 30px;
+            cursor:pointer;
+            display: flex;
+            align-items: 25px;
+            height: 30px;
+            align-items: center;
+            justify-content: center;" [ngClass]="{'color-actived': !tipo_exibicao_bloco}" (click)="change_to_list()"
                 class="change-type-list me-2"><i class="bi bi-list" style="font-size:20px;"></i></div>
-            <div [ngClass]="{'color-actived': tipo_exibicao_bloco}" (click)="change_to_card()" class="change-type-list"><i
+            <div style="width: 30px;
+            cursor:pointer;
+            display: flex;
+            align-items: 25px;
+            height: 30px;
+            align-items: center;
+            justify-content: center;"  [ngClass]="{'color-actived': tipo_exibicao_bloco}" (click)="change_to_card()" class="change-type-list"><i
                     class="bi bi-grid-3x3-gap-fill" style="font-size:20px;"></i></div>
         </div>
     </div>
