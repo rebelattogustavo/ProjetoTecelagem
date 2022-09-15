@@ -27,6 +27,8 @@
             <input  *ngIf="tipoTela" type="text" class="inputsCadastro" placeholder="CPF" [(ngModel)]="cpf">
             <input *ngIf="tipoTela" type="date" class="inputsCadastro" placeholder="Data de nascimento"
                 [(ngModel)]="dataNascimento">
+            <input *ngIf="tipoTela" type="number" class="inputsCadastro" placeholder="Salário"
+                [(ngModel)]="salario">
             <input *ngIf="tipoTela" type="text" class="inputsCadastro" placeholder="Turno" [(ngModel)]="turno">
             <div class="inputsCadastro" *ngIf="tipoTela">
                 <input  type="password" class="inputsCadastro2" placeholder="Senha" id="inputSenha1"
@@ -41,10 +43,7 @@
             <button id="cadastrar" (click)="cadastrar()">
                 Cadastrar
             </button>
-            <p id="textoConta">
-                Já possui uma conta?
-                <span (click)="entrar()" id="entrar">Entrar</span>
-            </p>
+            <br>
         </div>
     </div>
 </body>

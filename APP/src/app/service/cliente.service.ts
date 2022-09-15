@@ -13,6 +13,7 @@ export class ClienteService {
   }
 
   buscarClientes(){
+
     return this.http.get('https://tecelagem-back-end.vercel.app/api/cliente');
   }
 
