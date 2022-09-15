@@ -9,6 +9,7 @@ export class MalhaService {
   constructor(private http: HttpClient) {}
 
   cadastrarMalha(body: {}) {
+    console.log(body);
     return this.http.post('https://tecelagem-back-end.vercel.app/api/malha', body);
   }
 

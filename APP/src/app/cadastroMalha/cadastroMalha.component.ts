@@ -13,17 +13,17 @@ export class CadastroMalhaComponent implements OnInit {
   nome = "";
   quantidade = "";
   descricao = "";
-  fios = [];
+  fios = "";
 
   fechaModal(){
     this.modalCadastroMalha.emit()
   }
 
   enviarCadastro(){
-    this.malhaService.cadastrarMalha({nome: this.malhaService, quantidade: this.quantidade, descricao: this.descricao, fios: this.fios})
-    .subscribe(e => {
-      console.log(e)
-    })
+    // this.malhaService.buscarMalhas();
+    let malhaCadastrada;
+    this.malhaService.cadastrarMalha({descricao: this.nome, valor: this.quantidade}).subscribe(e => malhaCadastrada = Object.values(e));
+    console.log(malhaCadastrada);
   }
 
   ngOnInit(): void {
