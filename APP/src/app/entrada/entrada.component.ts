@@ -27,8 +27,6 @@ export class EntradaComponent implements OnInit {
   rolosCaixa = 0;
   nome = "";
 
-  notaFiscal = "";
-
   //Inserir um novo item
   //Inserir a entrada_item
   //Verificar se o item existe
@@ -37,20 +35,20 @@ export class EntradaComponent implements OnInit {
 
   entradaItens() {
     if (this.tipo == 1) {
-      console.log(this.itemsService.cadastrarItem({
+      this.itemsService.cadastrarItem({
+        nome: this.nome,
         quantidade: this.quantidade,
         tipo: this.nome
-      }));
+      }).subscribe();
     } else if(this.tipo == 2){
       this.entradaFioService.cadastrarEntradaFio({
         clienteId: this.nome,
         quantidade: this.quantidade,
         valor: this.valor,
         fornecedorId: this.fornecedor,
-        notaFiscalId: this.notaFiscal,
         qtdCaixa: this.quantidade,
         rolosPorCaixa: this.rolosCaixa
-      })
+      }).subscribe();
     }
   }
 
