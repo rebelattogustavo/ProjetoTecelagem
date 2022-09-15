@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FioComponent implements OnInit {
 
   @Input() fio = {id: 0, descricao: ""}
-
+  @Input() tipo_exibicao_bloco = true;
   constructor() { }
 
   ngOnInit(): void {
