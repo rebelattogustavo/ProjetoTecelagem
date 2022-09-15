@@ -70,7 +70,7 @@
     <app-cadastroItem (modalCadastroItem)="changeModalCadastroItem()" *ngIf="stateItem"
         style="position: fixed; top:0;left:0"></app-cadastroItem>
     <app-cadastroMaquinas (modalCadastroMaquina)="changeModalCadastroMaquina()" *ngIf="stateMaquina"
-        style="position: absolute; top:8%;left:0"></app-cadastroMaquinas>
+    style="position: fixed; top:0;left:0"></app-cadastroMaquinas>
     <div>
         <div [ngClass]="{'row': tipo_exibicao_bloco}" *ngIf="lista == 'tela-inicial'" class="container-fios row">
             <app-malha [tipo_exibicao_bloco]="tipo_exibicao_bloco" *ngFor="let f of malhasFiltradas" class="col-md-3 col-sm-4" [malha]="f"></app-malha>
