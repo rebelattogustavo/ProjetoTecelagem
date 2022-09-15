@@ -11,7 +11,7 @@ const cadastrarMalha = async (descricao, valor, id) => {
 
         malha = await crud.cadastrar("malha", id, {descricao, valor});
     } else {
-        malha = await crud.cadastrar("malha", null, {descricao,valor});
+        malha = await crud.cadastrar("malha", null, { descricao, valor });
     }
     return malha;
 }

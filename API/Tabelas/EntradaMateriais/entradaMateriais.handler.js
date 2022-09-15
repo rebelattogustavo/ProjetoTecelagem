@@ -1,6 +1,6 @@
 const crud = require("../../crud");
 
-const cadastrarEntradaMaterial = async (descricao, quantidade, valorTotalGasto, 
+const cadastrarEntradaMaterial = async (descricao, quantidade, valorTotalGasto,
     notaFiscalId, fornecedorId, itemId, id) => {
     let entradaMateriais;
     if (id) {

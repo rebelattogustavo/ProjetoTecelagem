@@ -18,6 +18,7 @@ export class ClienteService {
   }
 
   buscarCliente(id: String){
+    console.log("service: ", id)
     return this.http.get(`https://tecelagem-back-end.vercel.app/api/cliente/${id}`);
   }
 
