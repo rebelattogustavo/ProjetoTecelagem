@@ -53,7 +53,7 @@ export class DetalhesMaquinaComponent implements OnInit {
             }
           }
 
-          this.producaoService.cadastrarProducao({peso_rolo: this.peso, defeito: this.defeito, cliente: clienteID, funcionario_codigo: funcionarioID, maquina: this.maquina.id, data: new Date()});
+          this.producaoService.cadastrarProducao({peso_rolo: this.peso, defeito: this.defeito, cliente: clienteID, funcionario_codigo: funcionarioID, maquina: this.maquina.id, data: new Date()}).subscribe();
           this.statusModalDetalhes.emit();
         })
       });
