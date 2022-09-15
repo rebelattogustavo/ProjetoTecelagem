@@ -1,8 +1,8 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
     <div class="logo-container">
-        <button class="logo" (click)="toggleCollapse()"><img style="width: 2.45rem;" src="" alt=""></button>
+        <button [ngClass]="collapsed ? 'inverte': 'naoinverte'" class="logo" (click)="toggleCollapse()"><img style="width: 2.45rem;" src="" alt="">
+            <i class="bi bi-list"></i></button>
         <div class="logo-text" @fadeInOut *ngIf="collapsed">MENU</div>
-  
             <i class="bi bi-x text-light btn2-close" @rotate *ngIf="collapsed" (click)="closeSidenav()"></i>
     </div>
     <ul class="sidenav-nav">

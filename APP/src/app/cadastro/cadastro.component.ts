@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { ClienteService } from '../service/cliente.service';
+import { FuncionarioService } from '../service/funcionario.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,7 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private clienteService: ClienteService,
+    private funcionarioService: FuncionarioService) { }
 
   olho1: number = 1;
   olho2: number = 1;
@@ -18,7 +23,8 @@ export class CadastroComponent implements OnInit {
   cnpj: string = "";
   cpf: string = "";
   dataNascimento: Date = new Date();
-  turno: string = ""
+  turno: string = "";
+  salario: number = 0;
 
   senhaUser: string = "";
   repetirSenhaUser: string = "";
@@ -32,7 +38,7 @@ export class CadastroComponent implements OnInit {
     this.rota = this.router.url;
     if (this.rota == '/home/cadastro/cliente') {
       this.tipoTela = false
-    } else{
+    } else {
       this.tipoTela = true
     }
     console.log(this.rota)
@@ -44,24 +50,35 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar() {
-    if (this.cnpj && this.usuario && this.senhaUser) {
-      if (this.senhaUser == this.repetirSenhaUser && this.senhaUser != '' && this.senhaUser) {
-        localStorage.setItem('cadastro', '1');
+    if (this.cnpj && this.usuario) {
+      localStorage.setItem('cadastro', '1');
+      const cliente = {
+        nome: this.usuario,
+        cnpj: this.cnpj
+      }
+      console.log(cliente.nome);
+      console.log(cliente.cnpj);
 
-        const user = {
+      this.clienteService.cadastrarCliente(cliente).subscribe((e) => {
+        console.log(e);
+      });
+    } else if (this.salario && this.cpf && this.usuario && this.dataNascimento && this.turno &&
+      this.senhaUser && this.repetirSenhaUser) {
+      if (this.senhaUser == this.repetirSenhaUser) {
+        const funcionario = {
           nome: this.usuario,
-          cnpj: this.cnpj,
+          cpf: this.cpf,
+          dataNascimento: this.dataNascimento,
+          turno: this.turno,
           senha: this.senhaUser,
-          tipo: 0
+          salario: this.salario
         }
+        console.log(funcionario.cpf);
+        console.log(funcionario.nome);
 
-        //Usar serviço para cadastrar
-        this.router.navigate(['']);
-      } else {
-        this.senhaIncorreta = 1;
-        setTimeout(() => {
-          this.senhaIncorreta = 0;
-        }, 5000)
+        this.funcionarioService.cadastrarFuncionario(funcionario).subscribe((e) => {
+          console.log(e);
+        });
       }
     } else {
       this.dadosIncorretos = 1;
