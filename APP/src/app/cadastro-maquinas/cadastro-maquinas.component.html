@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="centralizar">
-                <div style="margin-right: 50px;">
+                <div style="margin-right: 50px; margin-top: 5px;">
                     <h6>Ano de fabricação</h6>
 
                     <div class="centralizar">
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div style="margin-top: 5px;">
                     <h6>Ano de compra</h6>
 
                     <div class="centralizar">
@@ -71,7 +71,7 @@
             </div>
 
             <div class="centralizar">
-                <div style="margin-right: 50px;">
+                <div style="margin-right: 50px; margin-top: 5px;">
                     <h6>Quantidade de agulhas</h6>
 
                     <div class="centralizar">
@@ -86,7 +86,7 @@
                 </div>
 
 
-                <div>
+                <div style="margin-top: 5px;">
                     <h6>Quantidade de platinas</h6>
 
                     <div class="centralizar">
@@ -101,7 +101,7 @@
                 </div>
             </div>
             <div class="centralizar">
-                <div style="margin-right: 50px;">
+                <div style="margin-right: 50px; margin-top: 5px;">
                     <h6>Quantidade de gaiolas</h6>
 
                     <div class="centralizar">
@@ -115,7 +115,36 @@
                     </div>
                 </div>
 
-                <div>
+                <div style="margin-top: 5px;">
+                    <h6>Quantidade de Cones</h6>
+
+                    <div class="centralizar">
+                        <div class="ladoInput">
+                            <div style="margin-left: 15px; margin-top: 4px;">
+                                <i class="bi bi-boxes" style="font-size: 20px;"></i>
+                            </div>
+                        </div>
+
+                        <input [(ngModel)]="quantidadeCones" class="inputs" type="number">
+                    </div>
+                </div>
+            </div>
+            <div class="centralizar">
+                <div style="margin-right: 50px; margin-top: 5px;">
+                    <h6>RPM</h6>
+
+                    <div class="centralizar">
+                        <div class="ladoInput">
+                            <div style="margin-left: 15px; margin-top: 4px;">
+                                <i class="bi bi-boxes" style="font-size: 20px;"></i>
+                            </div>
+                        </div>
+
+                        <input [(ngModel)]="rmp" class="inputs" type="number">
+                    </div>
+                </div>
+
+                <div style="margin-top: 5px;">
                     <h6>Valor</h6>
 
                     <div class="centralizar">
@@ -125,16 +154,16 @@
                             </div>
                         </div>
 
-                        <input [(ngModel)]="valor" class="inputs" type="text">
+                        <input [(ngModel)]="valor" class="inputs" type="number">
                     </div>
                 </div>
             </div>
 
             </div>
 
-            <div class="centralizar" style="margin-top: 50px;">
+            <div class="centralizar" style="margin-top: 35px;">
                 <div>
-                    <button (click)="enviarDados()" class="nota" style=" margin-top: 25px;">
+                    <button (click)="enviarDados()" class="nota" style=" margin-top: 20px;">
                         Enviar
                     </button>
                 </div>
