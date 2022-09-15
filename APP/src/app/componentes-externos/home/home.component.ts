@@ -20,6 +20,14 @@ export class HomeComponent implements OnInit {
   ) { }
   stateDetalhes = false
   tipoModalEntrada = 1
+  tipo_exibicao_bloco = false
+
+  change_to_list(){
+    this.tipo_exibicao_bloco = false
+  }
+  change_to_card(){
+    this.tipo_exibicao_bloco = true
+  }
 
   fio = [{
     id: 1,
