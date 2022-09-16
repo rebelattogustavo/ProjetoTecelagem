@@ -27,7 +27,6 @@ export class EntradaComponent implements OnInit {
   rolosCaixa = 0;
   nome = "";
   fio = "";
-  notaFiscal = "";
   preco = 0;
 
   //Inserir um novo item
@@ -42,7 +41,9 @@ export class EntradaComponent implements OnInit {
         nome: this.nome,
         quantidade: this.quantidade,
         tipo: this.nome
-      });
+      }).subscribe({next: (e) => {
+        console.log(e)
+      }});
     } else if (this.tipo == 2) {
       this.preco = this.valor * this.rolosCaixa * this.quantidade
       let entradaItem = {
@@ -51,7 +52,6 @@ export class EntradaComponent implements OnInit {
         qtdCaixa: this.quantidade,
         rolosPorCaixa: this.rolosCaixa,
         fioId: this.fio,
-        precoNotaFiscal: this.preco,
         peso: this.peso
       }
       
