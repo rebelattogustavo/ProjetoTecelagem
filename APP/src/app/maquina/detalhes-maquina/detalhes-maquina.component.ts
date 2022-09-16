@@ -35,7 +35,7 @@ export class DetalhesMaquinaComponent implements OnInit {
 
         for (const cliente of listaClientes) {
           if(cliente.cnpj == this.cliente) {
-            clienteID = cliente.id;
+            clienteID = parseInt(cliente.id);
           }
         }
         if(!clienteID) {

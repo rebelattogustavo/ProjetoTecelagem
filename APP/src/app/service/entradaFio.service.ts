@@ -22,8 +22,7 @@ export class EntradaFioService {
   constructor(private http: HttpClient) {}
 
   cadastrarEntradaFio(body: object) {
-    console.log(body);
-    return this.http.post('https://tecelagem-back-end.vercel.app/api/entrada-fio', JSON.stringify(body));
+    return this.http.post('https://tecelagem-back-end.vercel.app/api/entrada-fio', body);
   }
 
   buscarEntradaFio(): Observable<Fio[]>{
