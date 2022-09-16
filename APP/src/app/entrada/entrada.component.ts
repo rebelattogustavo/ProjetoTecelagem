@@ -26,12 +26,9 @@ export class EntradaComponent implements OnInit {
   descricao = '';
   rolosCaixa = 0;
   nome = "";
-<<<<<<< Updated upstream
-=======
   fio = "";
   notaFiscal = "";
   preco = 0;
->>>>>>> Stashed changes
 
   //Inserir um novo item
   //Inserir a entrada_item
@@ -45,23 +42,13 @@ export class EntradaComponent implements OnInit {
         nome: this.nome,
         quantidade: this.quantidade,
         tipo: this.nome
-<<<<<<< Updated upstream
-      }).subscribe();
-    } else if(this.tipo == 2){
-      this.entradaFioService.cadastrarEntradaFio({
-=======
-      }));
+      });
     } else if (this.tipo == 2) {
       this.preco = this.valor * this.rolosCaixa * this.quantidade
       let entradaItem = {
->>>>>>> Stashed changes
         clienteId: this.nome,
         fornecedorId: this.fornecedor,
         qtdCaixa: this.quantidade,
-<<<<<<< Updated upstream
-        rolosPorCaixa: this.rolosCaixa
-      }).subscribe();
-=======
         rolosPorCaixa: this.rolosCaixa,
         fioId: this.fio,
         precoNotaFiscal: this.preco,
@@ -71,7 +58,6 @@ export class EntradaComponent implements OnInit {
       this.entradaFioService.cadastrarEntradaFio(entradaItem).subscribe(e => {
         console.log(e)
       })
->>>>>>> Stashed changes
     }
   }
 
