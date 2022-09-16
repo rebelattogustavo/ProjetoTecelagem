@@ -40,7 +40,7 @@ export const navbarData = [
         label: "Cadastro de Clientes"
     },
     {
-        routeLink: '/home/cadastro/cliente',
+        routeLink: '/home/clientes',
         icon: "bi bi-person-lines-fill",
         label: "Listar Clientes"
     },
