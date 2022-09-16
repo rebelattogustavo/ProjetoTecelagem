@@ -72,3 +72,13 @@
 .sinais:hover {
     cursor: pointer;
 }
+
+.notaFiscal{
+    width: 150px;
+    height: 35px;
+    border: none;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.479);
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+}

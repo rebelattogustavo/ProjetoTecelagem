@@ -22,6 +22,7 @@
             <h1 id="titulo">
                 Cadastrar
             </h1>
+            <div *ngIf="tipoTela == false" style="margin-top: 20px;"></div>
             <input type="text" class="inputsCadastro" placeholder="Nome" [(ngModel)]="usuario">
             <input  *ngIf="tipoTela == false" type="text" class="inputsCadastro" placeholder="CNPJ" [(ngModel)]="cnpj">
             <input  *ngIf="tipoTela" type="text" class="inputsCadastro" placeholder="CPF" [(ngModel)]="cpf">
@@ -40,6 +41,7 @@
                     [(ngModel)]="repetirSenhaUser">
                 <img src="../../../assets/olho-fechado.png" class="imgOlho" (click)="trocarOlho(2)" id="olho2">
             </div>
+            <div *ngIf="tipoTela == false" style="margin-top: 20px;"></div>
             <button id="cadastrar" (click)="cadastrar()">
                 Cadastrar
             </button>

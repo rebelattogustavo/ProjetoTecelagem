@@ -49,7 +49,12 @@
                     <h6>Fios</h6>
                     <div>
                         <div class="centralizar">
-                            <input [(ngModel)]="fios" class="selecionar" type="text" placeholder="Selecionar">
+                            <!-- <input [(ngModel)]="fios" class="selecionar" type="text" placeholder="Selecionar"> -->
+                            <select class="selecionar">
+                                <option *ngFor="let fio of listaFio">
+                                    {{fio.descricao}}
+                                </option>
+                            </select>
                         </div>
                     </div>
                 </div>

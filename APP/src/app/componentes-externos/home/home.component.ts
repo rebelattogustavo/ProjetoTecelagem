@@ -4,6 +4,10 @@ import { FioService } from 'src/app/service/fio.service';
 import { ItensService } from 'src/app/service/item.service';
 import { MalhaService } from 'src/app/service/malha.service';
 import { MaquinaService } from 'src/app/service/maquina.service';
+interface Fio {
+  id: number,
+  descricao: string;
+}
 
 @Component({
   selector: 'app-home',
@@ -11,6 +15,9 @@ import { MaquinaService } from 'src/app/service/maquina.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+
+  
 
   constructor(private router: Router,
     private fioService: FioService,
@@ -75,7 +82,7 @@ export class HomeComponent implements OnInit {
     { id: 0, tipo: "", quantidade: 0 }
   ];
 
-
+  
 
   textPesquisa = "";
 
@@ -98,8 +105,9 @@ export class HomeComponent implements OnInit {
       self.malhasFiltradas = this.malha;
     });
 
-    this.fioService.buscarFios().subscribe(e => {
-      self.fio = Object.values(e);
+    this.fioService.buscarFios().subscribe((e: Fio[]) => {
+      self.fio as Fio[];
+      self.fio = e;
       self.fiosFiltrados = this.fio;
     })
 

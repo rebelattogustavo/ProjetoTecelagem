@@ -32,6 +32,7 @@ a{
     flex-direction: column;
     width: 30.5%;
     background-color: #ffffff;
+    box-shadow: 1px 1px 30px 1px rgba(0, 0, 0, 0.555);
 }
 
 #imagemUsuario {
@@ -138,7 +139,7 @@ a{
     border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 8px;
     position: absolute;
-    top: 2%;
+    top: 10%;
     height: 10%;
 }
 
